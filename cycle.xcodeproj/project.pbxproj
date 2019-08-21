@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AA212230D30B4002EB295 /* OnBoardingVC.xib */; };
+		161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AA213230D30B4002EB295 /* OnBoardingVC.swift */; };
 		322D3E94230CFC290051B9FB /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D3E93230CFC290051B9FB /* MapVC.xib */; };
 		322D3E96230D05980051B9FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E95230D05980051B9FB /* MapViewController.swift */; };
 		322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E97230D0AC50051B9FB /* LoginVC.swift */; };
@@ -88,6 +90,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		161AA212230D30B4002EB295 /* OnBoardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingVC.xib; sourceTree = "<group>"; };
+		161AA213230D30B4002EB295 /* OnBoardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		322D3E93230CFC290051B9FB /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
 		322D3E95230D05980051B9FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161AA211230D30B4002EB295 /* On Boarding */ = {
+			isa = PBXGroup;
+			children = (
+				161AA213230D30B4002EB295 /* OnBoardingVC.swift */,
+				161AA212230D30B4002EB295 /* OnBoardingVC.xib */,
+			);
+			path = "On Boarding";
+			sourceTree = "<group>";
+		};
 		322D3E8F230CFAFA0051B9FB /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +302,7 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
 				327E4FC9230D12EC00FEBB9D /* Search Route */,
 				322D3E92230CFB0E0051B9FB /* Register */,
@@ -464,6 +478,7 @@
 				EFF1265223068EAD0059A4BE /* GoogleService-Info.plist in Resources */,
 				EFEE5DDC2301575C0027F401 /* Assets.xcassets in Resources */,
 				322D3E94230CFC290051B9FB /* MapVC.xib in Resources */,
+				161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */,
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
 			);
@@ -531,6 +546,7 @@
 				EF83F76F2305525F0082CDB8 /* SearchRouteViewController.swift in Sources */,
 				327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */,
 				EFF5FE322303FA9500F42319 /* User.swift in Sources */,
+				161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */,
 				EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */,
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
@@ -795,7 +811,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -815,7 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
