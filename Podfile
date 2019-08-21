@@ -6,7 +6,8 @@ target 'cycle' do
   use_frameworks!
 
   # Pods for cycle
-pod 'Firebase/Analytics'
-pod 'Firebase/Database'
-pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Hex'
 end
