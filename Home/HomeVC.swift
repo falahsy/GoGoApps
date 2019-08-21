@@ -26,6 +26,8 @@ class HomeVC: UIViewController {
         configTableView()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "gogo"
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
 }
 extension HomeVC: UITableViewDataSource, UITableViewDelegate{

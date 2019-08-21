@@ -68,7 +68,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var textBoxPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = GoGoColor.MAIN
+//        self.navigationController?.navigationBar.barTintColor = GoGoColor.MAIN
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "email")
         self.textBoxUserID.text = userID
