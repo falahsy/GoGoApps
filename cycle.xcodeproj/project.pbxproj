@@ -92,6 +92,7 @@
 /* Begin PBXFileReference section */
 		161AA212230D30B4002EB295 /* OnBoardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingVC.xib; sourceTree = "<group>"; };
 		161AA213230D30B4002EB295 /* OnBoardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
+		1670D766230F627400443D86 /* gogoApps Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gogoApps Extension.entitlements"; sourceTree = "<group>"; };
 		2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		322D3E93230CFC290051B9FB /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
 		322D3E95230D05980051B9FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +257,7 @@
 		EF2B16F8230BB13100EBF33B /* gogoApps Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1670D766230F627400443D86 /* gogoApps Extension.entitlements */,
 				EF2B16F9230BB13100EBF33B /* InterfaceController.swift */,
 				EF2B16FB230BB13100EBF33B /* ExtensionDelegate.swift */,
 				EF2B16FD230BB13100EBF33B /* NotificationController.swift */,
@@ -418,6 +420,14 @@
 					};
 					EF2B16F3230BB13100EBF33B = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					EFEE5DD02301575B0027F401 = {
 						CreatedOnToolsVersion = 10.2;
@@ -612,7 +622,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "gogoApps Extension/gogoApps Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,7 +645,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "gogoApps Extension/gogoApps Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,7 +670,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
@@ -675,7 +689,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
