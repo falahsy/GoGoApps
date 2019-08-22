@@ -27,6 +27,10 @@
 		BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22AC230D353E00A35295 /* HomeCell.swift */; };
 		BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22AD230D353E00A35295 /* HomeCell.xib */; };
 		BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22B0230D378500A35295 /* GoGoColor.swift */; };
+		BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576A9230E32B700ADA11B /* HomeDateCell.swift */; };
+		BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AA230E32B700ADA11B /* HomeDateCell.xib */; };
+		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
+		BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
 		EF2B16F5230BB13100EBF33B /* gogoApps Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF2B16F4230BB13100EBF33B /* gogoApps Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -119,6 +123,10 @@
 		BE0D22AC230D353E00A35295 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		BE0D22AD230D353E00A35295 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BE0D22B0230D378500A35295 /* GoGoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoGoColor.swift; sourceTree = "<group>"; };
+		BEE576A9230E32B700ADA11B /* HomeDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateCell.swift; sourceTree = "<group>"; };
+		BEE576AA230E32B700ADA11B /* HomeDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDateCell.xib; sourceTree = "<group>"; };
+		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
+		BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoEventCell.xib; sourceTree = "<group>"; };
 		EF1EC614230255810011EA59 /* cycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cycle.entitlements; sourceTree = "<group>"; };
 		EF2B16E8230BB13000EBF33B /* gogoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B16EB230BB13000EBF33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -267,6 +275,10 @@
 				BE0D22A9230D351300A35295 /* HomeHeaderCell.xib */,
 				BE0D22AC230D353E00A35295 /* HomeCell.swift */,
 				BE0D22AD230D353E00A35295 /* HomeCell.xib */,
+				BEE576A9230E32B700ADA11B /* HomeDateCell.swift */,
+				BEE576AA230E32B700ADA11B /* HomeDateCell.xib */,
+				BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */,
+				BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */,
 			);
 			path = "Home Cell";
 			sourceTree = "<group>";
@@ -510,7 +522,9 @@
 				322D3E94230CFC290051B9FB /* MapVC.xib in Resources */,
 				BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */,
 				161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */,
+				BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */,
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
+				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
 			);
@@ -579,6 +593,7 @@
 				BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */,
 				327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */,
 				EFF5FE322303FA9500F42319 /* User.swift in Sources */,
+				BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */,
 				161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */,
 				EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */,
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
@@ -597,6 +612,7 @@
 				322D3E96230D05980051B9FB /* MapViewController.swift in Sources */,
 				EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */,
 				BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */,
+				BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */,
 				327E4FD1230D131200FEBB9D /* SearchActivityVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +665,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,6 +687,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -692,7 +710,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
@@ -711,7 +729,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
@@ -847,7 +865,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2RW8586XY;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -867,7 +885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2RW8586XY;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

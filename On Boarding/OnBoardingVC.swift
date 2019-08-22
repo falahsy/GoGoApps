@@ -15,6 +15,7 @@ class OnBoardingVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var signInBtn: UIButton!
     
+    
     var scrollViewWidth: CGFloat! = 0.0
     var scrollViewHeight: CGFloat! = 0.0
     
@@ -36,7 +37,7 @@ class OnBoardingVC: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.layoutIfNeeded()
-        nextButton.addTarget(self, action: #selector(showLoginVC), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(showRegisVC), for: .touchUpInside)
         signInBtn.addTarget(self, action: #selector(showLoginVC), for: .touchUpInside)
         self.scrollView.delegate = self
         scrollView.isPagingEnabled = true
@@ -96,6 +97,15 @@ class OnBoardingVC: UIViewController, UIScrollViewDelegate {
     
     @objc func showLoginVC() {
         let vc = LoginVC()
+        vc.isLogin = true
+        print(vc.isLogin!)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func showRegisVC() {
+        let vc = LoginVC()
+        vc.isLogin = false
+        print(vc.isLogin!)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

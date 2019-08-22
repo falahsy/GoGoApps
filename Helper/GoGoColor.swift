@@ -10,6 +10,6 @@ import UIKit
 import Hex
 
 class GoGoColor: NSObject {
-    static let MAIN = UIColor(hex: "#05A457")
+    static let MAIN = UIColor(hex: "#00B06A")
 }
 

@@ -11,7 +11,7 @@ import MapKit
 
 class LoginVC: UIViewController {
     
-    var isLogin = true
+    var isLogin : Bool?
   
     @IBOutlet weak var welcomeLbl: UILabel!{
         didSet{
@@ -29,6 +29,7 @@ class LoginVC: UIViewController {
             logRegBtn.layer.cornerRadius = logRegBtn.frame.size.height/2
             logRegBtn.clipsToBounds = true
             logRegBtn.setTitle("Login", for: .normal)
+            logRegBtn.backgroundColor = GoGoColor.MAIN
         }
     }
     @IBOutlet weak var createAccView: UIView!{
@@ -66,22 +67,53 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var textBoxUserID: UITextField!
     @IBOutlet weak var textBoxPassword: UITextField!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if isLogin == true{
+            print(isLogin!)
+            loginViewDisplay()
+        }else{
+            print(isLogin!)
+            registerViewDisplay()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = GoGoColor.MAIN
+        
 //        self.navigationController?.navigationBar.barTintColor = GoGoColor.MAIN
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "email")
         self.textBoxUserID.text = userID
-        loginViewDisplay()
-        if isLogin == true{
-            logRegBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
-        }else{
-            logRegBtn.addTarget(self, action: #selector(signIn), for: .touchUpInside)
-        }
+        
+        logRegBtn.addTarget(self, action: #selector(loginRegister), for: .touchUpInside)
         loginBtn.addTarget(self, action: #selector(loginViewDisplay), for: .touchUpInside)
         signUpBtn.addTarget(self, action: #selector(registerViewDisplay), for: .touchUpInside)
     }
+    func loginFirstViewDisplay(){
+        print(isLogin!)
+        welcomeLbl.text = "Welcome Back"
+        accountInfoLbl.text = "Login to your account"
+        logRegBtn.setTitle("Login", for: .normal)
+        forgotPassBtn.isHidden = false
+        dontHaveAccLbl.isHidden = false
+        alrdyHaveAccLbl.isHidden = true
+        loginBtn.isHidden = true
+        signUpBtn.isHidden = false
+    }
+    func registerFirstViewDisplay(){
+        print(isLogin!)
+        welcomeLbl.text = "Welcome"
+        accountInfoLbl.text = "Create a new account"
+        logRegBtn.setTitle("Register", for: .normal)
+        forgotPassBtn.isHidden = true
+        dontHaveAccLbl.isHidden = true
+        alrdyHaveAccLbl.isHidden = false
+        loginBtn.isHidden = false
+        signUpBtn.isHidden = true
+    }
     @objc func loginViewDisplay(){
+        print(isLogin!)
         isLogin = true
         welcomeLbl.text = "Welcome Back"
         accountInfoLbl.text = "Login to your account"
@@ -93,6 +125,7 @@ class LoginVC: UIViewController {
         signUpBtn.isHidden = false
     }
     @objc func registerViewDisplay(){
+        print(isLogin!)
         isLogin = false
         welcomeLbl.text = "Welcome"
         accountInfoLbl.text = "Create a new account"
@@ -106,20 +139,7 @@ class LoginVC: UIViewController {
     
     @objc func signIn() {
         
-        Login.createAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,status) in
-            
-            
-            if status{
-                self.showInputDialog()
-                
-            }else{
-                
-                let alert = UIAlertController(title: "Welcome",message: info,preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-        }
+        
     }
     
     func showInputDialog() {
@@ -159,23 +179,39 @@ class LoginVC: UIViewController {
         //finally presenting the dialog box
         self.present(alertController, animated: true, completion: nil)
     }
-    @objc func login() {
-        
-        Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
-            
-            if result{
-                let defaults = UserDefaults.standard
-                defaults.set(self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "email")
-                let homeVC = HomeVC()
-                self.navigationController?.pushViewController(homeVC, animated: true)
-            }else{
-                let alert = UIAlertController(title: "Login",message: info,preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true, completion: nil)
+    @objc func loginRegister() {
+        print("asdasdasd \(isLogin)")
+        if isLogin!{
+            Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
+                
+                if result{
+                    let defaults = UserDefaults.standard
+                    defaults.set(self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "email")
+                    let homeVC = HomeVC()
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                }else{
+                    let alert = UIAlertController(title: "Login",message: info,preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
-            
-            
+        } else{
+            Login.createAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,status) in
+                
+                
+                if status{
+                    self.showInputDialog()
+                    
+                }else{
+                    
+                    let alert = UIAlertController(title: "Welcome",message: info,preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }
         }
+        
     }
     
 }
