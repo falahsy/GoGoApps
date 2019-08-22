@@ -31,6 +31,8 @@
 		BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AA230E32B700ADA11B /* HomeDateCell.xib */; };
 		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
 		BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */; };
+		BEE576B9230E83E000ADA11B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576B7230E83E000ADA11B /* ProfileViewController.swift */; };
+		BEE576BA230E83E000ADA11B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576B8230E83E000ADA11B /* ProfileViewController.xib */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
 		EF2B16F5230BB13100EBF33B /* gogoApps Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF2B16F4230BB13100EBF33B /* gogoApps Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -127,6 +129,8 @@
 		BEE576AA230E32B700ADA11B /* HomeDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDateCell.xib; sourceTree = "<group>"; };
 		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
 		BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoEventCell.xib; sourceTree = "<group>"; };
+		BEE576B7230E83E000ADA11B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BEE576B8230E83E000ADA11B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		EF1EC614230255810011EA59 /* cycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cycle.entitlements; sourceTree = "<group>"; };
 		EF2B16E8230BB13000EBF33B /* gogoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B16EB230BB13000EBF33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -283,6 +287,15 @@
 			path = "Home Cell";
 			sourceTree = "<group>";
 		};
+		BEE576B6230E83CA00ADA11B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BEE576B7230E83E000ADA11B /* ProfileViewController.swift */,
+				BEE576B8230E83E000ADA11B /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +356,7 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				BEE576B6230E83CA00ADA11B /* Profile */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
@@ -522,6 +536,7 @@
 				322D3E94230CFC290051B9FB /* MapVC.xib in Resources */,
 				BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */,
 				161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */,
+				BEE576BA230E83E000ADA11B /* ProfileViewController.xib in Resources */,
 				BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */,
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
 				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
@@ -599,6 +614,7 @@
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
 				EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */,
+				BEE576B9230E83E000ADA11B /* ProfileViewController.swift in Sources */,
 				EFE11BF52304423600782142 /* Login.swift in Sources */,
 				EF6864BF230664B300B039FA /* PretiffyDistance.swift in Sources */,
 				EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */,

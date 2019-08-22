@@ -12,8 +12,8 @@ import Hex
 
 class HomeVC: UIViewController {
     
-    var todayContent = 0
-    var upcomingContent = 0
+    var todayContent = 2
+    var upcomingContent = 3
     @IBOutlet weak var tableView: UITableView!
     func configTableView(){
         tableView.backgroundColor = UIColor(hex: "#F9F9F9")
@@ -89,6 +89,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         if todayContent != 0 && upcomingContent != 0{
             if indexPath.row == 0 {
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeHeaderCell", for: indexPath)) as! HomeHeaderCell
+                cell.delegate = self
                 return cell
             }else if indexPath.row == 1 {
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeDateCell", for: indexPath)) as! HomeDateCell
@@ -149,4 +150,12 @@ extension HomeVC{
         let result = formatter.string(from: date)
         return result
     }
+}
+extension HomeVC : homeCellDelegate{
+    func toProfile() {
+        let vc = ProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

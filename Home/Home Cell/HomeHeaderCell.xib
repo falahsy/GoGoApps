@@ -26,39 +26,51 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITI-lw-Cbu">
-                        <rect key="frame" x="20" y="81" width="172" height="213"/>
+                        <rect key="frame" x="20" y="70" width="176" height="213"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="172" id="OMz-8Q-wuP"/>
-                            <constraint firstAttribute="height" constant="213" id="wJc-zD-eQ4"/>
+                            <constraint firstAttribute="height" constant="213" id="gcI-iH-eyj"/>
                         </constraints>
                         <state key="normal" image="create button"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyR-eO-5Jw">
-                        <rect key="frame" x="222" y="81" width="172" height="213"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="213" id="cXn-6P-hZu"/>
-                            <constraint firstAttribute="width" constant="172" id="onL-1u-Gph"/>
-                        </constraints>
+                        <rect key="frame" x="218" y="70" width="176" height="213"/>
                         <state key="normal" image="join button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW3-Oj-kjg">
+                        <rect key="frame" x="364" y="20" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="4Ut-Be-Bn2"/>
+                            <constraint firstAttribute="width" constant="30" id="z2Y-th-cFo"/>
+                        </constraints>
+                        <state key="normal" image="Flag"/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="YyR-eO-5Jw" firstAttribute="top" secondItem="ITI-lw-Cbu" secondAttribute="top" id="KQe-eL-HEc"/>
-                    <constraint firstAttribute="bottom" secondItem="YyR-eO-5Jw" secondAttribute="bottom" constant="29.5" id="N6B-6a-1Xd"/>
+                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="height" secondItem="YyR-eO-5Jw" secondAttribute="height" id="1fX-df-o1T"/>
+                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="width" secondItem="YyR-eO-5Jw" secondAttribute="width" id="5FV-Ic-UKz"/>
+                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="top" secondItem="qwc-Ib-7ML" secondAttribute="bottom" constant="25" id="ANo-Xr-mQc"/>
+                    <constraint firstItem="YyR-eO-5Jw" firstAttribute="trailing" secondItem="BW3-Oj-kjg" secondAttribute="trailing" id="Dn3-ZR-iTp"/>
+                    <constraint firstItem="YyR-eO-5Jw" firstAttribute="leading" secondItem="ITI-lw-Cbu" secondAttribute="trailing" constant="22" id="KGZ-LD-XjV"/>
+                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="leading" secondItem="qwc-Ib-7ML" secondAttribute="leading" id="NHM-oH-i08"/>
+                    <constraint firstAttribute="trailing" secondItem="BW3-Oj-kjg" secondAttribute="trailing" constant="20" id="NqR-YQ-UfV"/>
+                    <constraint firstAttribute="bottom" secondItem="ITI-lw-Cbu" secondAttribute="bottom" constant="40.5" id="ODq-5J-bfd"/>
+                    <constraint firstItem="BW3-Oj-kjg" firstAttribute="centerY" secondItem="qwc-Ib-7ML" secondAttribute="centerY" id="QUB-i1-JuR"/>
                     <constraint firstItem="qwc-Ib-7ML" firstAttribute="top" secondItem="lnh-Ut-ap8" secondAttribute="top" constant="25" id="W9H-Xb-WTs"/>
                     <constraint firstItem="qwc-Ib-7ML" firstAttribute="leading" secondItem="lnh-Ut-ap8" secondAttribute="leading" constant="20" id="YaN-0p-0sB"/>
-                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="top" secondItem="qwc-Ib-7ML" secondAttribute="bottom" constant="36" id="ZBo-su-ziI"/>
-                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="leading" secondItem="qwc-Ib-7ML" secondAttribute="leading" id="bU6-i8-s2a"/>
-                    <constraint firstItem="YyR-eO-5Jw" firstAttribute="bottom" secondItem="ITI-lw-Cbu" secondAttribute="bottom" id="eKZ-Ij-MwB"/>
-                    <constraint firstAttribute="bottom" secondItem="ITI-lw-Cbu" secondAttribute="bottom" constant="29.5" id="wcT-05-cyl"/>
-                    <constraint firstAttribute="trailing" secondItem="YyR-eO-5Jw" secondAttribute="trailing" constant="20" id="zN0-DT-Pq2"/>
+                    <constraint firstItem="YyR-eO-5Jw" firstAttribute="top" secondItem="BW3-Oj-kjg" secondAttribute="bottom" constant="20" id="eo3-Gn-RZH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="PFe-AB-lT3"/>
+            <connections>
+                <outlet property="createBtn" destination="ITI-lw-Cbu" id="13F-22-BA3"/>
+                <outlet property="joinBtn" destination="YyR-eO-5Jw" id="gfe-fc-1lQ"/>
+                <outlet property="profileBtn" destination="BW3-Oj-kjg" id="tmo-Ul-gyO"/>
+            </connections>
             <point key="canvasLocation" x="24.637681159420293" y="-10.714285714285714"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Flag" width="48" height="48"/>
         <image name="create button" width="174" height="231"/>
         <image name="join button" width="176" height="233"/>
     </resources>

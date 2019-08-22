@@ -158,7 +158,8 @@ class LoginVC: UIViewController {
             }
             let defaults = UserDefaults.standard
             defaults.set(self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "email")
-            self.performSegue(withIdentifier: "showMap", sender: nil )
+            let homeVC = HomeVC()
+            self.navigationController?.pushViewController(homeVC, animated: true)
         }
         
         //        //the cancel action doing nothing
@@ -180,7 +181,6 @@ class LoginVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     @objc func loginRegister() {
-        print("asdasdasd \(isLogin)")
         if isLogin!{
             Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
                 
