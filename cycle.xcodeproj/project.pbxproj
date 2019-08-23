@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AA212230D30B4002EB295 /* OnBoardingVC.xib */; };
 		161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AA213230D30B4002EB295 /* OnBoardingVC.swift */; };
+		16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16699DA1230F885B00A90ABC /* CloudKit.framework */; };
 		322D3E94230CFC290051B9FB /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D3E93230CFC290051B9FB /* MapVC.xib */; };
 		322D3E96230D05980051B9FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E95230D05980051B9FB /* MapViewController.swift */; };
 		322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E97230D0AC50051B9FB /* LoginVC.swift */; };
@@ -92,6 +93,8 @@
 /* Begin PBXFileReference section */
 		161AA212230D30B4002EB295 /* OnBoardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingVC.xib; sourceTree = "<group>"; };
 		161AA213230D30B4002EB295 /* OnBoardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
+		16699DA0230F86E000A90ABC /* gogoApps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gogoApps.entitlements; sourceTree = "<group>"; };
+		16699DA1230F885B00A90ABC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1670D766230F627400443D86 /* gogoApps Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gogoApps Extension.entitlements"; sourceTree = "<group>"; };
 		2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		322D3E93230CFC290051B9FB /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A6AA7ABD33538A8EC47165E /* Pods_cycle.framework in Frameworks */,
+				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +234,7 @@
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16699DA1230F885B00A90ABC /* CloudKit.framework */,
 				2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */,
 			);
 			name = Frameworks;
@@ -247,6 +252,7 @@
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
 			isa = PBXGroup;
 			children = (
+				16699DA0230F86E000A90ABC /* gogoApps.entitlements */,
 				EF2B16EA230BB13000EBF33B /* Interface.storyboard */,
 				EF2B16ED230BB13100EBF33B /* Assets.xcassets */,
 				EF2B16EF230BB13100EBF33B /* Info.plist */,
@@ -417,12 +423,17 @@
 				TargetAttributes = {
 					EF2B16E7230BB13000EBF33B = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					EF2B16F3230BB13100EBF33B = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
@@ -433,6 +444,12 @@
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -622,7 +639,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "gogoApps Extension/gogoApps Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
@@ -631,7 +647,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -645,7 +661,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "gogoApps Extension/gogoApps Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
@@ -654,7 +669,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -673,7 +688,7 @@
 				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -692,7 +707,7 @@
 				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -831,7 +846,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -851,7 +866,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
