@@ -99,11 +99,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if let window = window {
-            let mainVC = OnBoardingVC()
-            navigationController = UINavigationController(rootViewController: mainVC)
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
+            if Preference.hasSkippedIntro() && Preference.hasLoggedIn() {
+                let homeVC = HomeVC()
+                setRoot(window, homeVC)
+            } else if Preference.hasSkippedIntro() {
+                let loginVC = LoginVC()
+                loginVC.isLogin = true
+                setRoot(window, loginVC)
+            } else {
+                let onBoardingVC = OnBoardingVC()
+                setRoot(window, onBoardingVC)
+            }
+            
         }
+    }
+    
+    private func setRoot<T: UIViewController>(_ window: UIWindow, _ vc: T) {
+        navigationController = UINavigationController(rootViewController: vc)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

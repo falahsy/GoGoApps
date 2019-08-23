@@ -28,10 +28,11 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "gogo"
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupLargeTitle(title: "GoGo", prefLargeTitle: false, isHidingBackButton: true)
     }
 }
 extension HomeVC: UITableViewDataSource, UITableViewDelegate{

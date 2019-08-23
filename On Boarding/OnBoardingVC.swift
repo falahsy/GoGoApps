@@ -96,6 +96,7 @@ class OnBoardingVC: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func showLoginVC() {
+        Preference.set(value: true, forKey: .kSkipOnBoarding)
         let vc = LoginVC()
         vc.isLogin = true
         print(vc.isLogin!)
@@ -103,6 +104,7 @@ class OnBoardingVC: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func showRegisVC() {
+        Preference.set(value: true, forKey: .kSkipOnBoarding)
         let vc = LoginVC()
         vc.isLogin = false
         print(vc.isLogin!)

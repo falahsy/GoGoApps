@@ -20,6 +20,8 @@
 		327E4FD2230D131200FEBB9D /* SearchActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E4FD0230D131200FEBB9D /* SearchActivityVC.xib */; };
 		327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E4FD3230D1B8D00FEBB9D /* FriendsCell.swift */; };
 		327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */; };
+		3297C561230FA49200548F26 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C560230FA49200548F26 /* Preference.swift */; };
+		3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */; };
 		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
@@ -121,6 +123,8 @@
 		327E4FD0230D131200FEBB9D /* SearchActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchActivityVC.xib; sourceTree = "<group>"; };
 		327E4FD3230D1B8D00FEBB9D /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
+		3297C560230FA49200548F26 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.release.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.release.xcconfig"; sourceTree = "<group>"; };
 		632687FF7D4AC005F2F89996 /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +264,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		3297C55F230F9FD600548F26 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
+				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		3297C562230FA4A400548F26 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				3297C560230FA49200548F26 /* Preference.swift */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		3297C589230FC7E300548F26 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,13 +338,6 @@
 			path = "Home Cell";
 			sourceTree = "<group>";
 		};
-		BE51C939230F9CE500A32805 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +366,8 @@
 		EF6864BD2306649E00B039FA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3297C589230FC7E300548F26 /* Extension */,
+				3297C562230FA4A400548F26 /* Preference */,
 				EF6864BE230664B300B039FA /* PretiffyDistance.swift */,
 				EFCF441D2307D7AE00633371 /* RandomHelper.swift */,
 				BE0D22B0230D378500A35295 /* GoGoColor.swift */,
@@ -378,9 +402,7 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
-				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
-				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
-				BE51C939230F9CE500A32805 /* Profile */,
+				3297C55F230F9FD600548F26 /* Profile */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
@@ -715,6 +737,7 @@
 				BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */,
 				327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */,
 				EFF5FE322303FA9500F42319 /* User.swift in Sources */,
+				3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */,
 				BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */,
 				161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */,
 				EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */,
@@ -736,6 +759,7 @@
 				EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */,
 				BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */,
 				BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */,
+				3297C561230FA49200548F26 /* Preference.swift in Sources */,
 				327E4FD1230D131200FEBB9D /* SearchActivityVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

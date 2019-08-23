@@ -67,6 +67,7 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var textBoxUserID: UITextField!
     @IBOutlet weak var textBoxPassword: UITextField!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if isLogin == true{
@@ -76,7 +77,9 @@ class LoginVC: UIViewController {
             print(isLogin!)
             registerViewDisplay()
         }
+        navigationController?.isNavigationBarHidden = true
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = GoGoColor.MAIN
@@ -185,8 +188,8 @@ class LoginVC: UIViewController {
             Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
                 
                 if result{
-                    let defaults = UserDefaults.standard
-                    defaults.set(self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "email")
+                    Preference.set(value: self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
+                    Preference.set(value: true, forKey: .kUserLogin)
                     let homeVC = HomeVC()
                     self.navigationController?.pushViewController(homeVC, animated: true)
                 }else{
