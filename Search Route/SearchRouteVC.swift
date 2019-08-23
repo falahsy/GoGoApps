@@ -23,8 +23,12 @@ class SearchRouteVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
     }
     
     private func setupTableView() {
@@ -115,6 +119,7 @@ extension SearchRouteVC {
 
 extension SearchRouteVC: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("Cancel inside")
         delegate?.cancelRoutes()
     }
 }

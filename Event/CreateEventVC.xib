@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="CreateEventVC" customClass="CreateEventVC" customModule="cycle" customModuleProvider="target">
+            <connections>
+                <outlet property="createButton" destination="S5I-C6-iFc" id="MQ1-hu-3CT"/>
+                <outlet property="mapView" destination="Uqg-lm-D83" id="eaa-Dq-3a7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="I4x-UG-Kuw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06o-gq-D0Z">
+                    <rect key="frame" x="20" y="54" width="48" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="YzL-pZ-6b2"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="1c5-nD-QLJ">
+                    <rect key="frame" x="20" y="114" width="374" height="278.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an event" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwt-nf-0ye">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="143.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the starting point and destination. You can also add more than one checkpoints" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DL-Xo-GFs">
+                            <rect key="frame" x="0.0" y="174.5" width="374" height="43"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5I-C6-iFc">
+                            <rect key="frame" x="0.0" y="248.5" width="374" height="30"/>
+                            <color key="backgroundColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Create">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="createEvent:" destination="-1" eventType="touchUpInside" id="sY6-ZS-ySi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="S5I-C6-iFc" secondAttribute="bottom" id="TFe-CW-N5z"/>
+                        <constraint firstAttribute="trailing" secondItem="S5I-C6-iFc" secondAttribute="trailing" id="Tkq-Z1-geg"/>
+                        <constraint firstItem="S5I-C6-iFc" firstAttribute="leading" secondItem="1c5-nD-QLJ" secondAttribute="leading" id="XGo-ti-J6z"/>
+                        <constraint firstAttribute="trailing" secondItem="qwt-nf-0ye" secondAttribute="trailing" id="gtN-w7-xbO"/>
+                        <constraint firstItem="qwt-nf-0ye" firstAttribute="leading" secondItem="1c5-nD-QLJ" secondAttribute="leading" id="mX2-yp-GLn"/>
+                    </constraints>
+                </stackView>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uqg-lm-D83">
+                    <rect key="frame" x="0.0" y="412.5" width="414" height="449.5"/>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Uqg-lm-D83" secondAttribute="trailing" id="56M-RR-asR"/>
+                <constraint firstItem="1c5-nD-QLJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="7r5-GR-0tp"/>
+                <constraint firstItem="Uqg-lm-D83" firstAttribute="top" secondItem="1c5-nD-QLJ" secondAttribute="bottom" constant="20" id="9aW-Pu-7P8"/>
+                <constraint firstItem="06o-gq-D0Z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="9c0-Tg-yOU"/>
+                <constraint firstItem="Uqg-lm-D83" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ofm-b7-3eC"/>
+                <constraint firstItem="06o-gq-D0Z" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="RxU-fY-rmM"/>
+                <constraint firstAttribute="trailing" secondItem="1c5-nD-QLJ" secondAttribute="trailing" constant="20" id="Ved-U4-LYa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Uqg-lm-D83" secondAttribute="bottom" id="ZRe-Ko-EsN"/>
+                <constraint firstItem="1c5-nD-QLJ" firstAttribute="top" secondItem="06o-gq-D0Z" secondAttribute="bottom" constant="30" id="tFr-bd-Xck"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
+        </view>
+    </objects>
+</document>
