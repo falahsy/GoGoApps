@@ -35,13 +35,15 @@
 		EF2B16FE230BB13100EBF33B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B16FD230BB13100EBF33B /* NotificationController.swift */; };
 		EF2B1700230BB13200EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16FF230BB13200EBF33B /* Assets.xcassets */; };
 		EF2B1705230BB13200EBF33B /* gogoApps.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF2B16E8230BB13000EBF33B /* gogoApps.app */; };
-		EF6864BF230664B300B039FA /* PretiffyDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6864BE230664B300B039FA /* PretiffyDistance.swift */; };
+		EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6864BE230664B300B039FA /* Pretiffy.swift */; };
 		EF82A13B23039EEC001939B7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82A13A23039EEC001939B7 /* Activity.swift */; };
 		EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76C2305465B0082CDB8 /* MapVC.swift */; };
 		EF83F76F2305525F0082CDB8 /* SearchRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76E2305525F0082CDB8 /* SearchRouteViewController.swift */; };
 		EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */; };
 		EF90A8EB230E8CE0003BB556 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */; };
 		EFC2216E2308E5970083D8B5 /* CyclistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC2216D2308E5970083D8B5 /* CyclistView.swift */; };
+		EFCA717A230FDE5800F52EEC /* SearchRouteDestinationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCA7179230FDE5800F52EEC /* SearchRouteDestinationVC.xib */; };
+		EFCA717C230FDE7A00F52EEC /* SearchRouteDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCA717B230FDE7A00F52EEC /* SearchRouteDestinationVC.swift */; };
 		EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */; };
 		EFCF441C2307C9DA00633371 /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF441B2307C9DA00633371 /* ShowRouteViewController.swift */; };
 		EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF441D2307D7AE00633371 /* RandomHelper.swift */; };
@@ -135,13 +137,15 @@
 		EF2B16FF230BB13200EBF33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2B1701230BB13200EBF33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2B1702230BB13200EBF33B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		EF6864BE230664B300B039FA /* PretiffyDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretiffyDistance.swift; sourceTree = "<group>"; };
+		EF6864BE230664B300B039FA /* Pretiffy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretiffy.swift; sourceTree = "<group>"; };
 		EF82A13A23039EEC001939B7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EF83F76C2305465B0082CDB8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		EF83F76E2305525F0082CDB8 /* SearchRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteViewController.swift; sourceTree = "<group>"; };
 		EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateEventVC.xib; sourceTree = "<group>"; };
 		EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
 		EFC2216D2308E5970083D8B5 /* CyclistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclistView.swift; sourceTree = "<group>"; };
+		EFCA7179230FDE5800F52EEC /* SearchRouteDestinationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRouteDestinationVC.xib; sourceTree = "<group>"; };
+		EFCA717B230FDE7A00F52EEC /* SearchRouteDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteDestinationVC.swift; sourceTree = "<group>"; };
 		EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyclist.swift; sourceTree = "<group>"; };
 		EFCF441B2307C9DA00633371 /* ShowRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
 		EFCF441D2307D7AE00633371 /* RandomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomHelper.swift; sourceTree = "<group>"; };
@@ -214,13 +218,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		327E4FC9230D12EC00FEBB9D /* Search Route */ = {
+		327E4FC9230D12EC00FEBB9D /* Search Route Starting */ = {
 			isa = PBXGroup;
 			children = (
 				327E4FCB230D130700FEBB9D /* SearchRouteVC.swift */,
 				327E4FCC230D130700FEBB9D /* SearchRouteVC.xib */,
 			);
-			path = "Search Route";
+			path = "Search Route Starting";
 			sourceTree = "<group>";
 		};
 		327E4FCA230D12F200FEBB9D /* Search Activity */ = {
@@ -305,7 +309,7 @@
 		EF6864BD2306649E00B039FA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				EF6864BE230664B300B039FA /* PretiffyDistance.swift */,
+				EF6864BE230664B300B039FA /* Pretiffy.swift */,
 				EFCF441D2307D7AE00633371 /* RandomHelper.swift */,
 				BE0D22B0230D378500A35295 /* GoGoColor.swift */,
 			);
@@ -345,6 +349,15 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		EFCA7178230FDE3200F52EEC /* Search Route Destination */ = {
+			isa = PBXGroup;
+			children = (
+				EFCA7179230FDE5800F52EEC /* SearchRouteDestinationVC.xib */,
+				EFCA717B230FDE7A00F52EEC /* SearchRouteDestinationVC.swift */,
+			);
+			path = "Search Route Destination";
+			sourceTree = "<group>";
+		};
 		EFE1F197230ECB57005C6807 /* Route */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,12 +370,13 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				EFCA7178230FDE3200F52EEC /* Search Route Destination */,
 				EFE1F197230ECB57005C6807 /* Route */,
 				EF90A8E3230E7848003BB556 /* Event */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
-				327E4FC9230D12EC00FEBB9D /* Search Route */,
+				327E4FC9230D12EC00FEBB9D /* Search Route Starting */,
 				322D3E91230CFB0A0051B9FB /* Login */,
 				322D3E8F230CFAFA0051B9FB /* Map */,
 				EF6864BD2306649E00B039FA /* Helper */,
@@ -541,6 +555,7 @@
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
 				EFE1F19D230ECF1E005C6807 /* RouteVC.xib in Resources */,
+				EFCA717A230FDE5800F52EEC /* SearchRouteDestinationVC.xib in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
 				EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */,
 			);
@@ -616,7 +631,8 @@
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
 				EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */,
 				EFE11BF52304423600782142 /* Login.swift in Sources */,
-				EF6864BF230664B300B039FA /* PretiffyDistance.swift in Sources */,
+				EFCA717C230FDE7A00F52EEC /* SearchRouteDestinationVC.swift in Sources */,
+				EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */,
 				EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */,
 				EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */,
 				EF82A13B23039EEC001939B7 /* Activity.swift in Sources */,

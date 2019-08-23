@@ -13,12 +13,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteVC" customModule="cycle" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="dyS-wC-cTf" id="8P0-BT-gog"/>
+                <outlet property="dateLabel" destination="qI6-OM-kyx" id="EUB-KE-ifX"/>
                 <outlet property="destinationPoint" destination="7gn-il-kqz" id="r9U-LL-3sT"/>
+                <outlet property="durationLabel" destination="6Vp-jQ-P34" id="yZB-QP-xdd"/>
+                <outlet property="hookUpDatePicker" destination="kk1-qF-lTj" id="faB-nx-5gN"/>
                 <outlet property="mapView" destination="W3o-fe-1Ar" id="HFW-Zn-Txo"/>
-                <outlet property="navbar" destination="F9N-aL-gDF" id="glg-pY-wiy"/>
                 <outlet property="startingPoint" destination="a0E-HB-35B" id="jNv-ba-ngf"/>
-                <outlet property="textDate" destination="qI6-OM-kyx" id="IdP-pB-0al"/>
-                <outlet property="textDuration" destination="6Vp-jQ-P34" id="fd3-F6-RG9"/>
                 <outlet property="view" destination="iN0-l3-epB" id="A42-Nk-zrr"/>
             </connections>
         </placeholder>
@@ -27,25 +27,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9N-aL-gDF">
-                    <rect key="frame" x="0.0" y="44" width="414" height="73"/>
-                    <items>
-                        <navigationItem title="Create Route" id="MbS-Yy-emb">
-                            <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="OaX-gT-Gsg">
-                                <color key="tintColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="cancel:" destination="-1" id="a6p-Wx-Lwr"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="Zaj-Re-h5q">
-                                <color key="tintColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="done:" destination="-1" id="sux-l4-90T"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-2i-74X">
                     <rect key="frame" x="10" y="127" width="394" height="130"/>
                     <subviews>
@@ -123,27 +104,30 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="q0g-QD-aKa">
-                    <rect key="frame" x="30" y="287" width="354" height="20.5"/>
+                    <rect key="frame" x="30" y="287" width="354" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-lH-8Pd">
-                            <rect key="frame" x="0.0" y="0.0" width="217.5" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="217.5" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kk1-qF-lTj">
+                            <rect key="frame" x="251.5" y="0.0" width="0.0" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI6-OM-kyx">
-                            <rect key="frame" x="285.5" y="0.0" width="68.5" height="20.5"/>
+                            <rect key="frame" x="285.5" y="0.0" width="68.5" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W3o-fe-1Ar">
-                    <rect key="frame" x="0.0" y="376" width="414" height="486"/>
-                </mapView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="n6e-s0-Hba">
-                    <rect key="frame" x="30" y="335.5" width="354" height="20.5"/>
+                    <rect key="frame" x="30" y="345" width="354" height="20.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Estimated Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzb-5k-V7J">
                             <rect key="frame" x="0.0" y="0.0" width="270.5" height="20.5"/>
@@ -159,13 +143,9 @@
                         </label>
                     </subviews>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gjk-9a-N3S">
-                    <rect key="frame" x="0.0" y="586" width="414" height="276"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="276" id="HIr-4T-i6d"/>
-                    </constraints>
-                </tableView>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W3o-fe-1Ar">
+                    <rect key="frame" x="0.0" y="385.5" width="414" height="476.5"/>
+                </mapView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -173,25 +153,15 @@
                 <constraint firstAttribute="trailing" secondItem="q0g-QD-aKa" secondAttribute="trailing" constant="30" id="38s-Nu-k53"/>
                 <constraint firstItem="q0g-QD-aKa" firstAttribute="top" secondItem="TlT-2i-74X" secondAttribute="bottom" constant="30" id="81r-t5-jAp"/>
                 <constraint firstItem="n6e-s0-Hba" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="94c-Ok-8fh"/>
-                <constraint firstItem="F9N-aL-gDF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BHJ-rW-aY3"/>
                 <constraint firstItem="n6e-s0-Hba" firstAttribute="top" secondItem="q0g-QD-aKa" secondAttribute="bottom" constant="28" id="F54-sI-LNH"/>
-                <constraint firstItem="F9N-aL-gDF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="F6T-Ad-EmD"/>
-                <constraint firstItem="F9N-aL-gDF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LH2-V2-7gj"/>
                 <constraint firstItem="W3o-fe-1Ar" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MzR-at-Dd4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="n6e-s0-Hba" secondAttribute="trailing" constant="30" id="Nl1-3e-WbQ"/>
-                <constraint firstItem="TlT-2i-74X" firstAttribute="top" secondItem="F9N-aL-gDF" secondAttribute="bottom" constant="10" id="St9-70-upO"/>
-                <constraint firstItem="F9N-aL-gDF" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="TdB-bX-iNb"/>
-                <constraint firstItem="Gjk-9a-N3S" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Tg0-70-llG"/>
-                <constraint firstItem="F9N-aL-gDF" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dmF-rr-rHZ"/>
-                <constraint firstItem="Gjk-9a-N3S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gLK-Fp-Ax0"/>
-                <constraint firstItem="F9N-aL-gDF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ijv-Gx-dQW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="W3o-fe-1Ar" secondAttribute="bottom" id="kIl-s2-vIg"/>
                 <constraint firstItem="TlT-2i-74X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="nNC-RT-LAK"/>
                 <constraint firstItem="q0g-QD-aKa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="sxN-ev-LII"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TlT-2i-74X" secondAttribute="bottom" constant="605" id="tpg-6r-7vc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TlT-2i-74X" secondAttribute="trailing" constant="10" id="uuX-ze-59n"/>
                 <constraint firstItem="W3o-fe-1Ar" firstAttribute="top" secondItem="n6e-s0-Hba" secondAttribute="bottom" constant="20" id="wLv-tJ-DDl"/>
-                <constraint firstItem="Gjk-9a-N3S" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="wXj-w0-gNh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="47.826086956521742" y="103.79464285714285"/>

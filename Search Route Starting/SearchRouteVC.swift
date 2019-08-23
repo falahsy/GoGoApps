@@ -14,6 +14,7 @@ protocol SearchRouteDelegate: AnyObject {
     func cancelRoutes()
 }
 
+
 class SearchRouteVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -27,9 +28,7 @@ class SearchRouteVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         setupTableView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-    }
+    
     
     private func setupTableView() {
         tableView.delegate = self
@@ -123,3 +122,4 @@ extension SearchRouteVC: UISearchBarDelegate {
         delegate?.cancelRoutes()
     }
 }
+
