@@ -28,8 +28,6 @@
 		BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22AC230D353E00A35295 /* HomeCell.swift */; };
 		BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22AD230D353E00A35295 /* HomeCell.xib */; };
 		BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22B0230D378500A35295 /* GoGoColor.swift */; };
-		BE51C93C230F9D2400A32805 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51C93A230F9D2400A32805 /* ProfileViewController.swift */; };
-		BE51C93D230F9D2400A32805 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE51C93B230F9D2400A32805 /* ProfileViewController.xib */; };
 		BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576A9230E32B700ADA11B /* HomeDateCell.swift */; };
 		BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AA230E32B700ADA11B /* HomeDateCell.xib */; };
 		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
@@ -137,8 +135,6 @@
 		BE0D22AC230D353E00A35295 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		BE0D22AD230D353E00A35295 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BE0D22B0230D378500A35295 /* GoGoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoGoColor.swift; sourceTree = "<group>"; };
-		BE51C93A230F9D2400A32805 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BE51C93B230F9D2400A32805 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		BEE576A9230E32B700ADA11B /* HomeDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateCell.swift; sourceTree = "<group>"; };
 		BEE576AA230E32B700ADA11B /* HomeDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDateCell.xib; sourceTree = "<group>"; };
 		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
@@ -200,7 +196,6 @@
 			files = (
 				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
 				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
-				8A6AA7ABD33538A8EC47165E /* Pods_cycle.framework in Frameworks */,
 				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,13 +308,6 @@
 			path = "Home Cell";
 			sourceTree = "<group>";
 		};
-		BE51C939230F9CE500A32805 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,9 +370,6 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
-				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
-				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
-				BE51C939230F9CE500A32805 /* Profile */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
@@ -590,7 +575,6 @@
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
 				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
-				BE51C93D230F9D2400A32805 /* ProfileViewController.xib in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,7 +709,6 @@
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
 				EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */,
-				BE51C93C230F9D2400A32805 /* ProfileViewController.swift in Sources */,
 				EFE11BF52304423600782142 /* Login.swift in Sources */,
 				EF6864BF230664B300B039FA /* PretiffyDistance.swift in Sources */,
 				EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */,
