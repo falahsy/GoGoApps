@@ -49,12 +49,16 @@
 		EF82A13B23039EEC001939B7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82A13A23039EEC001939B7 /* Activity.swift */; };
 		EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76C2305465B0082CDB8 /* MapVC.swift */; };
 		EF83F76F2305525F0082CDB8 /* SearchRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76E2305525F0082CDB8 /* SearchRouteViewController.swift */; };
+		EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */; };
+		EF90A8EB230E8CE0003BB556 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */; };
 		EFC2216E2308E5970083D8B5 /* CyclistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC2216D2308E5970083D8B5 /* CyclistView.swift */; };
 		EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */; };
 		EFCF441C2307C9DA00633371 /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF441B2307C9DA00633371 /* ShowRouteViewController.swift */; };
 		EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF441D2307D7AE00633371 /* RandomHelper.swift */; };
 		EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0535423059F1C007DC359 /* SearchActivityViewController.swift */; };
 		EFE11BF52304423600782142 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE11BF42304423600782142 /* Login.swift */; };
+		EFE1F19B230ECBB4005C6807 /* RouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1F19A230ECBB4005C6807 /* RouteVC.swift */; };
+		EFE1F19D230ECF1E005C6807 /* RouteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE1F19C230ECF1E005C6807 /* RouteVC.xib */; };
 		EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE5DD42301575B0027F401 /* AppDelegate.swift */; };
 		EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE5DD62301575B0027F401 /* ViewController.swift */; };
 		EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEE5DD82301575B0027F401 /* Main.storyboard */; };
@@ -163,12 +167,16 @@
 		EF82A13A23039EEC001939B7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EF83F76C2305465B0082CDB8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		EF83F76E2305525F0082CDB8 /* SearchRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteViewController.swift; sourceTree = "<group>"; };
+		EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateEventVC.xib; sourceTree = "<group>"; };
+		EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
 		EFC2216D2308E5970083D8B5 /* CyclistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclistView.swift; sourceTree = "<group>"; };
 		EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyclist.swift; sourceTree = "<group>"; };
 		EFCF441B2307C9DA00633371 /* ShowRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
 		EFCF441D2307D7AE00633371 /* RandomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomHelper.swift; sourceTree = "<group>"; };
 		EFE0535423059F1C007DC359 /* SearchActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityViewController.swift; sourceTree = "<group>"; };
 		EFE11BF42304423600782142 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		EFE1F19A230ECBB4005C6807 /* RouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVC.swift; sourceTree = "<group>"; };
+		EFE1F19C230ECF1E005C6807 /* RouteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteVC.xib; sourceTree = "<group>"; };
 		EFEE5DD12301575B0027F401 /* cycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEE5DD42301575B0027F401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEE5DD62301575B0027F401 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -402,10 +410,30 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		EF90A8E3230E7848003BB556 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */,
+				EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		EFE1F197230ECB57005C6807 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				EFE1F19A230ECBB4005C6807 /* RouteVC.swift */,
+				EFE1F19C230ECF1E005C6807 /* RouteVC.xib */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
 				3297C55F230F9FD600548F26 /* Profile */,
+				EFE1F197230ECB57005C6807 /* Route */,
+				EF90A8E3230E7848003BB556 /* Event */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
@@ -612,7 +640,9 @@
 				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
 				BE51C93D230F9D2400A32805 /* ProfileViewController.xib in Resources */,
+				EFE1F19D230ECF1E005C6807 /* RouteVC.xib in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
+				EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +774,7 @@
 				BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */,
 				161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */,
 				EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */,
+				EFE1F19B230ECBB4005C6807 /* RouteVC.swift in Sources */,
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
 				EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */,
@@ -760,6 +791,7 @@
 				EFCF441C2307C9DA00633371 /* ShowRouteViewController.swift in Sources */,
 				322D3E96230D05980051B9FB /* MapViewController.swift in Sources */,
 				EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */,
+				EF90A8EB230E8CE0003BB556 /* CreateEventVC.swift in Sources */,
 				BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */,
 				BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */,
 				3297C561230FA49200548F26 /* Preference.swift in Sources */,

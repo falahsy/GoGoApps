@@ -32,7 +32,7 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupLargeTitle(title: "GoGo", prefLargeTitle: false, isHidingBackButton: true)
+        setupNavController(title: "GoGo", prefLargeTitle: false, isHidingBackButton: true)
     }
 }
 extension HomeVC: UITableViewDataSource, UITableViewDelegate{
@@ -158,5 +158,13 @@ extension HomeVC : homeCellDelegate{
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func toNewRoute() {
+        let vc = CreateEventVC()
+        navigationController?.present(vc, animated: true, completion: nil)
+    }
+    
+    func toJoinEvent() {
+        
+    }
     
 }

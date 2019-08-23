@@ -9,10 +9,14 @@
 import UIKit
 
 extension UIViewController {
-    func setupLargeTitle(title: String, prefLargeTitle: Bool, isHidingBackButton: Bool) {
+    func setupNavController(title: String, prefLargeTitle: Bool, isHidingBackButton: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = prefLargeTitle
         navigationItem.title = title
         navigationController?.navigationBar.isHidden = false
         navigationItem.setHidesBackButton(isHidingBackButton, animated: false)
+    }
+    
+    func setupLargeTitle(prefLargeTitle: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = prefLargeTitle
     }
 }

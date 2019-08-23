@@ -8,12 +8,14 @@
 
 import UIKit
 
-protocol homeCellDelegate:class{
+protocol homeCellDelegate: AnyObject {
     func toProfile()
+    func toNewRoute()
+    func toJoinEvent()
 }
 class HomeHeaderCell: UITableViewCell {
     
-    var delegate: homeCellDelegate?
+    weak var delegate: homeCellDelegate?
     @IBOutlet weak var joinBtn: UIButton!
     @IBOutlet weak var createBtn: UIButton!
     override func awakeFromNib() {
@@ -29,6 +31,12 @@ class HomeHeaderCell: UITableViewCell {
     }
     @objc func toProfile(){
         self.delegate?.toProfile()
+    }
+    @IBAction func toCreateNew(_ sender: UIButton) {
+        delegate?.toNewRoute()
+    }
+    @IBAction func onJoinTapped(_ sender: UIButton) {
+        delegate?.toJoinEvent()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

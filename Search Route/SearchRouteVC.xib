@@ -26,14 +26,15 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="NNu-dA-LQN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="A3P-4A-r9i"/>
+                <constraint firstItem="NNu-dA-LQN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JZ5-vX-TA0"/>
                 <constraint firstItem="NNu-dA-LQN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="R94-VM-22q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NNu-dA-LQN" secondAttribute="trailing" id="d64-vj-laV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NNu-dA-LQN" secondAttribute="bottom" id="lRC-N8-JvF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="103.79464285714285"/>
         </view>
     </objects>
 </document>
