@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AA212230D30B4002EB295 /* OnBoardingVC.xib */; };
 		161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AA213230D30B4002EB295 /* OnBoardingVC.swift */; };
+		16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16699DA1230F885B00A90ABC /* CloudKit.framework */; };
 		322D3E94230CFC290051B9FB /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D3E93230CFC290051B9FB /* MapVC.xib */; };
 		322D3E96230D05980051B9FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E95230D05980051B9FB /* MapViewController.swift */; };
 		322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E97230D0AC50051B9FB /* LoginVC.swift */; };
@@ -19,7 +20,7 @@
 		327E4FD2230D131200FEBB9D /* SearchActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E4FD0230D131200FEBB9D /* SearchActivityVC.xib */; };
 		327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E4FD3230D1B8D00FEBB9D /* FriendsCell.swift */; };
 		327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */; };
-		8A6AA7ABD33538A8EC47165E /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */; };
+		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
 		BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A8230D351300A35295 /* HomeHeaderCell.swift */; };
@@ -27,10 +28,13 @@
 		BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22AC230D353E00A35295 /* HomeCell.swift */; };
 		BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22AD230D353E00A35295 /* HomeCell.xib */; };
 		BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22B0230D378500A35295 /* GoGoColor.swift */; };
+		BE51C93C230F9D2400A32805 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51C93A230F9D2400A32805 /* ProfileViewController.swift */; };
+		BE51C93D230F9D2400A32805 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE51C93B230F9D2400A32805 /* ProfileViewController.xib */; };
 		BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576A9230E32B700ADA11B /* HomeDateCell.swift */; };
 		BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AA230E32B700ADA11B /* HomeDateCell.xib */; };
 		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
 		BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */; };
+		CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
 		EF2B16F5230BB13100EBF33B /* gogoApps Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF2B16F4230BB13100EBF33B /* gogoApps Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -56,6 +60,7 @@
 		EFEE5DDF2301575C0027F401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEE5DDD2301575C0027F401 /* LaunchScreen.storyboard */; };
 		EFF1265223068EAD0059A4BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFF1265123068EAD0059A4BE /* GoogleService-Info.plist */; };
 		EFF5FE322303FA9500F42319 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5FE312303FA9500F42319 /* User.swift */; };
+		FD5F72AB28132E9D7B2F1259 /* Pods_gogoApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +108,9 @@
 /* Begin PBXFileReference section */
 		161AA212230D30B4002EB295 /* OnBoardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingVC.xib; sourceTree = "<group>"; };
 		161AA213230D30B4002EB295 /* OnBoardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
-		2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16699DA0230F86E000A90ABC /* gogoApps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gogoApps.entitlements; sourceTree = "<group>"; };
+		16699DA1230F885B00A90ABC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1670D766230F627400443D86 /* gogoApps Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gogoApps Extension.entitlements"; sourceTree = "<group>"; };
 		322D3E93230CFC290051B9FB /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
 		322D3E95230D05980051B9FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		322D3E97230D0AC50051B9FB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -114,8 +121,14 @@
 		327E4FD0230D131200FEBB9D /* SearchActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchActivityVC.xib; sourceTree = "<group>"; };
 		327E4FD3230D1B8D00FEBB9D /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
-		64D32B79D8172905F0E2D7C7 /* Pods-cycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.debug.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.debug.xcconfig"; sourceTree = "<group>"; };
-		704073F0987A14519897C3E8 /* Pods-cycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.release.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.release.xcconfig"; sourceTree = "<group>"; };
+		3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.release.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.release.xcconfig"; sourceTree = "<group>"; };
+		632687FF7D4AC005F2F89996 /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80A61C0EE9199D1BC8DD306D /* Pods-gogoApps Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps Extension.release.xcconfig"; path = "Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension.release.xcconfig"; sourceTree = "<group>"; };
+		8FC23F4C72B70DB4608DFA25 /* Pods-cycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.debug.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.debug.xcconfig"; sourceTree = "<group>"; };
+		964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		996F1A36226DF49D12CED18D /* Pods-cycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.release.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.release.xcconfig"; sourceTree = "<group>"; };
+		9F8DACF77BB687BEED26E683 /* Pods-gogoApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.debug.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0D22A3230D34EB00A35295 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BE0D22A4230D34EB00A35295 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		BE0D22A8230D351300A35295 /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
@@ -123,10 +136,13 @@
 		BE0D22AC230D353E00A35295 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		BE0D22AD230D353E00A35295 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BE0D22B0230D378500A35295 /* GoGoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoGoColor.swift; sourceTree = "<group>"; };
+		BE51C93A230F9D2400A32805 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE51C93B230F9D2400A32805 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		BEE576A9230E32B700ADA11B /* HomeDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateCell.swift; sourceTree = "<group>"; };
 		BEE576AA230E32B700ADA11B /* HomeDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDateCell.xib; sourceTree = "<group>"; };
 		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
 		BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoEventCell.xib; sourceTree = "<group>"; };
+		C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps Extension.debug.xcconfig"; path = "Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1EC614230255810011EA59 /* cycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cycle.entitlements; sourceTree = "<group>"; };
 		EF2B16E8230BB13000EBF33B /* gogoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B16EB230BB13000EBF33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -165,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5F72AB28132E9D7B2F1259 /* Pods_gogoApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +197,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A6AA7ABD33538A8EC47165E /* Pods_cycle.framework in Frameworks */,
+				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
+				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +263,10 @@
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */,
+				16699DA1230F885B00A90ABC /* CloudKit.framework */,
+				632687FF7D4AC005F2F89996 /* Pods_cycle.framework */,
+				3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */,
+				964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -252,8 +274,12 @@
 		9A1A0F3A43432EC568E83499 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				64D32B79D8172905F0E2D7C7 /* Pods-cycle.debug.xcconfig */,
-				704073F0987A14519897C3E8 /* Pods-cycle.release.xcconfig */,
+				8FC23F4C72B70DB4608DFA25 /* Pods-cycle.debug.xcconfig */,
+				996F1A36226DF49D12CED18D /* Pods-cycle.release.xcconfig */,
+				9F8DACF77BB687BEED26E683 /* Pods-gogoApps.debug.xcconfig */,
+				5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */,
+				C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */,
+				80A61C0EE9199D1BC8DD306D /* Pods-gogoApps Extension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -283,9 +309,17 @@
 			path = "Home Cell";
 			sourceTree = "<group>";
 		};
+		BE51C939230F9CE500A32805 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
 			isa = PBXGroup;
 			children = (
+				16699DA0230F86E000A90ABC /* gogoApps.entitlements */,
 				EF2B16EA230BB13000EBF33B /* Interface.storyboard */,
 				EF2B16ED230BB13100EBF33B /* Assets.xcassets */,
 				EF2B16EF230BB13100EBF33B /* Info.plist */,
@@ -296,6 +330,7 @@
 		EF2B16F8230BB13100EBF33B /* gogoApps Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1670D766230F627400443D86 /* gogoApps Extension.entitlements */,
 				EF2B16F9230BB13100EBF33B /* InterfaceController.swift */,
 				EF2B16FB230BB13100EBF33B /* ExtensionDelegate.swift */,
 				EF2B16FD230BB13100EBF33B /* NotificationController.swift */,
@@ -343,6 +378,9 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
+				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
+				BE51C939230F9CE500A32805 /* Profile */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
@@ -392,6 +430,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF2B170A230BB13200EBF33B /* Build configuration list for PBXNativeTarget "gogoApps" */;
 			buildPhases = (
+				3B03BB1DA3A829337216BE0B /* [CP] Check Pods Manifest.lock */,
 				EF2B16E6230BB13000EBF33B /* Resources */,
 				EF2B1709230BB13200EBF33B /* Embed App Extensions */,
 				D6707B67186B67C145DC40F9 /* Frameworks */,
@@ -410,9 +449,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF2B1706230BB13200EBF33B /* Build configuration list for PBXNativeTarget "gogoApps Extension" */;
 			buildPhases = (
+				F7419CEE537CDC78DFA5EDDD /* [CP] Check Pods Manifest.lock */,
 				EF2B16F0230BB13100EBF33B /* Sources */,
 				EF2B16F1230BB13100EBF33B /* Frameworks */,
 				EF2B16F2230BB13100EBF33B /* Resources */,
+				825E5E030EDFE86130446704 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -427,12 +468,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFEE5DE32301575C0027F401 /* Build configuration list for PBXNativeTarget "cycle" */;
 			buildPhases = (
-				E3627001BB8FB3429D231A15 /* [CP] Check Pods Manifest.lock */,
+				BED305727DFE08766D858660 /* [CP] Check Pods Manifest.lock */,
 				EFEE5DCD2301575B0027F401 /* Sources */,
 				EFEE5DCE2301575B0027F401 /* Frameworks */,
 				EFEE5DCF2301575B0027F401 /* Resources */,
-				F393E7B44D629FD7EA074151 /* [CP] Embed Pods Frameworks */,
 				EF2B170D230BB13200EBF33B /* Embed Watch Content */,
+				00A5BA6133AD000A918F41BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -456,14 +497,33 @@
 				TargetAttributes = {
 					EF2B16E7230BB13000EBF33B = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					EF2B16F3230BB13100EBF33B = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					EFEE5DD02301575B0027F401 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -526,6 +586,7 @@
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
 				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
+				BE51C93D230F9D2400A32805 /* ProfileViewController.xib in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +594,63 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E3627001BB8FB3429D231A15 /* [CP] Check Pods Manifest.lock */ = {
+		00A5BA6133AD000A918F41BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B03BB1DA3A829337216BE0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gogoApps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		825E5E030EDFE86130446704 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BED305727DFE08766D858660 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -555,21 +672,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F393E7B44D629FD7EA074151 /* [CP] Embed Pods Frameworks */ = {
+		F7419CEE537CDC78DFA5EDDD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gogoApps Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -599,6 +721,7 @@
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
 				EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */,
+				BE51C93C230F9D2400A32805 /* ProfileViewController.swift in Sources */,
 				EFE11BF52304423600782142 /* Login.swift in Sources */,
 				EF6864BF230664B300B039FA /* PretiffyDistance.swift in Sources */,
 				EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */,
@@ -662,17 +785,18 @@
 /* Begin XCBuildConfiguration section */
 		EF2B1707230BB13200EBF33B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4N5X372G52;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -684,17 +808,18 @@
 		};
 		EF2B1708230BB13200EBF33B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80A61C0EE9199D1BC8DD306D /* Pods-gogoApps Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4N5X372G52;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -706,14 +831,15 @@
 		};
 		EF2B170B230BB13200EBF33B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F8DACF77BB687BEED26E683 /* Pods-gogoApps.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4N5X372G52;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -725,14 +851,15 @@
 		};
 		EF2B170C230BB13200EBF33B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4N5X372G52;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -860,7 +987,7 @@
 		};
 		EFEE5DE42301575C0027F401 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64D32B79D8172905F0E2D7C7 /* Pods-cycle.debug.xcconfig */;
+			baseConfigurationReference = 8FC23F4C72B70DB4608DFA25 /* Pods-cycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
@@ -871,7 +998,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -880,7 +1007,7 @@
 		};
 		EFEE5DE52301575C0027F401 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 704073F0987A14519897C3E8 /* Pods-cycle.release.xcconfig */;
+			baseConfigurationReference = 996F1A36226DF49D12CED18D /* Pods-cycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
@@ -891,7 +1018,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
