@@ -28,12 +28,11 @@
 		BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22AC230D353E00A35295 /* HomeCell.swift */; };
 		BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22AD230D353E00A35295 /* HomeCell.xib */; };
 		BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22B0230D378500A35295 /* GoGoColor.swift */; };
+		BE51C938230F9C3F00A32805 /* Profile in Resources */ = {isa = PBXBuildFile; fileRef = BE51C937230F9C3F00A32805 /* Profile */; };
 		BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576A9230E32B700ADA11B /* HomeDateCell.swift */; };
 		BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AA230E32B700ADA11B /* HomeDateCell.xib */; };
 		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
 		BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */; };
-		BEE576B9230E83E000ADA11B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576B7230E83E000ADA11B /* ProfileViewController.swift */; };
-		BEE576BA230E83E000ADA11B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576B8230E83E000ADA11B /* ProfileViewController.xib */; };
 		CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
@@ -136,12 +135,11 @@
 		BE0D22AC230D353E00A35295 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		BE0D22AD230D353E00A35295 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BE0D22B0230D378500A35295 /* GoGoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoGoColor.swift; sourceTree = "<group>"; };
+		BE51C937230F9C3F00A32805 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profile; sourceTree = "<group>"; };
 		BEE576A9230E32B700ADA11B /* HomeDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateCell.swift; sourceTree = "<group>"; };
 		BEE576AA230E32B700ADA11B /* HomeDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDateCell.xib; sourceTree = "<group>"; };
 		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
 		BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoEventCell.xib; sourceTree = "<group>"; };
-		BEE576B7230E83E000ADA11B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BEE576B8230E83E000ADA11B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps Extension.debug.xcconfig"; path = "Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1EC614230255810011EA59 /* cycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cycle.entitlements; sourceTree = "<group>"; };
 		EF2B16E8230BB13000EBF33B /* gogoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,15 +307,6 @@
 			path = "Home Cell";
 			sourceTree = "<group>";
 		};
-		BEE576B6230E83CA00ADA11B /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				BEE576B7230E83E000ADA11B /* ProfileViewController.swift */,
-				BEE576B8230E83E000ADA11B /* ProfileViewController.xib */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,7 +369,7 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
-				BEE576B6230E83CA00ADA11B /* Profile */,
+				BE51C937230F9C3F00A32805 /* Profile */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
@@ -580,9 +569,9 @@
 				EFF1265223068EAD0059A4BE /* GoogleService-Info.plist in Resources */,
 				EFEE5DDC2301575C0027F401 /* Assets.xcassets in Resources */,
 				322D3E94230CFC290051B9FB /* MapVC.xib in Resources */,
+				BE51C938230F9C3F00A32805 /* Profile in Resources */,
 				BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */,
 				161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */,
-				BEE576BA230E83E000ADA11B /* ProfileViewController.xib in Resources */,
 				BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */,
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
 				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
@@ -721,7 +710,6 @@
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
 				EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */,
-				BEE576B9230E83E000ADA11B /* ProfileViewController.swift in Sources */,
 				EFE11BF52304423600782142 /* Login.swift in Sources */,
 				EF6864BF230664B300B039FA /* PretiffyDistance.swift in Sources */,
 				EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */,
