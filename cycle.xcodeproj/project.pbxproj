@@ -312,8 +312,6 @@
 		BE51C939230F9CE500A32805 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
-				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -380,6 +378,8 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
+				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
 				BE51C939230F9CE500A32805 /* Profile */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
