@@ -22,6 +22,9 @@
 		327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */; };
 		3297C561230FA49200548F26 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C560230FA49200548F26 /* Preference.swift */; };
 		3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */; };
+		3297C5A02310155E00548F26 /* JoinEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C59E2310155E00548F26 /* JoinEventVC.swift */; };
+		3297C5A12310155E00548F26 /* JoinEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3297C59F2310155E00548F26 /* JoinEventVC.xib */; };
+		3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C5A3231015FC00548F26 /* UIView+Extension.swift */; };
 		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
@@ -129,6 +132,9 @@
 		327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
 		3297C560230FA49200548F26 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3297C59E2310155E00548F26 /* JoinEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventVC.swift; sourceTree = "<group>"; };
+		3297C59F2310155E00548F26 /* JoinEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinEventVC.xib; sourceTree = "<group>"; };
+		3297C5A3231015FC00548F26 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.release.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.release.xcconfig"; sourceTree = "<group>"; };
 		632687FF7D4AC005F2F89996 /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,8 +301,18 @@
 			isa = PBXGroup;
 			children = (
 				3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */,
+				3297C5A3231015FC00548F26 /* UIView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3297C5A22310156400548F26 /* Join Event */ = {
+			isa = PBXGroup;
+			children = (
+				3297C59E2310155E00548F26 /* JoinEventVC.swift */,
+				3297C59F2310155E00548F26 /* JoinEventVC.xib */,
+			);
+			path = "Join Event";
 			sourceTree = "<group>";
 		};
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
@@ -306,7 +322,6 @@
 				632687FF7D4AC005F2F89996 /* Pods_cycle.framework */,
 				3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */,
 				964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */,
-				2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -431,6 +446,7 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				3297C5A22310156400548F26 /* Join Event */,
 				3297C55F230F9FD600548F26 /* Profile */,
 				EFE1F197230ECB57005C6807 /* Route */,
 				EF90A8E3230E7848003BB556 /* Event */,
@@ -626,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				322D3E9A230D0AC50051B9FB /* LoginVC.xib in Resources */,
+				3297C5A12310155E00548F26 /* JoinEventVC.xib in Resources */,
 				327E4FD2230D131200FEBB9D /* SearchActivityVC.xib in Resources */,
 				327E4FCE230D130700FEBB9D /* SearchRouteVC.xib in Resources */,
 				EFEE5DDF2301575C0027F401 /* LaunchScreen.storyboard in Resources */,
@@ -783,6 +800,8 @@
 				EF6864BF230664B300B039FA /* PretiffyDistance.swift in Sources */,
 				EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */,
 				EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */,
+				3297C5A02310155E00548F26 /* JoinEventVC.swift in Sources */,
+				3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */,
 				EF82A13B23039EEC001939B7 /* Activity.swift in Sources */,
 				322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */,
 				BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */,

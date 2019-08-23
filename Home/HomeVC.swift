@@ -155,7 +155,7 @@ extension HomeVC{
 extension HomeVC : homeCellDelegate{
     func toProfile() {
         let vc = ProfileViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func toNewRoute() {
@@ -164,7 +164,8 @@ extension HomeVC : homeCellDelegate{
     }
     
     func toJoinEvent() {
-        
+        let vc = JoinEventVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

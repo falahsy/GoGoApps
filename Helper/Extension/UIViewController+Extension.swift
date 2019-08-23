@@ -19,4 +19,13 @@ extension UIViewController {
     func setupLargeTitle(prefLargeTitle: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = prefLargeTitle
     }
+    
+    func registerHideKeyboard() {
+        let gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
