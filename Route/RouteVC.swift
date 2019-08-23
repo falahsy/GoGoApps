@@ -60,9 +60,36 @@ class RouteVC: UIViewController {
         }
     }
     
-    
-    
     @IBAction func addRoute(_ sender: UIButton) {
+        
+        var routesShared:[CLLocationCoordinate2D] = []
+        
+        for route in self.routesPoints{
+            routesShared.append(route.coordinate)
+        }
+        self.activityID = "\(Int.random(in: 1...10000))"
+        
+        //join the user in the activity
+        let user = User()
+        
+        user.searchUser(userID: self.userID!) { (users) in
+            for cyclist in users{
+                cyclist.ref?.updateChildValues(["activity" : self.activityID!,"point" : 0])
+            }
+        }
+        
+        let activity = Activity(id: self.activityID!.trimmingCharacters(in: .whitespacesAndNewlines), routes: routesShared,date:self.eventDate)
+        
+        activity.insertData { (info) in
+            let defaults = UserDefaults.standard
+            defaults.set(self.activityID, forKey: "activity")
+            
+            let eventCreatedVC = EventCreatedVC()
+            self.navigationController?.pushViewController(eventCreatedVC, animated: true)
+            
+        }
+        
+       
     }
     
    
@@ -92,6 +119,7 @@ class RouteVC: UIViewController {
         selectLocationTap.delegate = self
         self.mapView.addGestureRecognizer(selectLocationTap)
         
+        self.eventDate = Date()
         
     }
     
@@ -324,7 +352,7 @@ extension RouteVC:SearchRouteDestinationDelegate{
         
         drawRoutes(routes: self.routesPoints)
         prepareDatePicker()
-        self.hookUpDatePicker.becomeFirstResponder()
+        
     }
     
     func cancelDestinationRoutes() {
@@ -383,7 +411,7 @@ extension RouteVC {
     
     func prepareDatePicker(){
         //Formate Date
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
         
         //ToolBar
         let toolbar = UIToolbar();
@@ -399,14 +427,21 @@ extension RouteVC {
         self.hookUpDatePicker.inputAccessoryView = toolbar
         // add datepicker to textField
         self.hookUpDatePicker.inputView = datePicker
-        print("Prepared")
+        hookUpDatePicker.becomeFirstResponder()
+        let alert = UIAlertController(title: "Event",message: "Pick a date for this event",preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
         
     }
     
    @objc func donedatePicker(){
     
     self.eventDate = datePicker.date
-        self.view.endEditing(true)
+    self.view.endEditing(true)
+    let alert = UIAlertController(title: "Route",message: "You are good to go",preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    self.present(alert, animated: true, completion: nil)
+    
     }
     
     @objc func cancelDatePicker(){

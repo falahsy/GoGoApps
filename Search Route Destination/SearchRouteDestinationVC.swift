@@ -109,9 +109,6 @@ extension SearchRouteDestinationVC {
 extension SearchRouteDestinationVC {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = matchingItems[indexPath.row].placemark
-        let alert = UIAlertController(title: "Route",message: "Let's Go",preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
         delegate?.dropPin(placemark: selectedItem)
         dismiss(animated: true, completion: nil)
         

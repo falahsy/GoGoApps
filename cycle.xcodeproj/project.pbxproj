@@ -35,6 +35,8 @@
 		EF2B16FE230BB13100EBF33B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B16FD230BB13100EBF33B /* NotificationController.swift */; };
 		EF2B1700230BB13200EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16FF230BB13200EBF33B /* Assets.xcassets */; };
 		EF2B1705230BB13200EBF33B /* gogoApps.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF2B16E8230BB13000EBF33B /* gogoApps.app */; };
+		EF63BD822310387E00000FF8 /* EventCreatedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF63BD812310387E00000FF8 /* EventCreatedVC.xib */; };
+		EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */; };
 		EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6864BE230664B300B039FA /* Pretiffy.swift */; };
 		EF82A13B23039EEC001939B7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82A13A23039EEC001939B7 /* Activity.swift */; };
 		EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76C2305465B0082CDB8 /* MapVC.swift */; };
@@ -137,6 +139,8 @@
 		EF2B16FF230BB13200EBF33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2B1701230BB13200EBF33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2B1702230BB13200EBF33B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		EF63BD812310387E00000FF8 /* EventCreatedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCreatedVC.xib; sourceTree = "<group>"; };
+		EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreatedVC.swift; sourceTree = "<group>"; };
 		EF6864BE230664B300B039FA /* Pretiffy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretiffy.swift; sourceTree = "<group>"; };
 		EF82A13A23039EEC001939B7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EF83F76C2305465B0082CDB8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -306,6 +310,15 @@
 			path = "gogoApps Extension";
 			sourceTree = "<group>";
 		};
+		EF63BD802310386000000FF8 /* Event Created */ = {
+			isa = PBXGroup;
+			children = (
+				EF63BD812310387E00000FF8 /* EventCreatedVC.xib */,
+				EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */,
+			);
+			path = "Event Created";
+			sourceTree = "<group>";
+		};
 		EF6864BD2306649E00B039FA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,13 +353,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		EF90A8E3230E7848003BB556 /* Event */ = {
+		EF90A8E3230E7848003BB556 /* Create Event */ = {
 			isa = PBXGroup;
 			children = (
 				EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */,
 				EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */,
 			);
-			path = Event;
+			path = "Create Event";
 			sourceTree = "<group>";
 		};
 		EFCA7178230FDE3200F52EEC /* Search Route Destination */ = {
@@ -370,9 +383,10 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				EF63BD802310386000000FF8 /* Event Created */,
 				EFCA7178230FDE3200F52EEC /* Search Route Destination */,
 				EFE1F197230ECB57005C6807 /* Route */,
-				EF90A8E3230E7848003BB556 /* Event */,
+				EF90A8E3230E7848003BB556 /* Create Event */,
 				BE0D22A2230D34D000A35295 /* Home */,
 				161AA211230D30B4002EB295 /* On Boarding */,
 				327E4FCA230D12F200FEBB9D /* Search Activity */,
@@ -556,6 +570,7 @@
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
 				EFE1F19D230ECF1E005C6807 /* RouteVC.xib in Resources */,
 				EFCA717A230FDE5800F52EEC /* SearchRouteDestinationVC.xib in Resources */,
+				EF63BD822310387E00000FF8 /* EventCreatedVC.xib in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
 				EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */,
 			);
@@ -637,6 +652,7 @@
 				EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */,
 				EF82A13B23039EEC001939B7 /* Activity.swift in Sources */,
 				322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */,
+				EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */,
 				BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */,
 				BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */,
 				EFC2216E2308E5970083D8B5 /* CyclistView.swift in Sources */,

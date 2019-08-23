@@ -438,7 +438,7 @@ class MapViewController: UIViewController {
             
             self.navigationItem.prompt = self.activityID ?? "tes"
             
-            let activity = Activity(id: self.activityID!.trimmingCharacters(in: .whitespacesAndNewlines), routes: routesShared)
+            let activity = Activity(id: self.activityID!.trimmingCharacters(in: .whitespacesAndNewlines), routes: routesShared,date:Date())
             
             activity.insertData { (info) in
                 let alert = UIAlertController(title: "Routes",message: info,preferredStyle: .alert)
