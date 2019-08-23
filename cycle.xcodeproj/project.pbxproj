@@ -111,6 +111,7 @@
 		16699DA0230F86E000A90ABC /* gogoApps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gogoApps.entitlements; sourceTree = "<group>"; };
 		16699DA1230F885B00A90ABC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1670D766230F627400443D86 /* gogoApps Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gogoApps Extension.entitlements"; sourceTree = "<group>"; };
+		2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		322D3E93230CFC290051B9FB /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
 		322D3E95230D05980051B9FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		322D3E97230D0AC50051B9FB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -199,6 +200,8 @@
 			files = (
 				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
 				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
+				8A6AA7ABD33538A8EC47165E /* Pods_cycle.framework in Frameworks */,
+				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +270,7 @@
 				632687FF7D4AC005F2F89996 /* Pods_cycle.framework */,
 				3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */,
 				964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */,
+				2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
