@@ -12,7 +12,7 @@ extension UIViewController {
     func setupNavController(title: String, prefLargeTitle: Bool, isHidingBackButton: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = prefLargeTitle
         navigationItem.title = title
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.isNavigationBarHidden = false
         navigationItem.setHidesBackButton(isHidingBackButton, animated: false)
     }
     
