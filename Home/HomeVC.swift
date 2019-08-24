@@ -160,7 +160,8 @@ extension HomeVC : homeCellDelegate{
     
     func toNewRoute() {
         let vc = CreateEventVC()
-        navigationController?.present(vc, animated: true, completion: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        navigationController?.present(navController, animated: true, completion: nil)
     }
     
     func toJoinEvent() {

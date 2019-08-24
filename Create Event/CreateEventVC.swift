@@ -29,6 +29,11 @@ class CreateEventVC: UIViewController {
         //set delegate for mapview
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
+    }
    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var createButton: UIButton!{
@@ -44,7 +49,7 @@ class CreateEventVC: UIViewController {
     
     @IBAction func createEvent(_ sender: UIButton) {
         let routeVC = RouteVC()
-        self.navigationController?.pushViewController(routeVC, animated: true)
+        navigationController?.pushViewController(routeVC, animated: true)
     }
 }
 

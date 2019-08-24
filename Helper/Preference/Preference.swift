@@ -15,6 +15,7 @@ enum PreferenceKey: String {
     case kUserEmail
     case kUserAddress
     case kUserDOB
+    case kUserActivity
 }
 
 struct Preference {

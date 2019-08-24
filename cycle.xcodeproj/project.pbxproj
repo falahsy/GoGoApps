@@ -400,8 +400,8 @@
 		EF63BD802310386000000FF8 /* Event Created */ = {
 			isa = PBXGroup;
 			children = (
-				EF63BD812310387E00000FF8 /* EventCreatedVC.xib */,
 				EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */,
+				EF63BD812310387E00000FF8 /* EventCreatedVC.xib */,
 			);
 			path = "Event Created";
 			sourceTree = "<group>";
@@ -411,7 +411,6 @@
 			children = (
 				3297C589230FC7E300548F26 /* Extension */,
 				3297C562230FA4A400548F26 /* Preference */,
-				EF6864BE230664B300B039FA /* PretiffyDistance.swift */,
 				EF6864BE230664B300B039FA /* Pretiffy.swift */,
 				EFCF441D2307D7AE00633371 /* RandomHelper.swift */,
 				BE0D22B0230D378500A35295 /* GoGoColor.swift */,

@@ -19,15 +19,15 @@ class EventCreatedVC: UIViewController{
         }
     }
     @IBOutlet weak var codeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        self.codeLabel.text = defaults.string(forKey: "activity")
+        let code = Preference.getString(forKey: .kUserActivity)
+        codeLabel.text = code
     }
    
     
     @IBAction func done(_ sender: UIButton) {
-        let homeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }
