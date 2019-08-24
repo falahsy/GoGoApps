@@ -13,25 +13,44 @@ import MapKit
 
 
 class RouteVC: UIViewController {
-    @IBOutlet weak var navbar: UINavigationBar!
     
     let locationManager = CLLocationManager()
     var initialLocation:CLLocationCoordinate2D!
     var resultSearchController:UISearchController? = nil
     var routesPoints:[MKPlacemark] = []
     var selectedPin:MKPlacemark? = nil
-    var distanceFromDestination = 0.0
-    var timeFromDestination = 0
+    var distanceFromDestination:Double!{
+        didSet{
+            let user = User()
+            
+            user.searchUser(userID: self.userID!) { (users) in
+                users.first?.ref?.updateChildValues(["distance": self.distanceFromDestination ?? 0.0])
+            }
+        }
+    }
+    var timeFromDestination:Int!{
+        didSet{
+            
+            self.durationLabel.text = "\(Pretiffy.getETA(seconds: self.timeFromDestination))"
+            
+        }
+    }
     var userID:String?
+    var activityID:String?
+    var eventDate:Date!{
+        didSet{
+            self.dateLabel.text = Pretiffy.formatDate(date: self.eventDate)
+        }
+    }
+    let datePicker = UIDatePicker()
+    
+    @IBOutlet weak var hookUpDatePicker: UITextField!
     
     @IBOutlet weak var startingPoint: UITextField!
     @IBOutlet weak var destinationPoint: UITextField!
-    @IBOutlet weak var testView: UIView!
     
-    @IBOutlet weak var textDate: UILabel!
-    @IBOutlet weak var textDuration: UILabel!
-    
-    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addButton: UIButton!{
         didSet{
@@ -42,7 +61,38 @@ class RouteVC: UIViewController {
     }
     
     @IBAction func addRoute(_ sender: UIButton) {
+        
+        var routesShared:[CLLocationCoordinate2D] = []
+        
+        for route in self.routesPoints{
+            routesShared.append(route.coordinate)
+        }
+        self.activityID = "\(Int.random(in: 1...10000))"
+        
+        //join the user in the activity
+        let user = User()
+        
+        user.searchUser(userID: self.userID!) { (users) in
+            for cyclist in users{
+                cyclist.ref?.updateChildValues(["activity" : self.activityID!,"point" : 0])
+            }
+        }
+        
+        let activity = Activity(id: self.activityID!.trimmingCharacters(in: .whitespacesAndNewlines), routes: routesShared,date:self.eventDate)
+        
+        activity.insertData { (info) in
+            let defaults = UserDefaults.standard
+            defaults.set(self.activityID, forKey: "activity")
+            
+            let eventCreatedVC = EventCreatedVC()
+            self.navigationController?.pushViewController(eventCreatedVC, animated: true)
+            
+        }
+        
+       
     }
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +110,41 @@ class RouteVC: UIViewController {
         let defaults = UserDefaults.standard
         self.userID = defaults.string(forKey: "email")
         
+        self.mapView.delegate = self
        
+        //set tap location in map view
+        let selectLocationTap = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(gestureReconizer:)))
+        selectLocationTap.minimumPressDuration = 1.5
+        selectLocationTap.delaysTouchesBegan = true
+        selectLocationTap.delegate = self
+        self.mapView.addGestureRecognizer(selectLocationTap)
+        
+        self.eventDate = Date()
         
     }
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        let homeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+    
+    override func viewDidAppear(_ animated: Bool) {
+       
+        guard let initialLocation = self.initialLocation else {return}
+            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            
+            let region = MKCoordinateRegion(center: initialLocation, span: span)
+            mapView.setRegion(region, animated: true)
+        
     }
-    @IBAction func done(_ sender: UIBarButtonItem) {
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.isHidden = false
+        
+        
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    
+    
     
 }
 
@@ -81,9 +157,7 @@ extension RouteVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            let region = MKCoordinateRegion(center: location.coordinate, span: span)
-            mapView.setRegion(region, animated: true)
+            
             self.initialLocation = location.coordinate
             
         }
@@ -107,7 +181,9 @@ extension RouteVC:UITextFieldDelegate{
             
             searchBar.sizeToFit()
             searchBar.placeholder = "Search for places"
-            self.navbar.topItem?.titleView = resultSearchController?.searchBar
+           
+            
+            self.navigationController?.navigationBar.topItem?.titleView = resultSearchController?.searchBar
             resultSearchController?.hidesNavigationBarDuringPresentation = false
             resultSearchController?.dimsBackgroundDuringPresentation = true
             definesPresentationContext = true
@@ -117,7 +193,25 @@ extension RouteVC:UITextFieldDelegate{
             searchBar.becomeFirstResponder()
             
         }else{
-            print("Destination point")
+            let destinationSearchTable = SearchRouteDestinationVC()
+            resultSearchController = UISearchController(searchResultsController: destinationSearchTable)
+            resultSearchController?.searchResultsUpdater = destinationSearchTable
+            resultSearchController?.searchBar.delegate = destinationSearchTable
+            
+            let searchBar = resultSearchController!.searchBar
+            
+            searchBar.sizeToFit()
+            searchBar.placeholder = "Search for events"
+            
+            
+            self.navigationController?.navigationBar.topItem?.titleView = resultSearchController?.searchBar
+            resultSearchController?.hidesNavigationBarDuringPresentation = false
+            resultSearchController?.dimsBackgroundDuringPresentation = true
+            definesPresentationContext = true
+            
+            destinationSearchTable.mapView = mapView
+            destinationSearchTable.delegate = self
+            searchBar.becomeFirstResponder()
         }
     }
 }
@@ -132,13 +226,9 @@ extension RouteVC: SearchRouteDelegate {
         mapView.setRegion(region, animated: true)
         
         mapView.removeAnnotations(mapView.annotations)
-        print("Cancel")
-        self.navigationItem.prompt = nil
-        self.navbar.topItem?.titleView = nil
-       
-        
-//        guard let timer = self.timerForBackground else {return}
-//        timer.invalidate()
+        self.navigationController?.navigationBar.topItem?.titleView = nil
+        self.navigationController?.navigationBar.topItem?.title = "Create Route"
+        self.startingPoint.text = nil
         
     }
     
@@ -156,15 +246,23 @@ extension RouteVC: SearchRouteDelegate {
     
     func dropPinZoomIn(placemark:MKPlacemark){
         // cache the pin
-        selectedPin = placemark
+        cancelRoutes()
         
+        selectedPin = placemark
+        mapView.removeAnnotations(mapView.annotations)
         addPinInMap(placemark: placemark)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
         
-        self.routesPoints.append(placemark)
+        //self.routesPoints.append(placemark)
+        self.routesPoints.insert(placemark, at: 0)
+        self.startingPoint.text = placemark.title
+        
+        self.navigationController?.navigationBar.topItem?.titleView = nil
+        self.navigationController?.navigationBar.topItem?.title = "Create Route"
+        
         drawRoutes(routes: self.routesPoints)
     }
     
@@ -178,8 +276,6 @@ extension RouteVC: SearchRouteDelegate {
         for point in routes{
             
             let directionRequest = MKDirections.Request()
-            
-            
             directionRequest.source = source
             directionRequest.destination = MKMapItem(placemark: point)
             directionRequest.transportType = .any
@@ -197,21 +293,8 @@ extension RouteVC: SearchRouteDelegate {
                 //get route and assign to our route variable
                 let route = directionResonse.routes[0]
                 
-                
                 self.distanceFromDestination += route.distance
                 self.timeFromDestination += Int (route.expectedTravelTime)
-                
-                DispatchQueue.main.async(execute: {
-                    
-                    let user = User()
-                    
-                    user.searchUser(userID: self.userID!) { (users) in
-                        users.first?.ref?.updateChildValues(["distance": self.distanceFromDestination])
-                    }
-                    
-                    self.textDuration.text = "\(Pretiffy.getETA(seconds: self.timeFromDestination))"
-                })
-                
                 
                 if draw{
                     
@@ -232,3 +315,137 @@ extension RouteVC: SearchRouteDelegate {
     }
 }
 
+extension RouteVC: MKMapViewDelegate{
+    
+    //MARK:- MapKit delegates
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = RandomHelper.generateRandomColor()
+        renderer.lineWidth = 4.0
+        
+        return renderer
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! Cyclist
+        
+        
+    }
+}
+
+extension RouteVC:SearchRouteDestinationDelegate{
+    func dropPin(placemark: MKPlacemark) {
+        
+        selectedPin = placemark
+        addPinInMap(placemark: placemark)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
+        mapView.setRegion(region, animated: true)
+        
+        self.routesPoints.append(placemark)
+        self.destinationPoint.text = placemark.title
+        
+        self.navigationController?.navigationBar.topItem?.titleView = nil
+        self.navigationController?.navigationBar.topItem?.title = "Create Route"
+        
+        drawRoutes(routes: self.routesPoints)
+        prepareDatePicker()
+        
+    }
+    
+    func cancelDestinationRoutes() {
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: initialLocation, span: span)
+        mapView.setRegion(region, animated: true)
+        
+        self.destinationPoint.text = nil
+        self.navigationController?.navigationBar.topItem?.titleView = nil
+        self.navigationController?.navigationBar.topItem?.title = "Create Route"
+        
+        if self.routesPoints.count > 1{
+            
+            self.routesPoints.remove(at: self.routesPoints.count - 1)
+        }
+        self.mapView.removeOverlays(self.mapView.overlays)
+        self.destinationPoint.text = nil
+        drawRoutes(routes: self.routesPoints)
+        
+    }
+    
+}
+
+extension RouteVC: UIGestureRecognizerDelegate{
+    
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizer.State.ended {
+            
+            let touchLocation = gestureReconizer.location(in: mapView)
+            let locationCoordinate = mapView.convert(touchLocation,toCoordinateFrom: mapView)
+            //print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+            let point = MKPlacemark(coordinate: locationCoordinate)
+            
+            if routesPoints.first(where: { $0.coordinate.latitude == point.coordinate.latitude && $0.coordinate.longitude == point.coordinate.longitude }) != nil{
+                
+                return
+            }
+             self.mapView.removeOverlays(self.mapView.overlays)
+            addPinInMap(placemark: point)
+            self.routesPoints.append(point)
+            drawRoutes(routes: self.routesPoints)
+            
+            return
+            
+        }
+        
+        if gestureReconizer.state != UIGestureRecognizer.State.began {
+            
+            return
+        }
+    }
+}
+
+extension RouteVC {
+    
+    func prepareDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .dateAndTime
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.bordered, target: self, action: #selector(self.donedatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.bordered, target: self, action: #selector(self.cancelDatePicker))
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        // add toolbar to textField
+        self.hookUpDatePicker.inputAccessoryView = toolbar
+        // add datepicker to textField
+        self.hookUpDatePicker.inputView = datePicker
+        hookUpDatePicker.becomeFirstResponder()
+        let alert = UIAlertController(title: "Event",message: "Pick a date for this event",preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+   @objc func donedatePicker(){
+    
+    self.eventDate = datePicker.date
+    self.view.endEditing(true)
+    let alert = UIAlertController(title: "Route",message: "You are good to go",preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    self.present(alert, animated: true, completion: nil)
+    
+    }
+    
+    @objc func cancelDatePicker(){
+        //cancel button dismiss datepicker dialog
+        self.view.endEditing(true)
+    }
+}

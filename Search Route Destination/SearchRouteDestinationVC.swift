@@ -1,25 +1,28 @@
 //
-//  SearchRouteVC.swift
+//  SearchRouteDestinationVC.swift
 //  cycle
 //
-//  Created by Azmi Muhammad on 21/08/19.
+//  Created by boy setiawan on 23/08/19.
 //  Copyright © 2019 boy setiawan. All rights reserved.
 //
+
+import Foundation
 
 import UIKit
 import MapKit
 
-protocol SearchRouteDelegate: AnyObject {
-    func dropPinZoomIn(placemark: MKPlacemark)
-    func cancelRoutes()
+protocol SearchRouteDestinationDelegate: AnyObject {
+    func dropPin(placemark: MKPlacemark)
+    func cancelDestinationRoutes()
 }
 
-class SearchRouteVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+class SearchRouteDestinationVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
     var mapView: MKMapView? = nil
     var matchingItems:[MKMapItem] = []
-    weak var delegate: SearchRouteDelegate?
+    weak var delegate: SearchRouteDestinationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +30,7 @@ class SearchRouteVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         setupTableView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-    }
+    
     
     private func setupTableView() {
         tableView.delegate = self
@@ -60,10 +61,10 @@ class SearchRouteVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         )
         return addressLine
     }
-
+    
 }
 
-extension SearchRouteVC : UISearchResultsUpdating {
+extension SearchRouteDestinationVC : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let mapView = mapView,
             let searchBarText = searchController.searchBar.text else { return }
@@ -89,7 +90,7 @@ extension SearchRouteVC : UISearchResultsUpdating {
     }
 }
 
-extension SearchRouteVC {
+extension SearchRouteDestinationVC {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
@@ -105,21 +106,19 @@ extension SearchRouteVC {
     }
 }
 
-extension SearchRouteVC {
+extension SearchRouteDestinationVC {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = matchingItems[indexPath.row].placemark
-        let alert = UIAlertController(title: "Route",message: "Pick Another Route",preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
-        delegate?.dropPinZoomIn(placemark: selectedItem)
+        delegate?.dropPin(placemark: selectedItem)
         dismiss(animated: true, completion: nil)
         
     }
 }
 
-extension SearchRouteVC: UISearchBarDelegate {
+extension SearchRouteDestinationVC: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("Cancel inside")
-        delegate?.cancelRoutes()
+        
+        delegate?.cancelDestinationRoutes()
     }
 }
+

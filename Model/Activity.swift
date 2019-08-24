@@ -18,16 +18,23 @@ struct Activity{
     var messageID = 0
     var message:String
     var userID:String
+    var date:Int
     let ref: DatabaseReference?
     private var key: String
     
-    init(id: String, routes: [CLLocationCoordinate2D], key: String = "") {
+    init(id: String, routes: [CLLocationCoordinate2D], key: String = "",date:Date) {
         self.activityID = id
         self.routes = routes
         self.ref = nil
         self.key = key
         self.message = ""
         self.userID = ""
+        // convert Date to TimeInterval (typealias for Double)
+        let timeInterval = date.timeIntervalSince1970
+        
+        // convert to Integer
+        let convertedDate = Int(timeInterval)
+        self.date = convertedDate
         
     }
     
@@ -38,6 +45,13 @@ struct Activity{
         self.key = ""
         self.message = ""
         self.userID = ""
+        // convert Date to TimeInterval (typealias for Double)
+        let date = Date()
+        let timeInterval = date.timeIntervalSince1970
+        
+        // convert to Integer
+        let convertedDate = Int(timeInterval)
+        self.date = convertedDate
     }
     
     init?(snapshot: DataSnapshot) {
@@ -49,7 +63,8 @@ struct Activity{
             let routes = value["routes"] as? [String],
             let messageID = value["messageID"] as? Int?,
             let message = value["message"] as? String,
-            let user = value["user"] as? String
+            let user = value["user"] as? String,
+            let date = value["date"] as? Int
             else {
                 return nil
             }
@@ -60,6 +75,7 @@ struct Activity{
         self.message = message
         self.messageID = messageID ?? 0
         self.userID = user
+        self.date = date
         
         var routesList :[CLLocationCoordinate2D] = []
         routes.forEach { (route) in
@@ -85,7 +101,8 @@ struct Activity{
             "routes": routesList,
             "messageID": messageID,
             "message": message,
-            "user": userID
+            "user": userID,
+            "date": date
             
         ]
     }
