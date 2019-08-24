@@ -288,15 +288,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		3297C55F230F9FD600548F26 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
-				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		3297C562230FA4A400548F26 /* Preference */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +312,15 @@
 				3297C59F2310155E00548F26 /* JoinEventVC.xib */,
 			);
 			path = "Join Event";
+			sourceTree = "<group>";
+		};
+		32BA7D5C2310E81A00253EB1 /* Profile User */ = {
+			isa = PBXGroup;
+			children = (
+				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
+				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
+			);
+			path = "Profile User";
 			sourceTree = "<group>";
 		};
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
@@ -473,7 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				3297C5A22310156400548F26 /* Join Event */,
-				3297C55F230F9FD600548F26 /* Profile */,
+				32BA7D5C2310E81A00253EB1 /* Profile User */,
 				EF63BD802310386000000FF8 /* Event Created */,
 				EFCA7178230FDE3200F52EEC /* Search Route Destination */,
 				EFE1F197230ECB57005C6807 /* Route */,
