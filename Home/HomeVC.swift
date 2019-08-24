@@ -142,6 +142,12 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         }
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = DetailEventVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 extension HomeVC{
     func getCurrDate() -> String{

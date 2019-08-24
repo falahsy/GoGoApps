@@ -25,6 +25,16 @@
 		3297C5A02310155E00548F26 /* JoinEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C59E2310155E00548F26 /* JoinEventVC.swift */; };
 		3297C5A12310155E00548F26 /* JoinEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3297C59F2310155E00548F26 /* JoinEventVC.xib */; };
 		3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C5A3231015FC00548F26 /* UIView+Extension.swift */; };
+		32BA7D602310EA9300253EB1 /* DetailEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BA7D5E2310EA9300253EB1 /* DetailEventVC.swift */; };
+		32BA7D612310EA9300253EB1 /* DetailEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32BA7D5F2310EA9300253EB1 /* DetailEventVC.xib */; };
+		32F22CAF2310EB2A003DA3C8 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CAD2310EB2A003DA3C8 /* MapCell.swift */; };
+		32F22CB02310EB2A003DA3C8 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CAE2310EB2A003DA3C8 /* MapCell.xib */; };
+		32F22CB52310ED4A003DA3C8 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CB32310ED4A003DA3C8 /* TeamCell.swift */; };
+		32F22CB62310ED4A003DA3C8 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CB42310ED4A003DA3C8 /* TeamCell.xib */; };
+		32F22CBA2310EE2A003DA3C8 /* TeamProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CB82310EE2A003DA3C8 /* TeamProfileCell.swift */; };
+		32F22CBB2310EE2A003DA3C8 /* TeamProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CB92310EE2A003DA3C8 /* TeamProfileCell.xib */; };
+		32F22CBF2310EFF3003DA3C8 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CBD2310EFF3003DA3C8 /* DetailCell.swift */; };
+		32F22CC02310EFF3003DA3C8 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CBE2310EFF3003DA3C8 /* DetailCell.xib */; };
 		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
@@ -139,6 +149,16 @@
 		3297C59E2310155E00548F26 /* JoinEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventVC.swift; sourceTree = "<group>"; };
 		3297C59F2310155E00548F26 /* JoinEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinEventVC.xib; sourceTree = "<group>"; };
 		3297C5A3231015FC00548F26 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		32BA7D5E2310EA9300253EB1 /* DetailEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventVC.swift; sourceTree = "<group>"; };
+		32BA7D5F2310EA9300253EB1 /* DetailEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailEventVC.xib; sourceTree = "<group>"; };
+		32F22CAD2310EB2A003DA3C8 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		32F22CAE2310EB2A003DA3C8 /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
+		32F22CB32310ED4A003DA3C8 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		32F22CB42310ED4A003DA3C8 /* TeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
+		32F22CB82310EE2A003DA3C8 /* TeamProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileCell.swift; sourceTree = "<group>"; };
+		32F22CB92310EE2A003DA3C8 /* TeamProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamProfileCell.xib; sourceTree = "<group>"; };
+		32F22CBD2310EFF3003DA3C8 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		32F22CBE2310EFF3003DA3C8 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.release.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.release.xcconfig"; sourceTree = "<group>"; };
 		632687FF7D4AC005F2F89996 /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,6 +343,63 @@
 			path = "Profile User";
 			sourceTree = "<group>";
 		};
+		32BA7D5D2310EA8200253EB1 /* Detail Event */ = {
+			isa = PBXGroup;
+			children = (
+				32F22CAC2310EB1C003DA3C8 /* Cell */,
+				32BA7D5E2310EA9300253EB1 /* DetailEventVC.swift */,
+				32BA7D5F2310EA9300253EB1 /* DetailEventVC.xib */,
+			);
+			path = "Detail Event";
+			sourceTree = "<group>";
+		};
+		32F22CAC2310EB1C003DA3C8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				32F22CBC2310EFDD003DA3C8 /* Detail */,
+				32F22CB22310EB3D003DA3C8 /* Team */,
+				32F22CB12310EB32003DA3C8 /* Map */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		32F22CB12310EB32003DA3C8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				32F22CAD2310EB2A003DA3C8 /* MapCell.swift */,
+				32F22CAE2310EB2A003DA3C8 /* MapCell.xib */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		32F22CB22310EB3D003DA3C8 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				32F22CB72310EE10003DA3C8 /* Team Profile */,
+				32F22CB32310ED4A003DA3C8 /* TeamCell.swift */,
+				32F22CB42310ED4A003DA3C8 /* TeamCell.xib */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		32F22CB72310EE10003DA3C8 /* Team Profile */ = {
+			isa = PBXGroup;
+			children = (
+				32F22CB82310EE2A003DA3C8 /* TeamProfileCell.swift */,
+				32F22CB92310EE2A003DA3C8 /* TeamProfileCell.xib */,
+			);
+			path = "Team Profile";
+			sourceTree = "<group>";
+		};
+		32F22CBC2310EFDD003DA3C8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				32F22CBD2310EFF3003DA3C8 /* DetailCell.swift */,
+				32F22CBE2310EFF3003DA3C8 /* DetailCell.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +549,7 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
+				32BA7D5D2310EA8200253EB1 /* Detail Event */,
 				3297C5A22310156400548F26 /* Join Event */,
 				32BA7D5C2310E81A00253EB1 /* Profile User */,
 				EF63BD802310386000000FF8 /* Event Created */,
@@ -670,8 +748,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				322D3E9A230D0AC50051B9FB /* LoginVC.xib in Resources */,
+				32F22CBB2310EE2A003DA3C8 /* TeamProfileCell.xib in Resources */,
 				3297C5A12310155E00548F26 /* JoinEventVC.xib in Resources */,
 				327E4FD2230D131200FEBB9D /* SearchActivityVC.xib in Resources */,
+				32F22CB02310EB2A003DA3C8 /* MapCell.xib in Resources */,
+				32F22CB62310ED4A003DA3C8 /* TeamCell.xib in Resources */,
+				32F22CC02310EFF3003DA3C8 /* DetailCell.xib in Resources */,
 				327E4FCE230D130700FEBB9D /* SearchRouteVC.xib in Resources */,
 				EFEE5DDF2301575C0027F401 /* LaunchScreen.storyboard in Resources */,
 				BE0D22AB230D351300A35295 /* HomeHeaderCell.xib in Resources */,
@@ -679,6 +761,7 @@
 				EFEE5DDC2301575C0027F401 /* Assets.xcassets in Resources */,
 				322D3E94230CFC290051B9FB /* MapVC.xib in Resources */,
 				BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */,
+				32BA7D612310EA9300253EB1 /* DetailEventVC.xib in Resources */,
 				161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */,
 				BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */,
 				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
@@ -815,11 +898,14 @@
 			files = (
 				EF83F76F2305525F0082CDB8 /* SearchRouteViewController.swift in Sources */,
 				BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */,
+				32F22CBF2310EFF3003DA3C8 /* DetailCell.swift in Sources */,
+				32F22CAF2310EB2A003DA3C8 /* MapCell.swift in Sources */,
 				327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */,
 				EFF5FE322303FA9500F42319 /* User.swift in Sources */,
 				3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */,
 				BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */,
 				161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */,
+				32F22CBA2310EE2A003DA3C8 /* TeamProfileCell.swift in Sources */,
 				EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */,
 				EFE1F19B230ECBB4005C6807 /* RouteVC.swift in Sources */,
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
@@ -833,12 +919,14 @@
 				EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */,
 				3297C5A02310155E00548F26 /* JoinEventVC.swift in Sources */,
 				3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */,
+				32BA7D602310EA9300253EB1 /* DetailEventVC.swift in Sources */,
 				EF82A13B23039EEC001939B7 /* Activity.swift in Sources */,
 				322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */,
 				EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */,
 				BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */,
 				BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */,
 				EFC2216E2308E5970083D8B5 /* CyclistView.swift in Sources */,
+				32F22CB52310ED4A003DA3C8 /* TeamCell.swift in Sources */,
 				EFCF441C2307C9DA00633371 /* ShowRouteViewController.swift in Sources */,
 				322D3E96230D05980051B9FB /* MapViewController.swift in Sources */,
 				EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */,
