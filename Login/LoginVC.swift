@@ -167,7 +167,7 @@ class LoginVC: UIViewController {
                 let defaults = UserDefaults.standard
                 defaults.set(self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "email")
                 //let homeVC = HomeVC()
-                let homeVC = CreateEventVC()
+                let homeVC = JointEventVC()
                 self.navigationController?.pushViewController(homeVC, animated: true)
             }else{
                 let alert = UIAlertController(title: "Login",message: info,preferredStyle: .alert)

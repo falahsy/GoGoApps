@@ -49,7 +49,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="tZg-xo-KyS">
-                    <rect key="frame" x="96" y="333" width="222" height="471.5"/>
+                    <rect key="frame" x="96" y="333" width="222" height="234.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBC-o8-XYJ">
                             <rect key="frame" x="71.5" y="0.0" width="79.5" height="38.5"/>
@@ -58,10 +58,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show code" translatesAutoresizingMaskIntoConstraints="NO" id="Y7l-tz-XNK">
-                            <rect key="frame" x="0.0" y="113.5" width="222" height="253.00000000000006"/>
+                            <rect key="frame" x="103" y="113.5" width="16" height="16"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8J-Pd-Veq">
-                            <rect key="frame" x="0.0" y="441.5" width="222" height="30"/>
+                            <rect key="frame" x="0.0" y="204.5" width="222" height="30"/>
                             <color key="backgroundColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Done">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
