@@ -48,7 +48,6 @@ class RouteVC: UIViewController {
     
     @IBOutlet weak var startingPoint: UITextField!
     @IBOutlet weak var destinationPoint: UITextField!
-    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -90,9 +89,7 @@ class RouteVC: UIViewController {
         
        
     }
-    
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -116,7 +113,13 @@ class RouteVC: UIViewController {
         selectLocationTap.delaysTouchesBegan = true
         selectLocationTap.delegate = self
         mapView.addGestureRecognizer(selectLocationTap)
+        
         eventDate = Date()
+        let dateTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dateTap(_:)))
+        dateLabel.addGestureRecognizer(dateTapGesture)
+        
+        timeFromDestination = 0
+        prepareDatePicker()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -186,7 +189,7 @@ extension RouteVC:UITextFieldDelegate{
             let searchBar = resultSearchController!.searchBar
             
             searchBar.sizeToFit()
-            searchBar.placeholder = "Search for events"
+            searchBar.placeholder = "Search for places"
             
             
             self.navigationController?.navigationBar.topItem?.titleView = resultSearchController?.searchBar
@@ -412,10 +415,8 @@ extension RouteVC {
         self.hookUpDatePicker.inputAccessoryView = toolbar
         // add datepicker to textField
         self.hookUpDatePicker.inputView = datePicker
-        hookUpDatePicker.becomeFirstResponder()
-        let alert = UIAlertController(title: "Event",message: "Pick a date for this event",preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
+        
+        
         
     }
     
@@ -423,9 +424,7 @@ extension RouteVC {
     
     self.eventDate = datePicker.date
     self.view.endEditing(true)
-    let alert = UIAlertController(title: "Route",message: "You are good to go",preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .default))
-    self.present(alert, animated: true, completion: nil)
+
     
     }
     
@@ -433,4 +432,11 @@ extension RouteVC {
         //cancel button dismiss datepicker dialog
         self.view.endEditing(true)
     }
+    
+    @objc func dateTap( _ recognizer : UITapGestureRecognizer){
+        
+        hookUpDatePicker.becomeFirstResponder()
+    }
 }
+
+

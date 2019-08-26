@@ -183,6 +183,7 @@ class LoginVC: UIViewController {
         //finally presenting the dialog box
         self.present(alertController, animated: true, completion: nil)
     }
+
     @objc func loginRegister() {
         if isLogin!{
             Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
@@ -198,7 +199,7 @@ class LoginVC: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-        } else{
+        } else {
             Login.createAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,status) in
                 
                 
@@ -211,7 +212,6 @@ class LoginVC: UIViewController {
                     alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true, completion: nil)
                 }
-                
             }
         }
         
