@@ -390,7 +390,9 @@ extension TrackingVC {
                 
                 for frontCyclist in self.groups{
                     
-                    user.searchUser(userID: frontCyclist.first!.key, callback: { (users) in
+                    let sortedCyclistInGroup = frontCyclist.sorted { $0.1 < $1.1 }
+                    
+                    user.searchUser(userID: sortedCyclistInGroup.first!.key, callback: { (users) in
                         
                         var info = ""
                         var detail = ""
