@@ -6,19 +6,17 @@
 //  Copyright © 2019 boy setiawan. All rights reserved.
 //
 
-import Foundation
-import Foundation
 import UIKit
 
-class JointEventVC: UIViewController{
+class JoinEventVC: UIViewController{
     
     @IBOutlet weak var firstCode: UITextField!
     @IBOutlet weak var secondCode: UITextField!
     @IBOutlet weak var thirdCode: UITextField!
     @IBOutlet weak var fourthCode: UITextField!
     
-    @IBOutlet weak var submitButton: UIButton!{
-        didSet{
+    @IBOutlet weak var submitButton: UIButton! {
+        didSet {
             submitButton.layer.cornerRadius = submitButton.frame.size.height/2
             submitButton.clipsToBounds = true
             
@@ -30,9 +28,9 @@ class JointEventVC: UIViewController{
        
         if code.isEmpty {
             firstCode.becomeFirstResponder()
-        }else{
+        } else {
             let kegiatan = Activity()
-            
+
             kegiatan.searchActivity(activityID: code) { (activities) in
                 
                 if activities.count > 0{
@@ -67,7 +65,7 @@ class JointEventVC: UIViewController{
     
 }
 
-extension JointEventVC:UITextFieldDelegate{
+extension JoinEventVC: UITextFieldDelegate{
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

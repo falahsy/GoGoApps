@@ -413,8 +413,7 @@ extension TrackingVC {
                         
                         self.sortedFriendsByDistance.append(user)
                         
-                        self.sortedFriendsByDistance = self.sortedFriendsByDistance.sorted(by: { (user1:User, user2:User) -> Bool in
-                            return user1.distance < user2.distance
+                        self.sortedFriendsByDistance = self.sortedFriendsByDistance.sorted(by: { (user1, user2) -> Bool in return user1.distance < user2.distance
                         })
                         
                         self.collectionView.reloadData()
@@ -471,7 +470,7 @@ extension TrackingVC {
     func showSOSDialog() {
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
-        let alertController = UIAlertController(title: "SOS", message: "Message", preferredStyle: .alert)
+        let alertController = UIAlertController(title : "SOS", message: "Message", preferredStyle: .alert)
         
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Submit", style: .default) { (_) in

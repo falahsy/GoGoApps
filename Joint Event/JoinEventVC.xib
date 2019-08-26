@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JointEventVC" customModule="cycle" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinEventVC" customModule="cycle" customModuleProvider="target">
             <connections>
                 <outlet property="firstCode" destination="lBR-eI-GBD" id="kwo-9Y-JZt"/>
                 <outlet property="fourthCode" destination="ePO-cb-LSP" id="0UE-z7-0vi"/>

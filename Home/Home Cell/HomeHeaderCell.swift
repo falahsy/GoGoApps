@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol homeCellDelegate: AnyObject {
+protocol homeCellDelegate: class {
     func toProfile()
     func toNewRoute()
     func toJoinEvent()
