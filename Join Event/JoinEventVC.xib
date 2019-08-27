@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinEventVC" customModule="cycle" customModuleProvider="target">
             <connections>
-                <outlet property="firstCode" destination="lBR-eI-GBD" id="kwo-9Y-JZt"/>
-                <outlet property="fourthCode" destination="ePO-cb-LSP" id="0UE-z7-0vi"/>
-                <outlet property="secondCode" destination="NpE-eg-v4r" id="S8X-Rr-nTA"/>
+                <outlet property="pin1TextField" destination="lBR-eI-GBD" id="tO0-gO-YEP"/>
+                <outlet property="pin2TextField" destination="NpE-eg-v4r" id="aKi-6x-HQe"/>
+                <outlet property="pin3TextField" destination="7Vx-HA-67B" id="kac-fv-uyM"/>
+                <outlet property="pin4TextField" destination="ePO-cb-LSP" id="gbg-96-9JO"/>
                 <outlet property="submitButton" destination="c69-8p-hVt" id="Ero-J2-RlQ"/>
-                <outlet property="thirdCode" destination="7Vx-HA-67B" id="AEp-ru-eBa"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ekZ-ag-deZ"/>
             </connections>
         </placeholder>
@@ -54,28 +54,28 @@
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NpE-eg-v4r">
                                     <rect key="frame" x="144.5" y="0.0" width="52.5" height="50"/>
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Vx-HA-67B">
                                     <rect key="frame" x="217" y="0.0" width="52.5" height="50"/>
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePO-cb-LSP">
                                     <rect key="frame" x="289.5" y="0.0" width="52" height="50"/>
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-85-Qb6">
                                     <rect key="frame" x="361.5" y="0.0" width="52.5" height="50"/>

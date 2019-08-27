@@ -28,6 +28,10 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        let activity = Activity()
+        activity.getAllActivity { results in
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

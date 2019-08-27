@@ -67,7 +67,7 @@ struct Activity{
             let date = value["date"] as? Int
             else {
                 return nil
-            }
+        }
         
         self.ref = snapshot.ref
         self.key = snapshot.key
@@ -120,6 +120,21 @@ struct Activity{
         }
     }
     
+    func getAllActivity(callback: @escaping ([Activity]) -> Void) {
+        Activity.dbRef.child("activities").observeSingleEvent(of: .value) { (snapshot) in
+            var activityList:[Activity] = []
+            for item in snapshot.children {
+                let activity = item as! DataSnapshot
+                
+                guard let activityCyclist = Activity(snapshot: activity) else {return}
+                activityList.append(activityCyclist)
+            }
+            
+            print(activityList)
+            callback(activityList)
+        }
+    }
+    
     func deleteData(callback: (String) -> Void) {
         
         if ref != nil{
@@ -147,7 +162,7 @@ struct Activity{
             }
             
             callback(activityList)
-           
+            
             
         })
         

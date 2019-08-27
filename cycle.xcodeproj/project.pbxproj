@@ -10,6 +10,15 @@
 		161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AA212230D30B4002EB295 /* OnBoardingVC.xib */; };
 		161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AA213230D30B4002EB295 /* OnBoardingVC.swift */; };
 		16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16699DA1230F885B00A90ABC /* CloudKit.framework */; };
+		3204F9A523156286000FDB77 /* DetailEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F99823156286000FDB77 /* DetailEventVC.xib */; };
+		3204F9A623156286000FDB77 /* DetailEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99923156286000FDB77 /* DetailEventVC.swift */; };
+		3204F9A723156286000FDB77 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99C23156286000FDB77 /* MapCell.swift */; };
+		3204F9A823156286000FDB77 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99D23156286000FDB77 /* DetailModel.swift */; };
+		3204F9A923156286000FDB77 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F99E23156286000FDB77 /* MapCell.xib */; };
+		3204F9AA23156286000FDB77 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F9A023156286000FDB77 /* TeamCell.xib */; };
+		3204F9AB23156286000FDB77 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F9A123156286000FDB77 /* TeamCell.swift */; };
+		3204F9AC23156286000FDB77 /* TeamProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F9A323156286000FDB77 /* TeamProfileCell.swift */; };
+		3204F9AD23156286000FDB77 /* TeamProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F9A423156286000FDB77 /* TeamProfileCell.xib */; };
 		322D3E94230CFC290051B9FB /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D3E93230CFC290051B9FB /* MapVC.xib */; };
 		322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E97230D0AC50051B9FB /* LoginVC.swift */; };
 		322D3E9A230D0AC50051B9FB /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D3E98230D0AC50051B9FB /* LoginVC.xib */; };
@@ -22,19 +31,9 @@
 		3297C561230FA49200548F26 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C560230FA49200548F26 /* Preference.swift */; };
 		3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */; };
 		3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C5A3231015FC00548F26 /* UIView+Extension.swift */; };
-		32BA7D602310EA9300253EB1 /* DetailEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BA7D5E2310EA9300253EB1 /* DetailEventVC.swift */; };
-		32BA7D612310EA9300253EB1 /* DetailEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32BA7D5F2310EA9300253EB1 /* DetailEventVC.xib */; };
 		32D240C923139B8800D4D69C /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C623139B8700D4D69C /* SearchActivityViewController.swift */; };
 		32D240CA23139B8800D4D69C /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C723139B8800D4D69C /* ShowRouteViewController.swift */; };
 		32D240CB23139B8800D4D69C /* SearchRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C823139B8800D4D69C /* SearchRouteViewController.swift */; };
-		32F22CAF2310EB2A003DA3C8 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CAD2310EB2A003DA3C8 /* MapCell.swift */; };
-		32F22CB02310EB2A003DA3C8 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CAE2310EB2A003DA3C8 /* MapCell.xib */; };
-		32F22CB52310ED4A003DA3C8 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CB32310ED4A003DA3C8 /* TeamCell.swift */; };
-		32F22CB62310ED4A003DA3C8 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CB42310ED4A003DA3C8 /* TeamCell.xib */; };
-		32F22CBA2310EE2A003DA3C8 /* TeamProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CB82310EE2A003DA3C8 /* TeamProfileCell.swift */; };
-		32F22CBB2310EE2A003DA3C8 /* TeamProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CB92310EE2A003DA3C8 /* TeamProfileCell.xib */; };
-		32F22CBF2310EFF3003DA3C8 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F22CBD2310EFF3003DA3C8 /* DetailCell.swift */; };
-		32F22CC02310EFF3003DA3C8 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F22CBE2310EFF3003DA3C8 /* DetailCell.xib */; };
 		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
@@ -138,6 +137,15 @@
 		16699DA0230F86E000A90ABC /* gogoApps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gogoApps.entitlements; sourceTree = "<group>"; };
 		16699DA1230F885B00A90ABC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1670D766230F627400443D86 /* gogoApps Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gogoApps Extension.entitlements"; sourceTree = "<group>"; };
+		3204F99823156286000FDB77 /* DetailEventVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailEventVC.xib; sourceTree = "<group>"; };
+		3204F99923156286000FDB77 /* DetailEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventVC.swift; sourceTree = "<group>"; };
+		3204F99C23156286000FDB77 /* MapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		3204F99D23156286000FDB77 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		3204F99E23156286000FDB77 /* MapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
+		3204F9A023156286000FDB77 /* TeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
+		3204F9A123156286000FDB77 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		3204F9A323156286000FDB77 /* TeamProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileCell.swift; sourceTree = "<group>"; };
+		3204F9A423156286000FDB77 /* TeamProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamProfileCell.xib; sourceTree = "<group>"; };
 		322D3E93230CFC290051B9FB /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
 		322D3E97230D0AC50051B9FB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		322D3E98230D0AC50051B9FB /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -150,19 +158,9 @@
 		3297C560230FA49200548F26 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3297C5A3231015FC00548F26 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		32BA7D5E2310EA9300253EB1 /* DetailEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventVC.swift; sourceTree = "<group>"; };
-		32BA7D5F2310EA9300253EB1 /* DetailEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailEventVC.xib; sourceTree = "<group>"; };
 		32D240C623139B8700D4D69C /* SearchActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchActivityViewController.swift; sourceTree = "<group>"; };
 		32D240C723139B8800D4D69C /* ShowRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
 		32D240C823139B8800D4D69C /* SearchRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRouteViewController.swift; sourceTree = "<group>"; };
-		32F22CAD2310EB2A003DA3C8 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
-		32F22CAE2310EB2A003DA3C8 /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
-		32F22CB32310ED4A003DA3C8 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
-		32F22CB42310ED4A003DA3C8 /* TeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
-		32F22CB82310EE2A003DA3C8 /* TeamProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileCell.swift; sourceTree = "<group>"; };
-		32F22CB92310EE2A003DA3C8 /* TeamProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamProfileCell.xib; sourceTree = "<group>"; };
-		32F22CBD2310EFF3003DA3C8 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
-		32F22CBE2310EFF3003DA3C8 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.release.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.release.xcconfig"; sourceTree = "<group>"; };
 		632687FF7D4AC005F2F89996 /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +268,54 @@
 			path = "On Boarding";
 			sourceTree = "<group>";
 		};
+		3204F99723156286000FDB77 /* Detail Event */ = {
+			isa = PBXGroup;
+			children = (
+				3204F99A23156286000FDB77 /* Cell */,
+				3204F99823156286000FDB77 /* DetailEventVC.xib */,
+				3204F99923156286000FDB77 /* DetailEventVC.swift */,
+			);
+			path = "Detail Event";
+			sourceTree = "<group>";
+		};
+		3204F99A23156286000FDB77 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3204F99B23156286000FDB77 /* Map */,
+				3204F99F23156286000FDB77 /* Team */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3204F99B23156286000FDB77 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3204F99E23156286000FDB77 /* MapCell.xib */,
+				3204F99C23156286000FDB77 /* MapCell.swift */,
+				3204F99D23156286000FDB77 /* DetailModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		3204F99F23156286000FDB77 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				3204F9A223156286000FDB77 /* Team Profile */,
+				3204F9A023156286000FDB77 /* TeamCell.xib */,
+				3204F9A123156286000FDB77 /* TeamCell.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		3204F9A223156286000FDB77 /* Team Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3204F9A323156286000FDB77 /* TeamProfileCell.swift */,
+				3204F9A423156286000FDB77 /* TeamProfileCell.xib */,
+			);
+			path = "Team Profile";
+			sourceTree = "<group>";
+		};
 		322D3E8F230CFAFA0051B9FB /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,16 +388,6 @@
 			path = "Profile User";
 			sourceTree = "<group>";
 		};
-		32BA7D5D2310EA8200253EB1 /* Detail Event */ = {
-			isa = PBXGroup;
-			children = (
-				32F22CAC2310EB1C003DA3C8 /* Cell */,
-				32BA7D5E2310EA9300253EB1 /* DetailEventVC.swift */,
-				32BA7D5F2310EA9300253EB1 /* DetailEventVC.xib */,
-			);
-			path = "Detail Event";
-			sourceTree = "<group>";
-		};
 		32D240C523139B2700D4D69C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,53 +396,6 @@
 				32D240C723139B8800D4D69C /* ShowRouteViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		32F22CAC2310EB1C003DA3C8 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				32F22CBC2310EFDD003DA3C8 /* Detail */,
-				32F22CB22310EB3D003DA3C8 /* Team */,
-				32F22CB12310EB32003DA3C8 /* Map */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		32F22CB12310EB32003DA3C8 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				32F22CAD2310EB2A003DA3C8 /* MapCell.swift */,
-				32F22CAE2310EB2A003DA3C8 /* MapCell.xib */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
-		32F22CB22310EB3D003DA3C8 /* Team */ = {
-			isa = PBXGroup;
-			children = (
-				32F22CB72310EE10003DA3C8 /* Team Profile */,
-				32F22CB32310ED4A003DA3C8 /* TeamCell.swift */,
-				32F22CB42310ED4A003DA3C8 /* TeamCell.xib */,
-			);
-			path = Team;
-			sourceTree = "<group>";
-		};
-		32F22CB72310EE10003DA3C8 /* Team Profile */ = {
-			isa = PBXGroup;
-			children = (
-				32F22CB82310EE2A003DA3C8 /* TeamProfileCell.swift */,
-				32F22CB92310EE2A003DA3C8 /* TeamProfileCell.xib */,
-			);
-			path = "Team Profile";
-			sourceTree = "<group>";
-		};
-		32F22CBC2310EFDD003DA3C8 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				32F22CBD2310EFF3003DA3C8 /* DetailCell.swift */,
-				32F22CBE2310EFF3003DA3C8 /* DetailCell.xib */,
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
@@ -483,13 +472,13 @@
 			path = "gogoApps Extension";
 			sourceTree = "<group>";
 		};
-		EF4E9D612310AC86007557E0 /* Joint Event */ = {
+		EF4E9D612310AC86007557E0 /* Join Event */ = {
 			isa = PBXGroup;
 			children = (
 				EF4E9D622310ACAD007557E0 /* JoinEventVC.xib */,
 				EF4E9D642310B0B4007557E0 /* JoinEventVC.swift */,
 			);
-			path = "Joint Event";
+			path = "Join Event";
 			sourceTree = "<group>";
 		};
 		EF63BD802310386000000FF8 /* Event Created */ = {
@@ -577,11 +566,11 @@
 			isa = PBXGroup;
 			children = (
 				32D240C523139B2700D4D69C /* Controller */,
-				32BA7D5D2310EA8200253EB1 /* Detail Event */,
 				32BA7D5C2310E81A00253EB1 /* Profile User */,
 				EFC627B3231173D3007C30CD /* Show route */,
+				3204F99723156286000FDB77 /* Detail Event */,
 				EFC627A02310E3D7007C30CD /* Tracking */,
-				EF4E9D612310AC86007557E0 /* Joint Event */,
+				EF4E9D612310AC86007557E0 /* Join Event */,
 				EF63BD802310386000000FF8 /* Event Created */,
 				EFCA7178230FDE3200F52EEC /* Search Route Destination */,
 				EFE1F197230ECB57005C6807 /* Route */,
@@ -775,13 +764,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3204F9A523156286000FDB77 /* DetailEventVC.xib in Resources */,
 				EFC627B023110627007C30CD /* CyclistCollectionCell.xib in Resources */,
+				3204F9AD23156286000FDB77 /* TeamProfileCell.xib in Resources */,
 				322D3E9A230D0AC50051B9FB /* LoginVC.xib in Resources */,
-				32F22CBB2310EE2A003DA3C8 /* TeamProfileCell.xib in Resources */,
 				327E4FD2230D131200FEBB9D /* SearchActivityVC.xib in Resources */,
-				32F22CB02310EB2A003DA3C8 /* MapCell.xib in Resources */,
-				32F22CB62310ED4A003DA3C8 /* TeamCell.xib in Resources */,
-				32F22CC02310EFF3003DA3C8 /* DetailCell.xib in Resources */,
 				327E4FCE230D130700FEBB9D /* SearchRouteVC.xib in Resources */,
 				EFEE5DDF2301575C0027F401 /* LaunchScreen.storyboard in Resources */,
 				BE0D22AB230D351300A35295 /* HomeHeaderCell.xib in Resources */,
@@ -789,8 +776,8 @@
 				EFEE5DDC2301575C0027F401 /* Assets.xcassets in Resources */,
 				322D3E94230CFC290051B9FB /* MapVC.xib in Resources */,
 				BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */,
-				32BA7D612310EA9300253EB1 /* DetailEventVC.xib in Resources */,
 				161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */,
+				3204F9AA23156286000FDB77 /* TeamCell.xib in Resources */,
 				BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */,
 				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
@@ -803,6 +790,7 @@
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
 				EF4E9D632310ACAD007557E0 /* JoinEventVC.xib in Resources */,
 				EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */,
+				3204F9A923156286000FDB77 /* MapCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,15 +915,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */,
-				32F22CBF2310EFF3003DA3C8 /* DetailCell.swift in Sources */,
-				32F22CAF2310EB2A003DA3C8 /* MapCell.swift in Sources */,
+				3204F9A623156286000FDB77 /* DetailEventVC.swift in Sources */,
 				327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */,
 				EFF5FE322303FA9500F42319 /* User.swift in Sources */,
 				3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */,
 				BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */,
 				EF4E9D652310B0B4007557E0 /* JoinEventVC.swift in Sources */,
 				161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */,
-				32F22CBA2310EE2A003DA3C8 /* TeamProfileCell.swift in Sources */,
 				EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */,
 				EFE1F19B230ECBB4005C6807 /* RouteVC.swift in Sources */,
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
@@ -944,10 +930,10 @@
 				EFE11BF52304423600782142 /* Login.swift in Sources */,
 				EFCA717C230FDE7A00F52EEC /* SearchRouteDestinationVC.swift in Sources */,
 				EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */,
+				3204F9A723156286000FDB77 /* MapCell.swift in Sources */,
 				EFC627AF23110627007C30CD /* CyclistCollectionCell.swift in Sources */,
 				EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */,
 				3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */,
-				32BA7D602310EA9300253EB1 /* DetailEventVC.swift in Sources */,
 				EF82A13B23039EEC001939B7 /* Activity.swift in Sources */,
 				322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */,
 				EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */,
@@ -955,11 +941,13 @@
 				32D240CB23139B8800D4D69C /* SearchRouteViewController.swift in Sources */,
 				EFC627B723117462007C30CD /* ShowRouteVC.swift in Sources */,
 				BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */,
+				3204F9A823156286000FDB77 /* DetailModel.swift in Sources */,
 				EFC2216E2308E5970083D8B5 /* CyclistView.swift in Sources */,
-				32F22CB52310ED4A003DA3C8 /* TeamCell.swift in Sources */,
 				EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */,
+				3204F9AC23156286000FDB77 /* TeamProfileCell.swift in Sources */,
 				EFC627A82310EE0A007C30CD /* TrackingVC.swift in Sources */,
 				EF90A8EB230E8CE0003BB556 /* CreateEventVC.swift in Sources */,
+				3204F9AB23156286000FDB77 /* TeamCell.swift in Sources */,
 				BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */,
 				BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */,
 				3297C561230FA49200548F26 /* Preference.swift in Sources */,
