@@ -103,8 +103,8 @@ class RouteVC: UIViewController {
         startingPoint.delegate = self
         destinationPoint.delegate = self
         
-        let defaults = UserDefaults.standard
-        userID = defaults.string(forKey: "email")
+        
+        userID = Preference.getString(forKey: .kUserEmail) ?? ""
         mapView.delegate = self
        
         //set tap location in map view

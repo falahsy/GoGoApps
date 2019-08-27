@@ -85,13 +85,14 @@ class LoginVC: UIViewController {
         self.view.backgroundColor = GoGoColor.MAIN
         
 //        self.navigationController?.navigationBar.barTintColor = GoGoColor.MAIN
-        let defaults = UserDefaults.standard
-        let userID = defaults.string(forKey: "email")
+        
+        let userID = Preference.getString(forKey: .kUserEmail) ?? ""
         self.textBoxUserID.text = userID
         
         logRegBtn.addTarget(self, action: #selector(loginRegister), for: .touchUpInside)
         loginBtn.addTarget(self, action: #selector(loginViewDisplay), for: .touchUpInside)
         signUpBtn.addTarget(self, action: #selector(registerViewDisplay), for: .touchUpInside)
+        registerHideKeyboard()
     }
     func loginFirstViewDisplay(){
         print(isLogin!)
