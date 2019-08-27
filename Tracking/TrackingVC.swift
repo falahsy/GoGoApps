@@ -71,6 +71,7 @@ class TrackingVC: UIViewController{
     var friendsDistance:[String:Double] = [:]
     var groups:[[String:Double]] = []
     var cyclistOrder:[CyclistInfo] = []
+    var backgroundCounter = 0
     
     @IBAction func go(_ sender: UIButton) {
         if self.timerForBackground != nil{
@@ -97,6 +98,7 @@ class TrackingVC: UIViewController{
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        locationManager.allowsBackgroundLocationUpdates = true
         //show user location
         mapView.showsUserLocation = true
         self.mapView.delegate = self
@@ -200,6 +202,16 @@ extension TrackingVC: CLLocationManagerDelegate {
             
             self.initialLocation = location.coordinate
             
+            if UIApplication.shared.applicationState == .active {
+                print("App in foreground location is \(location.coordinate)")
+            } else {
+                print("App is backgrounded. New location is %@", location.coordinate)
+                self.backgroundCounter = self.backgroundCounter + 1
+                if self.backgroundCounter % 10 == 0 {
+                    appIsInBackground()
+                }
+            }
+            
         }
     }
     
@@ -296,8 +308,8 @@ extension TrackingVC {
     func backgroundOperation(){
         
         //background operation
-        self.timerForBackground = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { (time) in
-            
+        self.timerForBackground = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { (time) in
+            print("Background")
             let kegiatan = Activity()
             
             self.checkSOSMessage(activity:kegiatan)
@@ -511,13 +523,18 @@ extension TrackingVC {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func checkSOSMessage(activity: Activity){
+    func checkSOSMessage(activity: Activity, background: Bool = false){
         activity.searchActivity(activityID: self.activityID ?? "") { (activities) in
             
             for activity in activities{
                 if  activity.messageID != self.messageID && self.userID != activity.userID  { //
                     //new sos message
-                    self.showSOSMessage(activity: activity)
+                    if background {
+                        print("SEND SOS MESSAGE TO WATCH")
+                    }else{
+                        self.showSOSMessage(activity: activity)
+                    }
+                    
                     
                 }
             }
@@ -581,6 +598,136 @@ extension TrackingVC {
             print("called")
             
         }
+        
+        
+    }
+
+    func appIsInBackground(){
+        
+        let kegiatan = Activity()
+        
+        self.checkSOSMessage(activity: kegiatan,background: true)
+        
+        //MARK:- Real Time Location
+        //send real time location
+        let user = User()
+        
+        self.sendRealtimeLocation(user: user)
+        //MARK:- Get Friends Location
+        self.sortedFriendsByDistance = []
+        
+        user.searchActivity(activity: self.activityID ?? "", callback: { (users) in
+            
+            self.friends = []
+            for cyclist in users{
+                
+                if cyclist.userID != self.userID{
+                    self.friends.append(Cyclist(user: cyclist)!)
+                }
+                
+            }
+            
+            //MARK:- Detect distance between check point in route
+            var point = 0
+            for (index, element) in self.routesPoints.enumerated() {
+                
+                guard let distance = element.location?.distance(from: CLLocation(latitude: self.initialLocation.latitude, longitude: self.initialLocation.longitude)) else {
+                    return
+                }
+                
+                if distance < 50 {
+                    point = index
+                }
+            }
+            
+            var you:User!
+            
+            user.searchUser(userID: self.userID!) { (users) in
+                users.first?.ref?.updateChildValues(["point": point])
+                you = users.first!
+                you.fullName = "You"
+                self.sortedFriendsByDistance.append(you)
+                //just in case there are no more friends afterwards
+                print("SEND DATA OF FRIENDS TO WATCH")
+                
+            }
+            
+            //MARK:- calculating distance to destination
+            let checkPointPassed = self.routesPoints[point...]
+            //nedd to do this because the array slice cannot automatically converted
+            let checkDistance = Array(checkPointPassed)
+            
+            self.drawRoutes(routes: checkDistance, draw: false)
+            
+            //MARK:- calculating friends distance to destination
+            for friend in  self.friends{
+                user.searchUser(userID: friend.userID, callback: { (users) in
+                    self.friendsDistance[users.first!.userID] = users.first!.distance
+                })
+            }
+            
+            
+            //MARK:- Grouping all cyclists
+            self.groups = []
+            while self.friendsDistance.count > 0 {
+                
+                let sortedByValueDictionary = self.friendsDistance.sorted { $0.1 < $1.1 }
+                guard let initialDistance = sortedByValueDictionary.first?.value else { return }
+                
+                let filteredDict = self.friendsDistance.filter{
+                    Int(($0.value - initialDistance)) < (50 )
+                }
+                
+                if filteredDict.count > 0{
+                    
+                    self.groups.append(filteredDict)
+                    
+                    for cyclist in filteredDict{
+                        self.friendsDistance.removeValue(forKey: cyclist.key)
+                    }
+                    
+                }
+                
+                
+            }
+            
+            self.friends = []
+            
+            for frontCyclist in self.groups{
+                
+                let sortedCyclistInGroup = frontCyclist.sorted { $0.1 < $1.1 }
+                
+                user.searchUser(userID: sortedCyclistInGroup.first!.key, callback: { (users) in
+                    
+                    var info = ""
+                    var detail = ""
+                    var user = users.first!
+                    
+                    if frontCyclist.count > 1 {
+                        info = "consists of \(frontCyclist.count ) friends"
+                        detail = "\(users.first!.fullName) is in group"
+                        user.fullName = info
+                        
+                    }else{
+                        info = users.first?.fullName ?? ""
+                        detail = users.first?.userID ?? ""
+                    }
+                    
+                    self.sortedFriendsByDistance.append(user)
+                    
+                    self.sortedFriendsByDistance = self.sortedFriendsByDistance.sorted(by: { (user1:User, user2:User) -> Bool in
+                        return user1.distance < user2.distance
+                    })
+                    
+                    print("SEND DATA TO WATCH")
+                })
+            }
+            
+            print("SEND DATA TO WATCH")
+            
+            
+        })
+        
         
         
     }

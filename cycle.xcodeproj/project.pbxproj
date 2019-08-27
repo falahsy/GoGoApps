@@ -558,6 +558,9 @@
 					EFEE5DD02301575B0027F401 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
