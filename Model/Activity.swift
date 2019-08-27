@@ -30,6 +30,11 @@ struct Activity{
         self.message = ""
         self.userID = ""
         // convert Date to TimeInterval (typealias for Double)
+        
+//        self.users.contains { (user) -> Bool in
+//            return user.userID.elementsEqual("a@ok.com")
+//        }
+        
         let timeInterval = date.timeIntervalSince1970
         
         // convert to Integer

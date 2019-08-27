@@ -47,8 +47,6 @@ class JoinEventVC: UIViewController{
                 
             }
         }
-        
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +58,7 @@ class JoinEventVC: UIViewController{
         self.thirdCode.keyboardType = .numberPad
         self.fourthCode.delegate = self
         self.fourthCode.keyboardType = .numberPad
-        
     }
-    
 }
 
 extension JoinEventVC: UITextFieldDelegate{

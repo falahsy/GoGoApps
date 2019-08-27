@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CloudKit
 
 class LoginVC: UIViewController {
     
@@ -84,6 +85,9 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = GoGoColor.MAIN
         
+        //to dismiss keyboard
+        setupKeyboardDismissRecognizer()
+        
 //        self.navigationController?.navigationBar.barTintColor = GoGoColor.MAIN
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "email")
@@ -92,6 +96,17 @@ class LoginVC: UIViewController {
         logRegBtn.addTarget(self, action: #selector(loginRegister), for: .touchUpInside)
         loginBtn.addTarget(self, action: #selector(loginViewDisplay), for: .touchUpInside)
         signUpBtn.addTarget(self, action: #selector(registerViewDisplay), for: .touchUpInside)
+    }
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    override func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
     func loginFirstViewDisplay(){
         print(isLogin!)
@@ -186,19 +201,36 @@ class LoginVC: UIViewController {
 
     @objc func loginRegister() {
         if isLogin!{
-            Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
-                
-                if result{
-                    Preference.set(value: self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
-                    Preference.set(value: true, forKey: .kUserLogin)
-                    let homeVC = HomeVC()
-                    self.navigationController?.pushViewController(homeVC, animated: true)
-                }else{
-                    let alert = UIAlertController(title: "Login",message: info,preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(alert, animated: true, completion: nil)
+//            Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
+//
+//                if result{
+//                    Preference.set(value: self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
+//                    Preference.set(value: true, forKey: .kUserLogin)
+//                    let homeVC = HomeVC()
+//                    self.navigationController?.pushViewController(homeVC, animated: true)
+//                }else{
+//                    let alert = UIAlertController(title: "Login",message: info,preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+//                    self.present(alert, animated: true, completion: nil)
+//                }
+//            }
+            let record = CKRecord(recordType: "gogoNotification")
+            let myContainer = CKContainer.default()
+            
+            record["eventID"] = 0
+            record["userID"] = 13
+            record["userName"] = textBoxUserID.text as! NSString
+            record["contentNotification"] = textBoxPassword.text as! NSString
+            
+            let publicDatabase = myContainer.publicCloudDatabase
+            
+            publicDatabase.save(record, completionHandler: { recordX, error in
+                if let error = error {
+                    print("Error \(error.localizedDescription)")
+                    return
                 }
-            }
+            })
+            
         } else {
             Login.createAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,status) in
                 
@@ -214,7 +246,5 @@ class LoginVC: UIViewController {
                 }
             }
         }
-        
     }
-    
 }
