@@ -80,8 +80,7 @@ class RouteVC: UIViewController {
         let activity = Activity(id: self.activityID!.trimmingCharacters(in: .whitespacesAndNewlines), routes: routesShared,date:self.eventDate)
         
         activity.insertData { (info) in
-            let defaults = UserDefaults.standard
-            defaults.set(self.activityID, forKey: "activity")
+            Preference.set(value: self.activityID, forKey: .kUserActivity)
             
             let eventCreatedVC = EventCreatedVC()
             self.navigationController?.pushViewController(eventCreatedVC, animated: true)
@@ -101,51 +100,39 @@ class RouteVC: UIViewController {
         //show user location
         mapView.showsUserLocation = true
         //set delegate for routetextfiled
-        self.startingPoint.delegate = self
-        self.destinationPoint.delegate = self
+        startingPoint.delegate = self
+        destinationPoint.delegate = self
         
-        let defaults = UserDefaults.standard
-        self.userID = defaults.string(forKey: "email")
         
-        self.mapView.delegate = self
+        userID = Preference.getString(forKey: .kUserEmail) ?? ""
+        mapView.delegate = self
        
         //set tap location in map view
         let selectLocationTap = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(gestureReconizer:)))
         selectLocationTap.minimumPressDuration = 1.5
         selectLocationTap.delaysTouchesBegan = true
         selectLocationTap.delegate = self
-        self.mapView.addGestureRecognizer(selectLocationTap)
+        mapView.addGestureRecognizer(selectLocationTap)
         
-        self.eventDate = Date()
+        eventDate = Date()
         let dateTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dateTap(_:)))
-        self.dateLabel.addGestureRecognizer(dateTapGesture)
+        dateLabel.addGestureRecognizer(dateTapGesture)
         
-        self.timeFromDestination = 0
+        timeFromDestination = 0
         prepareDatePicker()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       
         guard let initialLocation = self.initialLocation else {return}
             let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            
             let region = MKCoordinateRegion(center: initialLocation, span: span)
             mapView.setRegion(region, animated: true)
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        
-        self.navigationController?.navigationBar.isHidden = false
-        
-        
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = false
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-        
-    }
-    
-    
     
 }
 

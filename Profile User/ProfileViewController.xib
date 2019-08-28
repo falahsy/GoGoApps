@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="cycle" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="tES-6j-aS8" id="IEC-CZ-bL4"/>
+                <outlet property="view" destination="XB1-Fa-9Jn" id="xCg-Js-mq3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XB1-Fa-9Jn">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cl-BY-WFN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="275"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Statue" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-Q1-gnp">
+                            <rect key="frame" x="132" y="52" width="150" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gabriella Catharina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-dE-Qe0">
+                            <rect key="frame" x="134" y="230" width="146" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="275" id="Uqh-0a-vQk"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-Fy-WJC">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="BUu-Mu-LkC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Log out">
+                        <color key="titleColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onLogoutTapped:" destination="-1" eventType="touchUpInside" id="KYb-1T-qdA"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tES-6j-aS8">
+                    <rect key="frame" x="0.0" y="319" width="414" height="493"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="332-dd-YTe" firstAttribute="trailing" secondItem="dqG-Fy-WJC" secondAttribute="trailing" id="2nR-v0-4Kd"/>
+                <constraint firstItem="dqG-Fy-WJC" firstAttribute="leading" secondItem="332-dd-YTe" secondAttribute="leading" id="3J4-5O-bTL"/>
+                <constraint firstItem="1cl-BY-WFN" firstAttribute="top" secondItem="332-dd-YTe" secondAttribute="top" id="8dV-pe-3z3"/>
+                <constraint firstItem="1cl-BY-WFN" firstAttribute="trailing" secondItem="332-dd-YTe" secondAttribute="trailing" id="JEu-xa-eFE"/>
+                <constraint firstItem="332-dd-YTe" firstAttribute="bottom" secondItem="dqG-Fy-WJC" secondAttribute="bottom" id="W1H-Wp-blD"/>
+                <constraint firstItem="tES-6j-aS8" firstAttribute="top" secondItem="1cl-BY-WFN" secondAttribute="bottom" id="YrB-z9-wi3"/>
+                <constraint firstItem="dqG-Fy-WJC" firstAttribute="top" secondItem="tES-6j-aS8" secondAttribute="bottom" id="fQh-2m-g65"/>
+                <constraint firstItem="1cl-BY-WFN" firstAttribute="leading" secondItem="332-dd-YTe" secondAttribute="leading" id="pSZ-mq-jK5"/>
+                <constraint firstItem="tES-6j-aS8" firstAttribute="leading" secondItem="332-dd-YTe" secondAttribute="leading" id="w0M-YQ-KsX"/>
+                <constraint firstItem="332-dd-YTe" firstAttribute="trailing" secondItem="tES-6j-aS8" secondAttribute="trailing" id="zNP-st-aqv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="332-dd-YTe"/>
+            <point key="canvasLocation" x="47.826086956521742" y="97.767857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Statue" width="48" height="48"/>
+    </resources>
+</document>

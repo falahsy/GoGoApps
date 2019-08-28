@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-protocol SearchRouteDelegate: AnyObject {
+protocol SearchRouteDelegate: class {
     func dropPinZoomIn(placemark: MKPlacemark)
     func cancelRoutes()
 }

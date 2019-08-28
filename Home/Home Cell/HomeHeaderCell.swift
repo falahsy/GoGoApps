@@ -8,23 +8,35 @@
 
 import UIKit
 
+protocol homeCellDelegate: class {
+    func toProfile()
+    func toNewRoute()
+    func toJoinEvent()
+}
 class HomeHeaderCell: UITableViewCell {
     
-    @IBOutlet weak var createView: UIView!{
-        didSet{
-            createView.layer.cornerRadius = 7
-            createView.clipsToBounds = true
-        }
-    }
-    @IBOutlet weak var joinView: UIView!{
-        didSet{
-            joinView.layer.cornerRadius = 5
-            joinView.clipsToBounds = true
-        }
-    }
+    weak var delegate: homeCellDelegate?
+    @IBOutlet weak var joinBtn: UIButton!
+    @IBOutlet weak var createBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor(hex: "#F9F9F9")
+        profileBtn.addTarget(self, action: #selector(toProfile), for: .touchUpInside)
+    }
+    @IBOutlet weak var profileBtn: UIButton!{
+        didSet{
+            profileBtn.layer.cornerRadius = profileBtn.frame.size.width/2
+            profileBtn.clipsToBounds = true
+        }
+    }
+    @objc func toProfile(){
+        self.delegate?.toProfile()
+    }
+    @IBAction func toCreateNew(_ sender: UIButton) {
+        delegate?.toNewRoute()
+    }
+    @IBAction func onJoinTapped(_ sender: UIButton) {
+        delegate?.toJoinEvent()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

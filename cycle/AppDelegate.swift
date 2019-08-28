@@ -8,11 +8,15 @@
 
 import UIKit
 import Firebase
+import UserNotifications
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var eventID: Int = 0
     
     var navigationController: UINavigationController?
     
@@ -21,18 +25,99 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         setupRoot()
 
+        UNUserNotificationCenter.current().delegate = self
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {authorized,error in
+            if authorized {
+                DispatchQueue.main.async(execute: {
+                    application.registerForRemoteNotifications()
+                })
+            }
+        })
+        
         return true
+    }
+    
+    //setUp subscription ke cloudkit
+    // Note: Ini belum ke sambung sm cloudKit yg di apps ini karena belum di set profile nya
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        //akan melakukan unsubscribe ke semua event sebelum masuk ke event baru saat akan gowes
+        unsubscribeNotification()
+        
+//        let vc = ViewController()
+//        self.eventID = vc.eventIDummy
+        
+        // bakal ngefilter iventID yang sesuai
+        let subscription = CKQuerySubscription(recordType: "gogoNotification", predicate: NSPredicate(format: "eventID == \(self.eventID)"), options: .firesOnRecordCreation)
+        
+        let info = CKSubscription.NotificationInfo()
+        
+        info.titleLocalizationKey = "%1$@"
+        info.titleLocalizationArgs = ["userName"]
+        
+        info.alertLocalizationKey = "%1$@"
+        info.alertLocalizationArgs = ["contentNotification"]
+        
+        info.shouldBadge = true
+        info.soundName = "default"
+        
+        subscription.notificationInfo = info
+        
+        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
+            
+            if error == nil {
+                print("Success")
+            } else {
+                print("Error Occured \(error?.localizedDescription)")
+            }
+        })
+    }
+    
+    //unsubscribe ke cloudkit
+    func unsubscribeNotification(){
+        CKContainer.default().publicCloudDatabase.fetchAllSubscriptions(completionHandler: { subscriptions, error in
+            if error != nil {
+                // failed to fetch all subscriptions, handle error here
+                // end the function early
+                return
+            }
+            
+            if let subscriptions = subscriptions {
+                for subscription in subscriptions {
+                    CKContainer.default().publicCloudDatabase.delete(withSubscriptionID: subscription.subscriptionID, completionHandler: { string, error in
+                        if(error != nil){
+                            // deletion of subscription failed, handle error here
+                        }
+                    })
+                }
+            }
+        })
     }
     
     private func setupRoot() {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if let window = window {
-            let mainVC = OnBoardingVC()
-            navigationController = UINavigationController(rootViewController: mainVC)
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
+            if Preference.hasSkippedIntro() && Preference.hasLoggedIn() {
+                let homeVC = HomeVC()
+                setRoot(window, homeVC)
+            } else if Preference.hasSkippedIntro() {
+                let loginVC = LoginVC()
+                loginVC.isLogin = true
+                setRoot(window, loginVC)
+            } else {
+                let onBoardingVC = OnBoardingVC()
+                setRoot(window, onBoardingVC)
+            }
+            
         }
+    }
+    
+    private func setRoot<T: UIViewController>(_ window: UIWindow, _ vc: T) {
+        navigationController = UINavigationController(rootViewController: vc)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -61,7 +146,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         print("applicationWillTerminate")
     }
-
-
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+}
+
+extension AppDelegate {
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+}

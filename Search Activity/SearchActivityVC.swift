@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-protocol SearchActivityDelegate: AnyObject {
+protocol SearchActivityDelegate: class {
     func dropActivity(activity: Activity)
     func cancelActivity()
 }

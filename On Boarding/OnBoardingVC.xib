@@ -34,7 +34,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="681.5"/>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KND-wf-GGO">
-                    <rect key="frame" x="104" y="805" width="206" height="39"/>
+                    <rect key="frame" x="120.5" y="805" width="173" height="39"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="39" id="nbE-dg-Eo7"/>
                     </constraints>
@@ -72,11 +72,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KND-wf-GGO" secondAttribute="trailing" constant="104" id="4nk-Ch-jGI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KND-wf-GGO" secondAttribute="bottom" constant="18" id="6nT-Id-o5x"/>
+                <constraint firstItem="KND-wf-GGO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Gpw-Y9-gw1"/>
                 <constraint firstItem="Gmh-lh-t8i" firstAttribute="top" secondItem="aEH-hU-61v" secondAttribute="bottom" constant="16.5" id="IGH-Bu-75h"/>
                 <constraint firstItem="aEH-hU-61v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IbZ-vK-GxX"/>
-                <constraint firstItem="KND-wf-GGO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="104" id="N3H-xd-HOU"/>
                 <constraint firstItem="KND-wf-GGO" firstAttribute="top" secondItem="D0z-Bp-ZIR" secondAttribute="bottom" constant="6" id="SsY-cN-CKg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D0z-Bp-ZIR" secondAttribute="trailing" constant="27" id="Vri-J0-Vda"/>
                 <constraint firstItem="D0z-Bp-ZIR" firstAttribute="top" secondItem="Gmh-lh-t8i" secondAttribute="bottom" constant="19" id="Wfc-WD-YU0"/>

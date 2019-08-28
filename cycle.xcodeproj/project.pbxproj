@@ -9,8 +9,17 @@
 /* Begin PBXBuildFile section */
 		161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AA212230D30B4002EB295 /* OnBoardingVC.xib */; };
 		161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AA213230D30B4002EB295 /* OnBoardingVC.swift */; };
+		16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16699DA1230F885B00A90ABC /* CloudKit.framework */; };
+		3204F9A523156286000FDB77 /* DetailEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F99823156286000FDB77 /* DetailEventVC.xib */; };
+		3204F9A623156286000FDB77 /* DetailEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99923156286000FDB77 /* DetailEventVC.swift */; };
+		3204F9A723156286000FDB77 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99C23156286000FDB77 /* MapCell.swift */; };
+		3204F9A823156286000FDB77 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99D23156286000FDB77 /* DetailModel.swift */; };
+		3204F9A923156286000FDB77 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F99E23156286000FDB77 /* MapCell.xib */; };
+		3204F9AA23156286000FDB77 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F9A023156286000FDB77 /* TeamCell.xib */; };
+		3204F9AB23156286000FDB77 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F9A123156286000FDB77 /* TeamCell.swift */; };
+		3204F9AC23156286000FDB77 /* TeamProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F9A323156286000FDB77 /* TeamProfileCell.swift */; };
+		3204F9AD23156286000FDB77 /* TeamProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F9A423156286000FDB77 /* TeamProfileCell.xib */; };
 		322D3E94230CFC290051B9FB /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D3E93230CFC290051B9FB /* MapVC.xib */; };
-		322D3E96230D05980051B9FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E95230D05980051B9FB /* MapViewController.swift */; };
 		322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D3E97230D0AC50051B9FB /* LoginVC.swift */; };
 		322D3E9A230D0AC50051B9FB /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D3E98230D0AC50051B9FB /* LoginVC.xib */; };
 		327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E4FCB230D130700FEBB9D /* SearchRouteVC.swift */; };
@@ -19,7 +28,13 @@
 		327E4FD2230D131200FEBB9D /* SearchActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E4FD0230D131200FEBB9D /* SearchActivityVC.xib */; };
 		327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E4FD3230D1B8D00FEBB9D /* FriendsCell.swift */; };
 		327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */; };
-		8A6AA7ABD33538A8EC47165E /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */; };
+		3297C561230FA49200548F26 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C560230FA49200548F26 /* Preference.swift */; };
+		3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */; };
+		3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297C5A3231015FC00548F26 /* UIView+Extension.swift */; };
+		32D240C923139B8800D4D69C /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C623139B8700D4D69C /* SearchActivityViewController.swift */; };
+		32D240CA23139B8800D4D69C /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C723139B8800D4D69C /* ShowRouteViewController.swift */; };
+		32D240CB23139B8800D4D69C /* SearchRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C823139B8800D4D69C /* SearchRouteViewController.swift */; };
+		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
 		BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A8230D351300A35295 /* HomeHeaderCell.swift */; };
@@ -27,6 +42,13 @@
 		BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22AC230D353E00A35295 /* HomeCell.swift */; };
 		BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22AD230D353E00A35295 /* HomeCell.xib */; };
 		BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22B0230D378500A35295 /* GoGoColor.swift */; };
+		BE51C93C230F9D2400A32805 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51C93A230F9D2400A32805 /* ProfileViewController.swift */; };
+		BE51C93D230F9D2400A32805 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE51C93B230F9D2400A32805 /* ProfileViewController.xib */; };
+		BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576A9230E32B700ADA11B /* HomeDateCell.swift */; };
+		BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AA230E32B700ADA11B /* HomeDateCell.xib */; };
+		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
+		BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */; };
+		CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
 		EF2B16F5230BB13100EBF33B /* gogoApps Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF2B16F4230BB13100EBF33B /* gogoApps Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -35,14 +57,13 @@
 		EF2B16FE230BB13100EBF33B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B16FD230BB13100EBF33B /* NotificationController.swift */; };
 		EF2B1700230BB13200EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16FF230BB13200EBF33B /* Assets.xcassets */; };
 		EF2B1705230BB13200EBF33B /* gogoApps.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF2B16E8230BB13000EBF33B /* gogoApps.app */; };
-		EF4E9D632310ACAD007557E0 /* JointEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4E9D622310ACAD007557E0 /* JointEventVC.xib */; };
-		EF4E9D652310B0B4007557E0 /* JointEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4E9D642310B0B4007557E0 /* JointEventVC.swift */; };
+		EF4E9D632310ACAD007557E0 /* JoinEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4E9D622310ACAD007557E0 /* JoinEventVC.xib */; };
+		EF4E9D652310B0B4007557E0 /* JoinEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4E9D642310B0B4007557E0 /* JoinEventVC.swift */; };
 		EF63BD822310387E00000FF8 /* EventCreatedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF63BD812310387E00000FF8 /* EventCreatedVC.xib */; };
 		EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */; };
 		EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6864BE230664B300B039FA /* Pretiffy.swift */; };
 		EF82A13B23039EEC001939B7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82A13A23039EEC001939B7 /* Activity.swift */; };
 		EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76C2305465B0082CDB8 /* MapVC.swift */; };
-		EF83F76F2305525F0082CDB8 /* SearchRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76E2305525F0082CDB8 /* SearchRouteViewController.swift */; };
 		EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */; };
 		EF90A8EB230E8CE0003BB556 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */; };
 		EFC2216E2308E5970083D8B5 /* CyclistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC2216D2308E5970083D8B5 /* CyclistView.swift */; };
@@ -56,19 +77,16 @@
 		EFCA717A230FDE5800F52EEC /* SearchRouteDestinationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCA7179230FDE5800F52EEC /* SearchRouteDestinationVC.xib */; };
 		EFCA717C230FDE7A00F52EEC /* SearchRouteDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCA717B230FDE7A00F52EEC /* SearchRouteDestinationVC.swift */; };
 		EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */; };
-		EFCF441C2307C9DA00633371 /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF441B2307C9DA00633371 /* ShowRouteViewController.swift */; };
 		EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF441D2307D7AE00633371 /* RandomHelper.swift */; };
-		EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0535423059F1C007DC359 /* SearchActivityViewController.swift */; };
 		EFE11BF52304423600782142 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE11BF42304423600782142 /* Login.swift */; };
 		EFE1F19B230ECBB4005C6807 /* RouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1F19A230ECBB4005C6807 /* RouteVC.swift */; };
 		EFE1F19D230ECF1E005C6807 /* RouteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE1F19C230ECF1E005C6807 /* RouteVC.xib */; };
 		EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE5DD42301575B0027F401 /* AppDelegate.swift */; };
-		EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE5DD62301575B0027F401 /* ViewController.swift */; };
-		EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEE5DD82301575B0027F401 /* Main.storyboard */; };
 		EFEE5DDC2301575C0027F401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEE5DDB2301575C0027F401 /* Assets.xcassets */; };
 		EFEE5DDF2301575C0027F401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEE5DDD2301575C0027F401 /* LaunchScreen.storyboard */; };
 		EFF1265223068EAD0059A4BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFF1265123068EAD0059A4BE /* GoogleService-Info.plist */; };
 		EFF5FE322303FA9500F42319 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5FE312303FA9500F42319 /* User.swift */; };
+		FD5F72AB28132E9D7B2F1259 /* Pods_gogoApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,9 +134,19 @@
 /* Begin PBXFileReference section */
 		161AA212230D30B4002EB295 /* OnBoardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingVC.xib; sourceTree = "<group>"; };
 		161AA213230D30B4002EB295 /* OnBoardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
-		2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16699DA0230F86E000A90ABC /* gogoApps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gogoApps.entitlements; sourceTree = "<group>"; };
+		16699DA1230F885B00A90ABC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1670D766230F627400443D86 /* gogoApps Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gogoApps Extension.entitlements"; sourceTree = "<group>"; };
+		3204F99823156286000FDB77 /* DetailEventVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailEventVC.xib; sourceTree = "<group>"; };
+		3204F99923156286000FDB77 /* DetailEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventVC.swift; sourceTree = "<group>"; };
+		3204F99C23156286000FDB77 /* MapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		3204F99D23156286000FDB77 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		3204F99E23156286000FDB77 /* MapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
+		3204F9A023156286000FDB77 /* TeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
+		3204F9A123156286000FDB77 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		3204F9A323156286000FDB77 /* TeamProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileCell.swift; sourceTree = "<group>"; };
+		3204F9A423156286000FDB77 /* TeamProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamProfileCell.xib; sourceTree = "<group>"; };
 		322D3E93230CFC290051B9FB /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
-		322D3E95230D05980051B9FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		322D3E97230D0AC50051B9FB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		322D3E98230D0AC50051B9FB /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		327E4FCB230D130700FEBB9D /* SearchRouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteVC.swift; sourceTree = "<group>"; };
@@ -127,8 +155,20 @@
 		327E4FD0230D131200FEBB9D /* SearchActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchActivityVC.xib; sourceTree = "<group>"; };
 		327E4FD3230D1B8D00FEBB9D /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		327E4FD4230D1B8D00FEBB9D /* FriendsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
-		64D32B79D8172905F0E2D7C7 /* Pods-cycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.debug.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.debug.xcconfig"; sourceTree = "<group>"; };
-		704073F0987A14519897C3E8 /* Pods-cycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.release.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.release.xcconfig"; sourceTree = "<group>"; };
+		3297C560230FA49200548F26 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3297C5A3231015FC00548F26 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		32D240C623139B8700D4D69C /* SearchActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchActivityViewController.swift; sourceTree = "<group>"; };
+		32D240C723139B8800D4D69C /* ShowRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
+		32D240C823139B8800D4D69C /* SearchRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRouteViewController.swift; sourceTree = "<group>"; };
+		3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.release.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.release.xcconfig"; sourceTree = "<group>"; };
+		632687FF7D4AC005F2F89996 /* Pods_cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80A61C0EE9199D1BC8DD306D /* Pods-gogoApps Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps Extension.release.xcconfig"; path = "Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension.release.xcconfig"; sourceTree = "<group>"; };
+		8FC23F4C72B70DB4608DFA25 /* Pods-cycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.debug.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.debug.xcconfig"; sourceTree = "<group>"; };
+		964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gogoApps_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		996F1A36226DF49D12CED18D /* Pods-cycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycle.release.xcconfig"; path = "Target Support Files/Pods-cycle/Pods-cycle.release.xcconfig"; sourceTree = "<group>"; };
+		9F8DACF77BB687BEED26E683 /* Pods-gogoApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps.debug.xcconfig"; path = "Target Support Files/Pods-gogoApps/Pods-gogoApps.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0D22A3230D34EB00A35295 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BE0D22A4230D34EB00A35295 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		BE0D22A8230D351300A35295 /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
@@ -136,6 +176,13 @@
 		BE0D22AC230D353E00A35295 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		BE0D22AD230D353E00A35295 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BE0D22B0230D378500A35295 /* GoGoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoGoColor.swift; sourceTree = "<group>"; };
+		BE51C93A230F9D2400A32805 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE51C93B230F9D2400A32805 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		BEE576A9230E32B700ADA11B /* HomeDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateCell.swift; sourceTree = "<group>"; };
+		BEE576AA230E32B700ADA11B /* HomeDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDateCell.xib; sourceTree = "<group>"; };
+		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
+		BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoEventCell.xib; sourceTree = "<group>"; };
+		C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps Extension.debug.xcconfig"; path = "Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1EC614230255810011EA59 /* cycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cycle.entitlements; sourceTree = "<group>"; };
 		EF2B16E8230BB13000EBF33B /* gogoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B16EB230BB13000EBF33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -148,14 +195,13 @@
 		EF2B16FF230BB13200EBF33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2B1701230BB13200EBF33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2B1702230BB13200EBF33B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		EF4E9D622310ACAD007557E0 /* JointEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JointEventVC.xib; sourceTree = "<group>"; };
-		EF4E9D642310B0B4007557E0 /* JointEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JointEventVC.swift; sourceTree = "<group>"; };
+		EF4E9D622310ACAD007557E0 /* JoinEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinEventVC.xib; sourceTree = "<group>"; };
+		EF4E9D642310B0B4007557E0 /* JoinEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventVC.swift; sourceTree = "<group>"; };
 		EF63BD812310387E00000FF8 /* EventCreatedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCreatedVC.xib; sourceTree = "<group>"; };
 		EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreatedVC.swift; sourceTree = "<group>"; };
 		EF6864BE230664B300B039FA /* Pretiffy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretiffy.swift; sourceTree = "<group>"; };
 		EF82A13A23039EEC001939B7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EF83F76C2305465B0082CDB8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
-		EF83F76E2305525F0082CDB8 /* SearchRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteViewController.swift; sourceTree = "<group>"; };
 		EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateEventVC.xib; sourceTree = "<group>"; };
 		EF90A8EA230E8CE0003BB556 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
 		EFC2216D2308E5970083D8B5 /* CyclistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclistView.swift; sourceTree = "<group>"; };
@@ -169,16 +215,12 @@
 		EFCA7179230FDE5800F52EEC /* SearchRouteDestinationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRouteDestinationVC.xib; sourceTree = "<group>"; };
 		EFCA717B230FDE7A00F52EEC /* SearchRouteDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteDestinationVC.swift; sourceTree = "<group>"; };
 		EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyclist.swift; sourceTree = "<group>"; };
-		EFCF441B2307C9DA00633371 /* ShowRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
 		EFCF441D2307D7AE00633371 /* RandomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomHelper.swift; sourceTree = "<group>"; };
-		EFE0535423059F1C007DC359 /* SearchActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityViewController.swift; sourceTree = "<group>"; };
 		EFE11BF42304423600782142 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		EFE1F19A230ECBB4005C6807 /* RouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVC.swift; sourceTree = "<group>"; };
 		EFE1F19C230ECF1E005C6807 /* RouteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteVC.xib; sourceTree = "<group>"; };
 		EFEE5DD12301575B0027F401 /* cycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEE5DD42301575B0027F401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFEE5DD62301575B0027F401 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EFEE5DD92301575B0027F401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFEE5DDB2301575C0027F401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFEE5DDE2301575C0027F401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFEE5DE02301575C0027F401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5F72AB28132E9D7B2F1259 /* Pods_gogoApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +249,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A6AA7ABD33538A8EC47165E /* Pods_cycle.framework in Frameworks */,
+				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
+				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
+				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
+				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +266,54 @@
 				161AA212230D30B4002EB295 /* OnBoardingVC.xib */,
 			);
 			path = "On Boarding";
+			sourceTree = "<group>";
+		};
+		3204F99723156286000FDB77 /* Detail Event */ = {
+			isa = PBXGroup;
+			children = (
+				3204F99A23156286000FDB77 /* Cell */,
+				3204F99823156286000FDB77 /* DetailEventVC.xib */,
+				3204F99923156286000FDB77 /* DetailEventVC.swift */,
+			);
+			path = "Detail Event";
+			sourceTree = "<group>";
+		};
+		3204F99A23156286000FDB77 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3204F99B23156286000FDB77 /* Map */,
+				3204F99F23156286000FDB77 /* Team */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3204F99B23156286000FDB77 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3204F99E23156286000FDB77 /* MapCell.xib */,
+				3204F99C23156286000FDB77 /* MapCell.swift */,
+				3204F99D23156286000FDB77 /* DetailModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		3204F99F23156286000FDB77 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				3204F9A223156286000FDB77 /* Team Profile */,
+				3204F9A023156286000FDB77 /* TeamCell.xib */,
+				3204F9A123156286000FDB77 /* TeamCell.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		3204F9A223156286000FDB77 /* Team Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3204F9A323156286000FDB77 /* TeamProfileCell.swift */,
+				3204F9A423156286000FDB77 /* TeamProfileCell.xib */,
+			);
+			path = "Team Profile";
 			sourceTree = "<group>";
 		};
 		322D3E8F230CFAFA0051B9FB /* Map */ = {
@@ -267,10 +362,49 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		3297C562230FA4A400548F26 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				3297C560230FA49200548F26 /* Preference.swift */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		3297C589230FC7E300548F26 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3297C58A230FC7EE00548F26 /* UIViewController+Extension.swift */,
+				3297C5A3231015FC00548F26 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		32BA7D5C2310E81A00253EB1 /* Profile User */ = {
+			isa = PBXGroup;
+			children = (
+				BE51C93A230F9D2400A32805 /* ProfileViewController.swift */,
+				BE51C93B230F9D2400A32805 /* ProfileViewController.xib */,
+			);
+			path = "Profile User";
+			sourceTree = "<group>";
+		};
+		32D240C523139B2700D4D69C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				32D240C623139B8700D4D69C /* SearchActivityViewController.swift */,
+				32D240C823139B8800D4D69C /* SearchRouteViewController.swift */,
+				32D240C723139B8800D4D69C /* ShowRouteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E458B9B1D0ACB1505025E4C /* Pods_cycle.framework */,
+				16699DA1230F885B00A90ABC /* CloudKit.framework */,
+				632687FF7D4AC005F2F89996 /* Pods_cycle.framework */,
+				3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */,
+				964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,8 +412,12 @@
 		9A1A0F3A43432EC568E83499 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				64D32B79D8172905F0E2D7C7 /* Pods-cycle.debug.xcconfig */,
-				704073F0987A14519897C3E8 /* Pods-cycle.release.xcconfig */,
+				8FC23F4C72B70DB4608DFA25 /* Pods-cycle.debug.xcconfig */,
+				996F1A36226DF49D12CED18D /* Pods-cycle.release.xcconfig */,
+				9F8DACF77BB687BEED26E683 /* Pods-gogoApps.debug.xcconfig */,
+				5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */,
+				C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */,
+				80A61C0EE9199D1BC8DD306D /* Pods-gogoApps Extension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -301,6 +439,10 @@
 				BE0D22A9230D351300A35295 /* HomeHeaderCell.xib */,
 				BE0D22AC230D353E00A35295 /* HomeCell.swift */,
 				BE0D22AD230D353E00A35295 /* HomeCell.xib */,
+				BEE576A9230E32B700ADA11B /* HomeDateCell.swift */,
+				BEE576AA230E32B700ADA11B /* HomeDateCell.xib */,
+				BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */,
+				BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */,
 			);
 			path = "Home Cell";
 			sourceTree = "<group>";
@@ -308,6 +450,7 @@
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
 			isa = PBXGroup;
 			children = (
+				16699DA0230F86E000A90ABC /* gogoApps.entitlements */,
 				EF2B16EA230BB13000EBF33B /* Interface.storyboard */,
 				EF2B16ED230BB13100EBF33B /* Assets.xcassets */,
 				EF2B16EF230BB13100EBF33B /* Info.plist */,
@@ -318,6 +461,7 @@
 		EF2B16F8230BB13100EBF33B /* gogoApps Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1670D766230F627400443D86 /* gogoApps Extension.entitlements */,
 				EF2B16F9230BB13100EBF33B /* InterfaceController.swift */,
 				EF2B16FB230BB13100EBF33B /* ExtensionDelegate.swift */,
 				EF2B16FD230BB13100EBF33B /* NotificationController.swift */,
@@ -328,20 +472,20 @@
 			path = "gogoApps Extension";
 			sourceTree = "<group>";
 		};
-		EF4E9D612310AC86007557E0 /* Joint Event */ = {
+		EF4E9D612310AC86007557E0 /* Join Event */ = {
 			isa = PBXGroup;
 			children = (
-				EF4E9D622310ACAD007557E0 /* JointEventVC.xib */,
-				EF4E9D642310B0B4007557E0 /* JointEventVC.swift */,
+				EF4E9D622310ACAD007557E0 /* JoinEventVC.xib */,
+				EF4E9D642310B0B4007557E0 /* JoinEventVC.swift */,
 			);
-			path = "Joint Event";
+			path = "Join Event";
 			sourceTree = "<group>";
 		};
 		EF63BD802310386000000FF8 /* Event Created */ = {
 			isa = PBXGroup;
 			children = (
-				EF63BD812310387E00000FF8 /* EventCreatedVC.xib */,
 				EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */,
+				EF63BD812310387E00000FF8 /* EventCreatedVC.xib */,
 			);
 			path = "Event Created";
 			sourceTree = "<group>";
@@ -349,6 +493,8 @@
 		EF6864BD2306649E00B039FA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3297C589230FC7E300548F26 /* Extension */,
+				3297C562230FA4A400548F26 /* Preference */,
 				EF6864BE230664B300B039FA /* Pretiffy.swift */,
 				EFCF441D2307D7AE00633371 /* RandomHelper.swift */,
 				BE0D22B0230D378500A35295 /* GoGoColor.swift */,
@@ -366,18 +512,6 @@
 				EFC2216D2308E5970083D8B5 /* CyclistView.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		EF83F76B230546370082CDB8 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				EFEE5DD62301575B0027F401 /* ViewController.swift */,
-				322D3E95230D05980051B9FB /* MapViewController.swift */,
-				EF83F76E2305525F0082CDB8 /* SearchRouteViewController.swift */,
-				EFE0535423059F1C007DC359 /* SearchActivityViewController.swift */,
-				EFCF441B2307C9DA00633371 /* ShowRouteViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		EF90A8E3230E7848003BB556 /* Create Event */ = {
@@ -401,13 +535,13 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
-		EFC627B3231173D3007C30CD /* show route */ = {
+		EFC627B3231173D3007C30CD /* Show route */ = {
 			isa = PBXGroup;
 			children = (
 				EFC627B4231173FA007C30CD /* ShowRouteVC.xib */,
 				EFC627B623117462007C30CD /* ShowRouteVC.swift */,
 			);
-			path = "show route";
+			path = "Show route";
 			sourceTree = "<group>";
 		};
 		EFCA7178230FDE3200F52EEC /* Search Route Destination */ = {
@@ -431,9 +565,12 @@
 		EFEE5DC82301575B0027F401 = {
 			isa = PBXGroup;
 			children = (
-				EFC627B3231173D3007C30CD /* show route */,
+				32D240C523139B2700D4D69C /* Controller */,
+				32BA7D5C2310E81A00253EB1 /* Profile User */,
+				EFC627B3231173D3007C30CD /* Show route */,
+				3204F99723156286000FDB77 /* Detail Event */,
 				EFC627A02310E3D7007C30CD /* Tracking */,
-				EF4E9D612310AC86007557E0 /* Joint Event */,
+				EF4E9D612310AC86007557E0 /* Join Event */,
 				EF63BD802310386000000FF8 /* Event Created */,
 				EFCA7178230FDE3200F52EEC /* Search Route Destination */,
 				EFE1F197230ECB57005C6807 /* Route */,
@@ -445,7 +582,6 @@
 				322D3E91230CFB0A0051B9FB /* Login */,
 				322D3E8F230CFAFA0051B9FB /* Map */,
 				EF6864BD2306649E00B039FA /* Helper */,
-				EF83F76B230546370082CDB8 /* Controller */,
 				EF82A13723039C4E001939B7 /* Model */,
 				EFEE5DD32301575B0027F401 /* cycle */,
 				EF2B16E9230BB13000EBF33B /* gogoApps */,
@@ -471,7 +607,6 @@
 			children = (
 				EF1EC614230255810011EA59 /* cycle.entitlements */,
 				EFEE5DD42301575B0027F401 /* AppDelegate.swift */,
-				EFEE5DD82301575B0027F401 /* Main.storyboard */,
 				EFEE5DDB2301575C0027F401 /* Assets.xcassets */,
 				EFEE5DDD2301575C0027F401 /* LaunchScreen.storyboard */,
 				EFF1265123068EAD0059A4BE /* GoogleService-Info.plist */,
@@ -487,6 +622,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF2B170A230BB13200EBF33B /* Build configuration list for PBXNativeTarget "gogoApps" */;
 			buildPhases = (
+				3B03BB1DA3A829337216BE0B /* [CP] Check Pods Manifest.lock */,
 				EF2B16E6230BB13000EBF33B /* Resources */,
 				EF2B1709230BB13200EBF33B /* Embed App Extensions */,
 				D6707B67186B67C145DC40F9 /* Frameworks */,
@@ -505,9 +641,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF2B1706230BB13200EBF33B /* Build configuration list for PBXNativeTarget "gogoApps Extension" */;
 			buildPhases = (
+				F7419CEE537CDC78DFA5EDDD /* [CP] Check Pods Manifest.lock */,
 				EF2B16F0230BB13100EBF33B /* Sources */,
 				EF2B16F1230BB13100EBF33B /* Frameworks */,
 				EF2B16F2230BB13100EBF33B /* Resources */,
+				825E5E030EDFE86130446704 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -522,12 +660,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFEE5DE32301575C0027F401 /* Build configuration list for PBXNativeTarget "cycle" */;
 			buildPhases = (
-				E3627001BB8FB3429D231A15 /* [CP] Check Pods Manifest.lock */,
+				BED305727DFE08766D858660 /* [CP] Check Pods Manifest.lock */,
 				EFEE5DCD2301575B0027F401 /* Sources */,
 				EFEE5DCE2301575B0027F401 /* Frameworks */,
 				EFEE5DCF2301575B0027F401 /* Resources */,
-				F393E7B44D629FD7EA074151 /* [CP] Embed Pods Frameworks */,
 				EF2B170D230BB13200EBF33B /* Embed Watch Content */,
+				00A5BA6133AD000A918F41BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -551,9 +689,22 @@
 				TargetAttributes = {
 					EF2B16E7230BB13000EBF33B = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					EF2B16F3230BB13100EBF33B = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					EFEE5DD02301575B0027F401 = {
 						CreatedOnToolsVersion = 10.2;
@@ -562,6 +713,12 @@
 								enabled = 1;
 							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -610,7 +767,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3204F9A523156286000FDB77 /* DetailEventVC.xib in Resources */,
 				EFC627B023110627007C30CD /* CyclistCollectionCell.xib in Resources */,
+				3204F9AD23156286000FDB77 /* TeamProfileCell.xib in Resources */,
 				322D3E9A230D0AC50051B9FB /* LoginVC.xib in Resources */,
 				327E4FD2230D131200FEBB9D /* SearchActivityVC.xib in Resources */,
 				327E4FCE230D130700FEBB9D /* SearchRouteVC.xib in Resources */,
@@ -621,23 +780,83 @@
 				322D3E94230CFC290051B9FB /* MapVC.xib in Resources */,
 				BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */,
 				161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */,
-				EFEE5DDA2301575B0027F401 /* Main.storyboard in Resources */,
+				3204F9AA23156286000FDB77 /* TeamCell.xib in Resources */,
+				BEE576AC230E32B700ADA11B /* HomeDateCell.xib in Resources */,
+				BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */,
 				BE0D22AF230D353E00A35295 /* HomeCell.xib in Resources */,
+				BE51C93D230F9D2400A32805 /* ProfileViewController.xib in Resources */,
 				EFE1F19D230ECF1E005C6807 /* RouteVC.xib in Resources */,
 				EFCA717A230FDE5800F52EEC /* SearchRouteDestinationVC.xib in Resources */,
 				EFC627A22310E440007C30CD /* TrackingVC.xib in Resources */,
 				EFC627B5231173FA007C30CD /* ShowRouteVC.xib in Resources */,
 				EF63BD822310387E00000FF8 /* EventCreatedVC.xib in Resources */,
 				327E4FD6230D1B8D00FEBB9D /* FriendsCell.xib in Resources */,
-				EF4E9D632310ACAD007557E0 /* JointEventVC.xib in Resources */,
+				EF4E9D632310ACAD007557E0 /* JoinEventVC.xib in Resources */,
 				EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */,
+				3204F9A923156286000FDB77 /* MapCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E3627001BB8FB3429D231A15 /* [CP] Check Pods Manifest.lock */ = {
+		00A5BA6133AD000A918F41BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B03BB1DA3A829337216BE0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gogoApps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		825E5E030EDFE86130446704 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BED305727DFE08766D858660 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -659,21 +878,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F393E7B44D629FD7EA074151 /* [CP] Embed Pods Frameworks */ = {
+		F7419CEE537CDC78DFA5EDDD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gogoApps Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -693,38 +917,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF83F76F2305525F0082CDB8 /* SearchRouteViewController.swift in Sources */,
 				BE0D22AE230D353E00A35295 /* HomeCell.swift in Sources */,
+				3204F9A623156286000FDB77 /* DetailEventVC.swift in Sources */,
 				327E4FD5230D1B8D00FEBB9D /* FriendsCell.swift in Sources */,
 				EFF5FE322303FA9500F42319 /* User.swift in Sources */,
-				EF4E9D652310B0B4007557E0 /* JointEventVC.swift in Sources */,
+				3297C58B230FC7EE00548F26 /* UIViewController+Extension.swift in Sources */,
+				BEE576AB230E32B700ADA11B /* HomeDateCell.swift in Sources */,
+				EF4E9D652310B0B4007557E0 /* JoinEventVC.swift in Sources */,
 				161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */,
 				EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */,
 				EFE1F19B230ECBB4005C6807 /* RouteVC.swift in Sources */,
 				EFCF441E2307D7AE00633371 /* RandomHelper.swift in Sources */,
 				327E4FCD230D130700FEBB9D /* SearchRouteVC.swift in Sources */,
-				EFE0535523059F1C007DC359 /* SearchActivityViewController.swift in Sources */,
+				BE51C93C230F9D2400A32805 /* ProfileViewController.swift in Sources */,
 				EFE11BF52304423600782142 /* Login.swift in Sources */,
 				EFCA717C230FDE7A00F52EEC /* SearchRouteDestinationVC.swift in Sources */,
 				EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */,
+				3204F9A723156286000FDB77 /* MapCell.swift in Sources */,
 				EFC627AF23110627007C30CD /* CyclistCollectionCell.swift in Sources */,
-				EFEE5DD72301575B0027F401 /* ViewController.swift in Sources */,
 				EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */,
+				3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */,
 				EF82A13B23039EEC001939B7 /* Activity.swift in Sources */,
 				322D3E99230D0AC50051B9FB /* LoginVC.swift in Sources */,
 				EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */,
 				BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */,
+				32D240CB23139B8800D4D69C /* SearchRouteViewController.swift in Sources */,
 				EFC627B723117462007C30CD /* ShowRouteVC.swift in Sources */,
 				BE0D22B1230D378500A35295 /* GoGoColor.swift in Sources */,
+				3204F9A823156286000FDB77 /* DetailModel.swift in Sources */,
 				EFC2216E2308E5970083D8B5 /* CyclistView.swift in Sources */,
-				EFCF441C2307C9DA00633371 /* ShowRouteViewController.swift in Sources */,
-				322D3E96230D05980051B9FB /* MapViewController.swift in Sources */,
 				EFCEE83B2308C2E0006E5D70 /* Cyclist.swift in Sources */,
+				3204F9AC23156286000FDB77 /* TeamProfileCell.swift in Sources */,
 				EFC627A82310EE0A007C30CD /* TrackingVC.swift in Sources */,
 				EF90A8EB230E8CE0003BB556 /* CreateEventVC.swift in Sources */,
+				3204F9AB23156286000FDB77 /* TeamCell.swift in Sources */,
 				BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */,
+				BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */,
+				3297C561230FA49200548F26 /* Preference.swift in Sources */,
 				EFC627B2231135A6007C30CD /* CyclistInfo.swift in Sources */,
 				327E4FD1230D131200FEBB9D /* SearchActivityVC.swift in Sources */,
+				32D240C923139B8800D4D69C /* SearchActivityViewController.swift in Sources */,
+				32D240CA23139B8800D4D69C /* ShowRouteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,14 +985,6 @@
 			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
-		EFEE5DD82301575B0027F401 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EFEE5DD92301575B0027F401 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EFEE5DDD2301575C0027F401 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -773,16 +998,18 @@
 /* Begin XCBuildConfiguration section */
 		EF2B1707230BB13200EBF33B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = STKR5JMBGH;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -794,16 +1021,18 @@
 		};
 		EF2B1708230BB13200EBF33B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80A61C0EE9199D1BC8DD306D /* Pods-gogoApps Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = STKR5JMBGH;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -815,14 +1044,15 @@
 		};
 		EF2B170B230BB13200EBF33B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F8DACF77BB687BEED26E683 /* Pods-gogoApps.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = STKR5JMBGH;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -834,14 +1064,15 @@
 		};
 		EF2B170C230BB13200EBF33B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9B65E3480FEE268A8FD0E9 /* Pods-gogoApps.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = STKR5JMBGH;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -969,18 +1200,18 @@
 		};
 		EFEE5DE42301575C0027F401 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64D32B79D8172905F0E2D7C7 /* Pods-cycle.debug.xcconfig */;
+			baseConfigurationReference = 8FC23F4C72B70DB4608DFA25 /* Pods-cycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = STKR5JMBGH;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -989,18 +1220,18 @@
 		};
 		EFEE5DE52301575C0027F401 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 704073F0987A14519897C3E8 /* Pods-cycle.release.xcconfig */;
+			baseConfigurationReference = 996F1A36226DF49D12CED18D /* Pods-cycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NP7PUX36AY;
+				DEVELOPMENT_TEAM = STKR5JMBGH;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.go.kemlu.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
