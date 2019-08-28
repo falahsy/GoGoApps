@@ -36,6 +36,21 @@ class JoinEventVC: UIViewController{
         kegiatan.searchActivity(activityID: code) { (activities) in
             if activities.count > 0 {
                 Preference.set(value: code, forKey: .kUserActivity)
+                
+                let userID = Preference.getString(forKey: .kUserEmail) ?? ""
+                
+                
+                // create NSDate from Double (NSTimeInterval)
+                
+                let activity = activities.first!
+                let intervalDate = Double(activity.date)
+                let eventDate = Date(timeIntervalSince1970: intervalDate)
+                let event = Events(id: activity.activityID , user: userID, date: eventDate)
+                
+                event.insertData(callback: { (events) in
+                    print(events)
+                })
+                
                 let trackingVC = DetailEventVC()
                 self.navigationController?.pushViewController(trackingVC, animated: true)
             } else {
