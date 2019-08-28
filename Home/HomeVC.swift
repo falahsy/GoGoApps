@@ -14,6 +14,7 @@ class HomeVC: UIViewController {
     
     var todayContent = 2
     var upcomingContent = 3
+    var activityList:[Activity] = []
     @IBOutlet weak var tableView: UITableView!
     func configTableView(){
         tableView.backgroundColor = UIColor(hex: "#F9F9F9")
@@ -102,6 +103,8 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }else if indexPath.row > 1 && indexPath.row < todayContent + 2{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)) as! HomeCell
+                print(activityList.count)
+//                cell.eventNameLbl.text = activityList[indexPath.row + 2].activityID GAKDA DATA
                 return cell
             }else if indexPath.row == todayContent + 2{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeDateCell", for: indexPath)) as! HomeDateCell

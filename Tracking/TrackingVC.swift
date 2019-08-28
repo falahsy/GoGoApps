@@ -110,7 +110,6 @@ class TrackingVC: UIViewController{
             self.eventDate = eventDate
             
             for point in activities.first!.routes{
-                
                 let place = MKPlacemark(coordinate: point)
                 self.routesPoints.append(place)
                 self.addPinInMap(placemark: place)

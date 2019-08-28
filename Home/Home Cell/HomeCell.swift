@@ -10,6 +10,9 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
+    @IBOutlet weak var eventNameLbl: UILabel!
+    @IBOutlet weak var timeRangeLbl: UILabel!
+    @IBOutlet weak var placeRangeLbl: UILabel!
     @IBOutlet weak var cellView: UIView!{
         didSet{
             cellView.layer.cornerRadius = 7
@@ -26,5 +29,5 @@ class HomeCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
+  
 }

@@ -66,6 +66,9 @@
             <viewLayoutGuide key="safeArea" id="Clh-6R-HEO"/>
             <connections>
                 <outlet property="cellView" destination="0Mu-rl-sjM" id="sgv-3W-R42"/>
+                <outlet property="eventNameLbl" destination="90N-Gg-9dy" id="hdd-1X-4UB"/>
+                <outlet property="placeRangeLbl" destination="GPv-6w-huX" id="Zm9-VL-RBg"/>
+                <outlet property="timeRangeLbl" destination="sTt-xq-PdJ" id="dun-in-yfK"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="129.24107142857142"/>
         </tableViewCell>

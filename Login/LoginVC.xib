@@ -15,6 +15,7 @@
                 <outlet property="accountInfoLbl" destination="s5k-C3-ExZ" id="GGr-ZV-Ak7"/>
                 <outlet property="alrdyHaveAccLbl" destination="7fJ-iD-Cxu" id="lCH-sP-JOv"/>
                 <outlet property="createAccView" destination="UtO-wF-9tw" id="r8K-bd-yJG"/>
+                <outlet property="createViewBottomCons" destination="GSp-5A-uBb" id="oih-O7-DTG"/>
                 <outlet property="dontHaveAccLbl" destination="OU8-Yh-yaV" id="k6M-g5-ACD"/>
                 <outlet property="forgotPassBtn" destination="zMd-Tw-Axu" id="rcd-wv-To5"/>
                 <outlet property="logRegBtn" destination="TNF-Vt-Prz" id="LsZ-HY-1BA"/>
@@ -32,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtO-wF-9tw">
-                    <rect key="frame" x="20" y="475" width="374" height="488"/>
+                    <rect key="frame" x="20" y="475" width="374" height="750"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5k-C3-ExZ">
                             <rect key="frame" x="116.5" y="97" width="141" height="17"/>
@@ -49,13 +50,13 @@
                             <rect key="frame" x="64" y="145" width="246" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kho-vo-AL6">
                             <rect key="frame" x="64" y="188" width="246" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNF-Vt-Prz">
                             <rect key="frame" x="64" y="249" width="246" height="40"/>
@@ -119,12 +120,12 @@
                         <constraint firstItem="TNF-Vt-Prz" firstAttribute="leading" secondItem="UtO-wF-9tw" secondAttribute="leading" constant="64" id="XKd-yb-mr6"/>
                         <constraint firstItem="7fJ-iD-Cxu" firstAttribute="top" secondItem="TNF-Vt-Prz" secondAttribute="bottom" constant="42" id="cvw-0g-w2b"/>
                         <constraint firstItem="1XO-W4-OYY" firstAttribute="top" secondItem="UtO-wF-9tw" secondAttribute="top" constant="54" id="fzw-mP-BcP"/>
+                        <constraint firstAttribute="height" constant="750" id="gjv-dQ-LvY"/>
                         <constraint firstItem="zMd-Tw-Axu" firstAttribute="top" secondItem="TNF-Vt-Prz" secondAttribute="bottom" constant="8" id="gnX-oi-zMY"/>
                         <constraint firstItem="1OI-WJ-o4W" firstAttribute="centerY" secondItem="7fJ-iD-Cxu" secondAttribute="centerY" id="h5c-fM-sa4"/>
                         <constraint firstItem="zMd-Tw-Axu" firstAttribute="centerX" secondItem="TNF-Vt-Prz" secondAttribute="centerX" id="iNp-G1-dpG"/>
                         <constraint firstItem="DEm-jh-w3J" firstAttribute="leading" secondItem="UtO-wF-9tw" secondAttribute="leading" constant="64" id="j3V-QN-hdF"/>
                         <constraint firstItem="s5k-C3-ExZ" firstAttribute="centerX" secondItem="UtO-wF-9tw" secondAttribute="centerX" id="mUZ-Nu-mUX"/>
-                        <constraint firstAttribute="height" constant="488" id="rcp-QY-PIr"/>
                         <constraint firstAttribute="trailing" secondItem="kho-vo-AL6" secondAttribute="trailing" constant="64" id="tYG-tS-u3f"/>
                         <constraint firstItem="OU8-Yh-yaV" firstAttribute="leading" secondItem="UtO-wF-9tw" secondAttribute="leading" constant="80" id="uKM-5k-llC"/>
                         <constraint firstItem="kho-vo-AL6" firstAttribute="leading" secondItem="UtO-wF-9tw" secondAttribute="leading" constant="64" id="wQm-wQ-hHA"/>
@@ -134,8 +135,8 @@
             <color key="backgroundColor" red="0.019607843140000001" green="0.64313725489999995" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="UtO-wF-9tw" firstAttribute="leading" secondItem="2hG-1E-t8z" secondAttribute="leading" constant="20" id="6eZ-bc-4xy"/>
+                <constraint firstItem="UtO-wF-9tw" firstAttribute="bottom" secondItem="2hG-1E-t8z" secondAttribute="bottom" constant="363" id="GSp-5A-uBb"/>
                 <constraint firstItem="2hG-1E-t8z" firstAttribute="trailing" secondItem="UtO-wF-9tw" secondAttribute="trailing" constant="20" id="TNH-BD-tY6"/>
-                <constraint firstAttribute="bottom" secondItem="UtO-wF-9tw" secondAttribute="bottom" constant="-67" id="ljO-hG-hzd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="2hG-1E-t8z"/>
             <point key="canvasLocation" x="761" y="-210"/>

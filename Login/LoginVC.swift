@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate{
     
     var isLogin : Bool?
   
@@ -63,10 +63,11 @@ class LoginVC: UIViewController {
             loginBtn.isHidden = true
         }
     }
-    
-    
     @IBOutlet weak var textBoxUserID: UITextField!
     @IBOutlet weak var textBoxPassword: UITextField!
+    var isUpside : Bool?
+   
+    @IBOutlet weak var createViewBottomCons: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -78,22 +79,72 @@ class LoginVC: UIViewController {
             registerViewDisplay()
         }
         navigationController?.isNavigationBarHidden = true
+        isUpside = false
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        createViewBottomCons.constant = 363
+        self.view.layoutIfNeeded()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = GoGoColor.MAIN
-        
-//        self.navigationController?.navigationBar.barTintColor = GoGoColor.MAIN
-        
+        self.navigationController?.navigationBar.barTintColor = GoGoColor.MAIN
         let userID = Preference.getString(forKey: .kUserEmail) ?? ""
         self.textBoxUserID.text = userID
-        
+        textBoxUserID.addTarget(self, action: #selector(userTextFieldClicked), for: .touchDown)
+        textBoxPassword.addTarget(self, action: #selector(passTextFieldClicked), for: .touchDown)
         logRegBtn.addTarget(self, action: #selector(loginRegister), for: .touchUpInside)
         loginBtn.addTarget(self, action: #selector(loginViewDisplay), for: .touchUpInside)
         signUpBtn.addTarget(self, action: #selector(registerViewDisplay), for: .touchUpInside)
         registerHideKeyboard()
+        textBoxUserID.delegate = self
+        textBoxPassword.delegate = self
     }
+    
+    @objc override func dismissKeyboard() {
+        view.endEditing(true)
+        UIView.animate(withDuration: 0.4) {
+            self.createViewBottomCons.constant = 363
+            self.view.layoutIfNeeded()
+        }
+        isUpside = false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        UIView.animate(withDuration: 0.4) {
+            self.createViewBottomCons.constant = 363
+            self.view.layoutIfNeeded()
+        }
+        isUpside = false
+        return true
+    }
+    
+    @objc func userTextFieldClicked(){
+        self.createAccView.layoutIfNeeded()
+        if isUpside == false{
+            UIView.animate(withDuration: 0.4) {
+                self.createViewBottomCons.constant = 62
+                self.view.layoutIfNeeded()
+            }
+            isUpside = true
+        }
+    }
+    
+    @objc func passTextFieldClicked(){
+        self.createAccView.layoutIfNeeded()
+        if isUpside == false{
+            createViewBottomCons.constant = 62
+            UIView.animate(withDuration: 0.4) {
+                self.createViewBottomCons.constant = 62
+                self.view.layoutIfNeeded()
+            }
+            isUpside = true
+        }
+    }
+    
     func loginFirstViewDisplay(){
         print(isLogin!)
         welcomeLbl.text = "Welcome Back"
@@ -127,6 +178,7 @@ class LoginVC: UIViewController {
         alrdyHaveAccLbl.isHidden = true
         loginBtn.isHidden = true
         signUpBtn.isHidden = false
+         textBoxPassword.text = ""
     }
     @objc func registerViewDisplay(){
         print(isLogin!)
@@ -139,6 +191,7 @@ class LoginVC: UIViewController {
         alrdyHaveAccLbl.isHidden = false
         loginBtn.isHidden = false
         signUpBtn.isHidden = true
+        textBoxPassword.text = ""
     }
     
     @objc func signIn() {
