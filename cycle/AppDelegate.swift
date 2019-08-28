@@ -15,9 +15,7 @@ import CloudKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
     var eventID: Int = 0
-    
     var navigationController: UINavigationController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -53,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let detail = results.first!
             
             let subscription = CKQuerySubscription(recordType: "gogoNotification", predicate: NSPredicate(format: "eventID == \(detail.activityID)"), options: .firesOnRecordCreation)
+            
+            
             
             let info = CKSubscription.NotificationInfo()
             

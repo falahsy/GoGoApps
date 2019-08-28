@@ -146,8 +146,6 @@ struct User{
             }
             
             callback(userList)
-            
-            
         })
         
     }

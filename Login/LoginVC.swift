@@ -201,19 +201,6 @@ class LoginVC: UIViewController {
 
     @objc func loginRegister() {
         if isLogin!{
-//            Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
-//
-//                if result{
-//                    Preference.set(value: self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
-//                    Preference.set(value: true, forKey: .kUserLogin)
-//                    let homeVC = HomeVC()
-//                    self.navigationController?.pushViewController(homeVC, animated: true)
-//                }else{
-//                    let alert = UIAlertController(title: "Login",message: info,preferredStyle: .alert)
-//                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-//                    self.present(alert, animated: true, completion: nil)
-//                }
-//            }
             let record = CKRecord(recordType: "gogoNotification")
             let myContainer = CKContainer.default()
             
@@ -230,6 +217,21 @@ class LoginVC: UIViewController {
                     return
                 }
             })
+            
+            
+            Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
+                
+                if result{
+                    Preference.set(value: self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
+                    Preference.set(value: true, forKey: .kUserLogin)
+                    let homeVC = HomeVC()
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                }else{
+                    let alert = UIAlertController(title: "Login",message: info,preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
             
         } else {
             Login.createAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,status) in

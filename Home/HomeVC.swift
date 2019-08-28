@@ -28,6 +28,23 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        getAllActivity()
+    }
+    
+    func getAllActivity() {
+        let activity = Activity()
+        activity.getAllActivity { (results) in
+            results.forEach({ (activity) in
+                self.getUser(withEventId: activity.activityID)
+            })
+        }
+    }
+    
+    func getUser(withEventId id: String) {
+        let user = User()
+        user.searchActivity(activity: id) { (users) in
+            print(users)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

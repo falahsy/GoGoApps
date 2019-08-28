@@ -138,6 +138,22 @@ struct Activity{
         
     }
     
+    func getAllActivity(callback: @escaping ([Activity]) -> Void) {
+        Activity.dbRef.child("activities").observeSingleEvent(of: .value, with: { (snapshot) in
+            var activityList:[Activity] = []
+            for item in snapshot.children{
+                let activity = item as! DataSnapshot
+                
+                guard let activityCyclist = Activity(snapshot: activity) else {return}
+                activityList.append(activityCyclist)
+            }
+            
+            callback(activityList)
+            
+            
+        })
+    }
+    
     func searchActivity(activityID:String, callback: @escaping ([Activity]) -> Void){
         
         
