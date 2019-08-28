@@ -34,45 +34,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 })
             }
         })
-        
         return true
     }
     
     //setUp subscription ke cloudkit
     // Note: Ini belum ke sambung sm cloudKit yg di apps ini karena belum di set profile nya
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
-        //akan melakukan unsubscribe ke semua event sebelum masuk ke event baru saat akan gowes
-        unsubscribeNotification()
-        
-//        let vc = ViewController()
-//        self.eventID = vc.eventIDummy
-        
-        // bakal ngefilter iventID yang sesuai
-        let subscription = CKQuerySubscription(recordType: "gogoNotification", predicate: NSPredicate(format: "eventID == \(self.eventID)"), options: .firesOnRecordCreation)
-        
-        let info = CKSubscription.NotificationInfo()
-        
-        info.titleLocalizationKey = "%1$@"
-        info.titleLocalizationArgs = ["userName"]
-        
-        info.alertLocalizationKey = "%1$@"
-        info.alertLocalizationArgs = ["contentNotification"]
-        
-        info.shouldBadge = true
-        info.soundName = "default"
-        
-        subscription.notificationInfo = info
-        
-        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
-            
-            if error == nil {
-                print("Success")
-            } else {
-                print("Error Occured \(error?.localizedDescription)")
-            }
-        })
+//        subscribe()
     }
+    
+    func subscribe(){
+        let activtity = Activity()
+        let id = Preference.getString(forKey: .kUserActivity) ?? ""
+        activtity.searchActivity(activityID: id) { (results) in
+            
+            print(results)
+            
+            let detail = results.first!
+            
+            let subscription = CKQuerySubscription(recordType: "gogoNotification", predicate: NSPredicate(format: "eventID == \(detail.activityID)"), options: .firesOnRecordCreation)
+            
+            let info = CKSubscription.NotificationInfo()
+            
+            info.titleLocalizationKey = "%1$@"
+            info.titleLocalizationArgs = ["userName"]
+            
+            info.alertLocalizationKey = "%1$@"
+            info.alertLocalizationArgs = ["contentNotification"]
+            
+            info.shouldBadge = true
+            info.soundName = "default"
+            
+            subscription.notificationInfo = info
+            
+            CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
+                if error == nil {
+                    print("Success Subscription success with id: \(detail.activityID)")
+                } else {
+//                    print("Error Occured \(error?.localizedDescription) \(detail.activityID)")
+                }
+            })
+        }
+    }
+    
     
     //unsubscribe ke cloudkit
     func unsubscribeNotification(){

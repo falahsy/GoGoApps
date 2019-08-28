@@ -34,12 +34,11 @@ class DetailEventVC: UIViewController {
     }
     
     @IBAction func onStartTapped(_ sender: UIButton) {
-        let activtity = Activity()
-        let id = Preference.getString(forKey: .kUserActivity) ?? ""
-        activtity.searchActivity(activityID: id) { (results) in
-            let detail = results.first!
-            print(detail.activityID)
-        }
+        
+        let temp = UIApplication.shared.delegate as! AppDelegate
+        
+        temp.subscribe()
+        
         
         /*fR
             Activity(activityID: "2265", routes: [__C.CLLocationCoordinate2D(latitude: 37.323223111566776, longitude: -122.02272713184357), __C.CLLocationCoordinate2D(latitude: 37.3691563, longitude: -122.0384235)], messageID: 0, message: "", userID: "", date: 1566661515, ref: Optional(https://boyedata.firebaseio.com/activities/-Lmz8r61znXJhysB1S6g), key: "-Lmz8r61znXJhysB1S6g")
