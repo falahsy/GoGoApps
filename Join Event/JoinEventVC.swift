@@ -45,10 +45,18 @@ class JoinEventVC: UIViewController{
                 let activity = activities.first!
                 let intervalDate = Double(activity.date)
                 let eventDate = Date(timeIntervalSince1970: intervalDate)
-                let event = Events(id: activity.activityID , user: userID, date: eventDate)
                 
-                event.insertData(callback: { (events) in
-                    print(events)
+                let event = Events()
+                
+                event.searchActivity(activityID: activity.activityID, callback: { (events) in
+                    let firstEvent = events.first!
+                    
+                    let jointEvent = Events(id: firstEvent.activityID, user: userID, date: eventDate, distance: firstEvent.distance, eta: firstEvent.eta, destination: firstEvent.destination)
+                    
+                    jointEvent.insertData(callback: { (info) in
+                        print(info)
+                    })
+                    
                 })
                 
                 let trackingVC = DetailEventVC()

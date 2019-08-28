@@ -16,14 +16,20 @@ struct Events{
     var activityID:String
     var userID:String
     var date:Int
+    var distance:Double
+    var eta:Int
+    var destination:String
     let ref: DatabaseReference?
     private var key: String
     
-    init(id: String, user: String, key: String = "",date:Date) {
+    init(id: String, user: String, key: String = "",date:Date,distance:Double, eta:Int, destination:String) {
         self.activityID = id
         self.ref = nil
         self.key = key
         self.userID = user
+        self.distance = distance
+        self.eta = eta
+        self.destination = destination
         // convert Date to TimeInterval (typealias for Double)
         let timeInterval = date.timeIntervalSince1970
         
@@ -38,6 +44,9 @@ struct Events{
         self.ref = nil
         self.key = ""
         self.userID = ""
+        self.distance = 0.0
+        self.eta = 0
+        self.destination = ""
         // convert Date to TimeInterval (typealias for Double)
         let date = Date()
         let timeInterval = date.timeIntervalSince1970
@@ -54,7 +63,10 @@ struct Events{
             let value = snapshot.value as? [String: AnyObject],
             let activityID = value["activityID"] as? String,
             let user = value["userID"] as? String,
-            let date = value["date"] as? Int
+            let date = value["date"] as? Int,
+            let distance = value["distance"] as? Double,
+            let eta = value["eta"] as? Int,
+            let destination = value["destination"] as? String
             else {
                 return nil
         }
@@ -64,6 +76,9 @@ struct Events{
         self.activityID = activityID
         self.userID = user
         self.date = date
+        self.distance = distance
+        self.eta = eta
+        self.destination = destination
         
     }
     
@@ -72,7 +87,10 @@ struct Events{
         return [
             "activityID": activityID,
             "userID": userID,
-            "date": date
+            "date": date,
+            "distance": distance,
+            "eta": eta,
+            "destination": destination
             
         ]
     }
@@ -126,7 +144,7 @@ struct Events{
     func searchUser(userID:String, callback: @escaping ([Events]) -> Void){
         
         
-        Events.dbRef.child("events").queryOrdered(byChild:  "userID").queryStarting(atValue: activityID).queryEnding(atValue: activityID + "\u{f8ff}").observeSingleEvent(of: .value, with: { (snapshot) in
+        Events.dbRef.child("events").queryOrdered(byChild:  "userID").queryStarting(atValue: userID).queryEnding(atValue: userID + "\u{f8ff}").observeSingleEvent(of: .value, with: { (snapshot) in
             
             var eventsList:[Events] = []
             for item in snapshot.children{

@@ -10,6 +10,13 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
+    
+   
+    @IBOutlet weak var eventLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var membersLabel: UILabel!
+    @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var cellView: UIView!{
         didSet{
             cellView.layer.cornerRadius = 7
