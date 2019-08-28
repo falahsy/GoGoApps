@@ -102,6 +102,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }else if indexPath.row > 1 && indexPath.row < todayContent + 2{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)) as! HomeCell
+                
                 return cell
             }else if indexPath.row == todayContent + 2{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeDateCell", for: indexPath)) as! HomeDateCell

@@ -62,6 +62,7 @@
 		EF63BD822310387E00000FF8 /* EventCreatedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF63BD812310387E00000FF8 /* EventCreatedVC.xib */; };
 		EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */; };
 		EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6864BE230664B300B039FA /* Pretiffy.swift */; };
+		EF6A3C46231616B3002D4F1A /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6A3C45231616B3002D4F1A /* Events.swift */; };
 		EF82A13B23039EEC001939B7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82A13A23039EEC001939B7 /* Activity.swift */; };
 		EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76C2305465B0082CDB8 /* MapVC.swift */; };
 		EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */; };
@@ -200,6 +201,7 @@
 		EF63BD812310387E00000FF8 /* EventCreatedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCreatedVC.xib; sourceTree = "<group>"; };
 		EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreatedVC.swift; sourceTree = "<group>"; };
 		EF6864BE230664B300B039FA /* Pretiffy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretiffy.swift; sourceTree = "<group>"; };
+		EF6A3C45231616B3002D4F1A /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		EF82A13A23039EEC001939B7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EF83F76C2305465B0082CDB8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateEventVC.xib; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				EFE11BF42304423600782142 /* Login.swift */,
 				EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */,
 				EFC2216D2308E5970083D8B5 /* CyclistView.swift */,
+				EF6A3C45231616B3002D4F1A /* Events.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */,
 				3204F9A723156286000FDB77 /* MapCell.swift in Sources */,
 				EFC627AF23110627007C30CD /* CyclistCollectionCell.swift in Sources */,
+				EF6A3C46231616B3002D4F1A /* Events.swift in Sources */,
 				EFEE5DD52301575B0027F401 /* AppDelegate.swift in Sources */,
 				3297C5A4231015FC00548F26 /* UIView+Extension.swift in Sources */,
 				EF82A13B23039EEC001939B7 /* Activity.swift in Sources */,

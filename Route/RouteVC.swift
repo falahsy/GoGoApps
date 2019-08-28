@@ -82,6 +82,11 @@ class RouteVC: UIViewController {
         activity.insertData { (info) in
             Preference.set(value: self.activityID, forKey: .kUserActivity)
             
+            let event = Events(id: self.activityID ?? "", user: self.userID ?? "", date: self.eventDate)
+            event.insertData(callback: { (events) in
+                print(events)
+            })
+            
             let eventCreatedVC = EventCreatedVC()
             self.navigationController?.pushViewController(eventCreatedVC, animated: true)
             
