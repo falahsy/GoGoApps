@@ -42,22 +42,28 @@ class HomeVC: UIViewController {
         
         let userID = Preference.getString(forKey: .kUserEmail)!
         let today = Date()
+        let tommorow = Calendar.current.date(byAdding: .day, value: 1, to: today)
         let event = Events()
         
+        self.upcomingEvents = []
         event.searchUser(userID: userID) { (events) in
             for upcomingEvent in events{
                 
                 let intervalDate = Double(upcomingEvent.date)
                 let eventDate = Date(timeIntervalSince1970: intervalDate)
                 
-                if today > eventDate{
+                if tommorow! > eventDate{
                     
-                    upcomingEvent.ref?.removeValue()
+                    upcomingEvent.deleteData(callback: { (info) in
+                        print(info)
+                    })
+                    
                 }else{
                     
                     upcomingEvent.searchActivity(activityID: upcomingEvent.activityID, callback: { (friendsInCommon) in
                         let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta)
                         self.upcomingEvents.append(userEvent)
+                        print(self.upcomingEvents)
                         self.tableView.reloadData()
                     })
                 }
