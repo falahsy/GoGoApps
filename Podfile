@@ -18,7 +18,6 @@ target 'gogoApps' do
   use_frameworks!
 
   # Pods for gogoApps
-  pod 'Hex'
 
 end
 
@@ -27,6 +26,5 @@ target 'gogoApps Extension' do
   use_frameworks!
 
   # Pods for gogoApps Extension
-  pod 'Hex'
 
 end

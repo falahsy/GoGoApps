@@ -49,6 +49,10 @@
 		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
 		BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */; };
 		CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */; };
+		E02116452316390C00CB7246 /* RankList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02116442316390C00CB7246 /* RankList.swift */; };
+		E02116472316395300CB7246 /* Emergency_Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02116462316395300CB7246 /* Emergency_Page.swift */; };
+		E0211649231639CA00CB7246 /* Emergency_Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0211648231639CA00CB7246 /* Emergency_Details.swift */; };
+		E021164B23163A4400CB7246 /* RowTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E021164A23163A4400CB7246 /* RowTable.swift */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
 		EF2B16F5230BB13100EBF33B /* gogoApps Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF2B16F4230BB13100EBF33B /* gogoApps Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -184,6 +188,10 @@
 		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
 		BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoEventCell.xib; sourceTree = "<group>"; };
 		C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps Extension.debug.xcconfig"; path = "Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		E02116442316390C00CB7246 /* RankList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankList.swift; sourceTree = "<group>"; };
+		E02116462316395300CB7246 /* Emergency_Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency_Page.swift; sourceTree = "<group>"; };
+		E0211648231639CA00CB7246 /* Emergency_Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency_Details.swift; sourceTree = "<group>"; };
+		E021164A23163A4400CB7246 /* RowTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTable.swift; sourceTree = "<group>"; };
 		EF1EC614230255810011EA59 /* cycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cycle.entitlements; sourceTree = "<group>"; };
 		EF2B16E8230BB13000EBF33B /* gogoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B16EB230BB13000EBF33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -465,6 +473,10 @@
 			children = (
 				1670D766230F627400443D86 /* gogoApps Extension.entitlements */,
 				EF2B16F9230BB13100EBF33B /* InterfaceController.swift */,
+				E02116442316390C00CB7246 /* RankList.swift */,
+				E0211648231639CA00CB7246 /* Emergency_Details.swift */,
+				E021164A23163A4400CB7246 /* RowTable.swift */,
+				E02116462316395300CB7246 /* Emergency_Page.swift */,
 				EF2B16FB230BB13100EBF33B /* ExtensionDelegate.swift */,
 				EF2B16FD230BB13100EBF33B /* NotificationController.swift */,
 				EF2B16FF230BB13200EBF33B /* Assets.xcassets */,
@@ -648,7 +660,6 @@
 				EF2B16F0230BB13100EBF33B /* Sources */,
 				EF2B16F1230BB13100EBF33B /* Frameworks */,
 				EF2B16F2230BB13100EBF33B /* Resources */,
-				825E5E030EDFE86130446704 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -811,9 +822,24 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Hex/Hex.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-cycle/Pods-cycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hex.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -840,23 +866,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		825E5E030EDFE86130446704 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BED305727DFE08766D858660 /* [CP] Check Pods Manifest.lock */ = {
@@ -911,7 +920,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF2B16FE230BB13100EBF33B /* NotificationController.swift in Sources */,
+				E02116472316395300CB7246 /* Emergency_Page.swift in Sources */,
+				E02116452316390C00CB7246 /* RankList.swift in Sources */,
 				EF2B16FC230BB13100EBF33B /* ExtensionDelegate.swift in Sources */,
+				E021164B23163A4400CB7246 /* RowTable.swift in Sources */,
+				E0211649231639CA00CB7246 /* Emergency_Details.swift in Sources */,
 				EF2B16FA230BB13100EBF33B /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1006,14 +1019,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = XESBM2V2SR;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1029,14 +1042,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = XESBM2V2SR;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1053,10 +1066,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = XESBM2V2SR;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1073,10 +1086,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = XESBM2V2SR;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1209,13 +1222,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = XESBM2V2SR;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1229,13 +1242,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = XESBM2V2SR;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

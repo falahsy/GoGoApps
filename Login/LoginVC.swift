@@ -166,12 +166,6 @@ class LoginVC: UIViewController {
             self.navigationController?.pushViewController(homeVC, animated: true)
         }
         
-        //        //the cancel action doing nothing
-        //        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-        //
-        //
-        //        }
-        
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
             textField.placeholder = "Enter Name"
