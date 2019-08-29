@@ -47,6 +47,7 @@ class HomeVC: UIViewController {
         
         self.upcomingEvents = []
         event.searchUser(userID: userID) { (events) in
+            
             for upcomingEvent in events{
                 
                 let intervalDate = Double(upcomingEvent.date)
@@ -61,10 +62,13 @@ class HomeVC: UIViewController {
                 }else{
                     
                     upcomingEvent.searchActivity(activityID: upcomingEvent.activityID, callback: { (friendsInCommon) in
-                        let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta)
-                        self.upcomingEvents.append(userEvent)
-                        print(self.upcomingEvents)
-                        self.tableView.reloadData()
+                       
+                        DispatchQueue.main.async {
+                            let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta)
+                            self.upcomingEvents.append(userEvent)
+                            self.tableView.reloadData()
+                        }
+                        
                     })
                 }
                 
@@ -77,6 +81,7 @@ class HomeVC: UIViewController {
 }
 extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if todayContent != 0 && upcomingContent != 0{
             return 3 + todayContent + upcomingContent
         } else if todayContent == 0 && upcomingContent != 0{
@@ -127,6 +132,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if todayContent != 0 && upcomingContent != 0{
             if indexPath.row == 0 {
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeHeaderCell", for: indexPath)) as! HomeHeaderCell

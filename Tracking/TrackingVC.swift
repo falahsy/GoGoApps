@@ -180,8 +180,6 @@ extension TrackingVC:UICollectionViewDataSource{
             cell.subtitle.text = self.cyclistOrder[indexPath.row].subtitle
             cell.distance.text = self.cyclistOrder[indexPath.row].distance
             
-//            cell.subtitle?.text = "\(self.cyclistOrder[indexPath.row].userID) distance \(Pretiffy.getDistance(distance: self.sortedFriendsByDistance[indexPath.row].distance))"
-            
         }
         
         return cell

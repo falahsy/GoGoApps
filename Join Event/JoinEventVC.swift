@@ -39,9 +39,6 @@ class JoinEventVC: UIViewController{
                 
                 let userID = Preference.getString(forKey: .kUserEmail) ?? ""
                 
-                
-                // create NSDate from Double (NSTimeInterval)
-                
                 let activity = activities.first!
                 let intervalDate = Double(activity.date)
                 let eventDate = Date(timeIntervalSince1970: intervalDate)
@@ -49,18 +46,31 @@ class JoinEventVC: UIViewController{
                 let event = Events()
                 
                 event.searchActivity(activityID: activity.activityID, callback: { (events) in
-                    let firstEvent = events.first!
-                    
-                    let jointEvent = Events(id: firstEvent.activityID, user: userID, date: eventDate, distance: firstEvent.distance, eta: firstEvent.eta, destination: firstEvent.destination)
-                    
-                    jointEvent.insertData(callback: { (info) in
-                        print(info)
-                    })
-                    
+                    let result = events.allSatisfy{
+                         $0.userID == userID
+                    }
+                    if result {
+                        event.searchActivity(activityID: activity.activityID, callback: { (events) in
+                            let firstEvent = events.first!
+                            
+                            let jointEvent = Events(id: firstEvent.activityID, user: userID, date: eventDate, distance: firstEvent.distance, eta: firstEvent.eta, destination: firstEvent.destination)
+                            
+                            jointEvent.insertData(callback: { (info) in
+                                print(info)
+                            })
+                            
+                        })
+                        
+                        let trackingVC = DetailEventVC()
+                        self.navigationController?.pushViewController(trackingVC, animated: true)
+                    }else{
+                        let alert = UIAlertController(title: "Event",message: "You're already registered to this event",preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 })
                 
-                let trackingVC = DetailEventVC()
-                self.navigationController?.pushViewController(trackingVC, animated: true)
+                
             } else {
                 let alert = UIAlertController(title: "Event",message: "Event doesn't exist",preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default))
