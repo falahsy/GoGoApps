@@ -33,19 +33,10 @@ class DetailEventVC: UIViewController {
     var activity: Activity?
     var timer: Timer?
     var placemarks: [MKPlacemark] = []
+    var members: [User]?
     
     let locationManager: CLLocationManager = CLLocationManager()
-    var initialLocation: CLLocationCoordinate2D? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
-    var detailModel: DetailModel? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var initialLocation: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +77,16 @@ class DetailEventVC: UIViewController {
             })
             self.tableView.reloadData()
         }
+        
+        getMembers()
+    }
+    
+    private func getMembers() {
+        let user: User = User()
+        user.searchActivity(activity: activityId) { (users) in
+            self.members = users
+            self.tableView.reloadData()
+        }
     }
 
     @IBAction func onStartTapped(_ sender: UIButton) {
@@ -124,7 +125,7 @@ extension DetailEventVC: UITableViewDelegate, UITableViewDataSource {
 
     private func cellForMemberView(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TeamCell.identifier, for: indexPath) as? TeamCell else { return UITableViewCell() }
-        
+        cell.members = members
         return cell
     }
 }
@@ -151,6 +152,7 @@ extension DetailEventVC: CLLocationManagerDelegate, MKMapViewDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             initialLocation = location.coordinate
+            tableView.reloadData()
         }
     }
     

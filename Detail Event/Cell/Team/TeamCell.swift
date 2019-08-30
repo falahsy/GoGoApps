@@ -17,6 +17,12 @@ class TeamCell: UITableViewCell {
         }
     }
     
+    var members: [User]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionView()
@@ -32,12 +38,12 @@ class TeamCell: UITableViewCell {
 
 extension TeamCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return members?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamProfileCell.identifier, for: indexPath) as? TeamProfileCell else { return UICollectionViewCell() }
-        
+        cell.member = members?[indexPath.row]
         return cell
     }
     

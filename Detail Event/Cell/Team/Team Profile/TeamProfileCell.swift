@@ -11,14 +11,14 @@ import UIKit
 class TeamProfileCell: UICollectionViewCell {
 
     static let identifier: String = "TeamProfileCell"
-    @IBOutlet weak var imageView: UIImageView! {
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageFrame: UIView! {
         didSet {
-            imageView.setupRadius(type: .rounded, isMaskToBounds: true)
-            imageView.layer.borderWidth = 1
-            imageView.layer.borderColor = UIColor.black.cgColor
+            imageFrame.setupRadius(type: .rounded, isMaskToBounds: true)
+            imageFrame.layer.borderWidth = 1
+            imageFrame.layer.borderColor = UIColor.black.cgColor
         }
     }
-    
     @IBOutlet weak var view: UIView! {
         didSet {
             view.setupRadius(type: .custom(8.0))
@@ -29,6 +29,13 @@ class TeamProfileCell: UICollectionViewCell {
         didSet {
             nameLabel.text = "Brocolli"
         }   
+    }
+    
+    var member: User? {
+        didSet {
+            guard let member = member else { return }
+            nameLabel.text = member.fullName
+        }
     }
     
     override func awakeFromNib() {

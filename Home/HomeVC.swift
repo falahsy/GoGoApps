@@ -152,7 +152,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = DetailEventVC()
+        let vc = TrackingVC()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

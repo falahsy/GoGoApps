@@ -22,28 +22,41 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of9-T8-FDb">
                         <rect key="frame" x="8" y="8" width="84" height="144"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling - biru" translatesAutoresizingMaskIntoConstraints="NO" id="Skl-8b-Pni">
-                                <rect key="frame" x="15" y="16" width="54" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="IPj-Kc-RTl"/>
-                                    <constraint firstAttribute="height" constant="54" id="YaW-LX-tqs"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXS-ZK-IBX">
-                                <rect key="frame" x="8" y="86" width="68" height="17"/>
+                                <rect key="frame" x="8" y="54" width="68" height="90"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gZ-lI-O6m">
+                                <rect key="frame" x="15" y="0.0" width="54" height="54"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling - biru" translatesAutoresizingMaskIntoConstraints="NO" id="Skl-8b-Pni">
+                                        <rect key="frame" x="9" y="9" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="8xj-ic-OrG"/>
+                                            <constraint firstAttribute="height" constant="36" id="HLG-8F-DTC"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="XE4-PB-NXq"/>
+                                    <constraint firstItem="Skl-8b-Pni" firstAttribute="centerY" secondItem="9gZ-lI-O6m" secondAttribute="centerY" id="faF-Du-tWX"/>
+                                    <constraint firstAttribute="width" constant="54" id="lB9-n3-lVv"/>
+                                    <constraint firstItem="Skl-8b-Pni" firstAttribute="centerX" secondItem="9gZ-lI-O6m" secondAttribute="centerX" id="mxD-5L-cmp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iXS-ZK-IBX" secondAttribute="trailing" constant="8" id="2ad-gh-pR1"/>
-                            <constraint firstItem="iXS-ZK-IBX" firstAttribute="top" secondItem="Skl-8b-Pni" secondAttribute="bottom" constant="16" id="7b3-EM-7wt"/>
+                            <constraint firstItem="iXS-ZK-IBX" firstAttribute="top" secondItem="9gZ-lI-O6m" secondAttribute="bottom" id="GAT-h3-Puq"/>
+                            <constraint firstItem="9gZ-lI-O6m" firstAttribute="top" secondItem="Of9-T8-FDb" secondAttribute="top" id="LEc-Zv-Dy6"/>
                             <constraint firstItem="iXS-ZK-IBX" firstAttribute="centerX" secondItem="Of9-T8-FDb" secondAttribute="centerX" id="RNN-AF-ohB"/>
-                            <constraint firstItem="Skl-8b-Pni" firstAttribute="top" secondItem="Of9-T8-FDb" secondAttribute="top" constant="16" id="Vbd-Wh-Xfd"/>
+                            <constraint firstItem="9gZ-lI-O6m" firstAttribute="centerX" secondItem="Of9-T8-FDb" secondAttribute="centerX" id="Rtl-6f-Yik"/>
                             <constraint firstItem="iXS-ZK-IBX" firstAttribute="leading" secondItem="Of9-T8-FDb" secondAttribute="leading" constant="8" id="dcT-C0-V2r"/>
-                            <constraint firstItem="Skl-8b-Pni" firstAttribute="centerX" secondItem="Of9-T8-FDb" secondAttribute="centerX" id="ew2-uM-vcR"/>
+                            <constraint firstAttribute="bottom" secondItem="iXS-ZK-IBX" secondAttribute="bottom" id="lkM-hX-xww"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,6 +69,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="imageFrame" destination="9gZ-lI-O6m" id="Ugp-V9-R8v"/>
                 <outlet property="imageView" destination="Skl-8b-Pni" id="Ghg-0A-jUe"/>
                 <outlet property="nameLabel" destination="iXS-ZK-IBX" id="Gsr-cr-itj"/>
                 <outlet property="view" destination="Of9-T8-FDb" id="7ii-2A-Qtd"/>

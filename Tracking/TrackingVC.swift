@@ -90,9 +90,8 @@ class TrackingVC: UIViewController{
         collectionView.delegate = self
         collectionView.register(UINib.init(nibName: "CyclistCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cyclistCell")
         
-        let defaults = UserDefaults.standard
-        self.userID = defaults.string(forKey: "email")
-        self.activityID = defaults.string(forKey: "activity")
+        self.userID = Preference.getString(forKey: .kUserEmail)
+        self.activityID = Preference.getString(forKey: .kUserActivity)
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -120,7 +119,6 @@ class TrackingVC: UIViewController{
             self.drawRoutes(routes: self.routesPoints)
         }
         
-        self.navigationController?.navigationBar.isHidden = false
         self.mapView.register(CyclistView.self,
                               forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
@@ -141,14 +139,10 @@ class TrackingVC: UIViewController{
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        
         self.navigationController?.navigationBar.isHidden = false
-        
-        
     }
     override func viewWillDisappear(_ animated: Bool) {
-        
-        self.navigationController?.navigationBar.isHidden = true
+        super.viewWillDisappear(animated)
         guard let timer = self.timerForBackground else {return}
         timer.invalidate()
         

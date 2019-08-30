@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if error == nil {
                 print("Success")
             } else {
-                print("Error Occured \(error?.localizedDescription)")
+                print("Error Occured \(error?.localizedDescription ?? "Error")")
             }
         })
     }

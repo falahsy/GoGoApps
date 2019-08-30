@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingVC" customModule="cycle" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="cxB-14-aVI" id="KPD-is-rkf"/>
+                <outlet property="infoLabel" destination="uwc-Sj-ntD" id="sLu-ed-sWH"/>
+                <outlet property="titleLabel" destination="U3U-Xj-Jpi" id="L0N-z7-22E"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q19-Qe-Kve">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait for confirmation" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3U-Xj-Jpi">
+                            <rect key="frame" x="24" y="24" width="366" height="36"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwc-Sj-ntD">
+                            <rect key="frame" x="24" y="84" width="366" height="86.5"/>
+                            <string key="text">Please open Gogo on your Apple Watch so you can know how far you are from friends while cycling and quikly send emergency alert. </string>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zj4-14-9om">
+                            <rect key="frame" x="0.0" y="170.5" width="414" height="647.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourglass" translatesAutoresizingMaskIntoConstraints="NO" id="cxB-14-aVI">
+                                    <rect key="frame" x="127" y="244" width="160" height="160"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="160" id="XLe-1n-nPk"/>
+                                        <constraint firstAttribute="width" constant="160" id="va5-kO-XXU"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="cxB-14-aVI" firstAttribute="centerX" secondItem="zj4-14-9om" secondAttribute="centerX" id="NUg-9h-5QY"/>
+                                <constraint firstItem="cxB-14-aVI" firstAttribute="centerY" secondItem="zj4-14-9om" secondAttribute="centerY" id="fEq-0h-avZ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="zj4-14-9om" firstAttribute="top" secondItem="uwc-Sj-ntD" secondAttribute="bottom" id="5Ye-7k-hNu"/>
+                        <constraint firstItem="U3U-Xj-Jpi" firstAttribute="top" secondItem="q19-Qe-Kve" secondAttribute="top" constant="24" id="DFG-zc-OTX"/>
+                        <constraint firstItem="uwc-Sj-ntD" firstAttribute="top" secondItem="U3U-Xj-Jpi" secondAttribute="bottom" constant="24" id="HbG-hg-Zpu"/>
+                        <constraint firstAttribute="trailing" secondItem="zj4-14-9om" secondAttribute="trailing" id="OpY-B7-ZDY"/>
+                        <constraint firstAttribute="bottom" secondItem="zj4-14-9om" secondAttribute="bottom" id="UvP-Mc-NcX"/>
+                        <constraint firstItem="U3U-Xj-Jpi" firstAttribute="leading" secondItem="q19-Qe-Kve" secondAttribute="leading" constant="24" id="XTH-7t-Xos"/>
+                        <constraint firstAttribute="trailing" secondItem="uwc-Sj-ntD" secondAttribute="trailing" constant="24" id="cL6-sM-LWn"/>
+                        <constraint firstItem="zj4-14-9om" firstAttribute="leading" secondItem="q19-Qe-Kve" secondAttribute="leading" id="dWw-a5-bNE"/>
+                        <constraint firstAttribute="trailing" secondItem="U3U-Xj-Jpi" secondAttribute="trailing" constant="24" id="klR-5x-C3A"/>
+                        <constraint firstItem="uwc-Sj-ntD" firstAttribute="leading" secondItem="q19-Qe-Kve" secondAttribute="leading" constant="24" id="rcJ-GA-Gpc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="q19-Qe-Kve" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YhY-EG-k6x"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="q19-Qe-Kve" secondAttribute="trailing" id="cCv-bq-LHc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q19-Qe-Kve" secondAttribute="bottom" id="cWd-X5-fTS"/>
+                <constraint firstItem="q19-Qe-Kve" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mWM-Jm-GkS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="hourglass" width="124" height="162"/>
+    </resources>
+</document>
