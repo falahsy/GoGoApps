@@ -16,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var eventID: Int = 0
+    var eventID: String = ""
+    var flagLetsGo = false
+    var flagSos = false
+    var flagFinish = false
     
     var navigationController: UINavigationController?
     
@@ -42,22 +45,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Note: Ini belum ke sambung sm cloudKit yg di apps ini karena belum di set profile nya
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        //akan melakukan unsubscribe ke semua event sebelum masuk ke event baru saat akan gowes
-        unsubscribeNotification()
+    }
+    
+    func letsGo(eventId: String) {
         
-//        let vc = ViewController()
-//        self.eventID = vc.eventIDummy
+        self.unsubscribeNotification()
         
-        // bakal ngefilter iventID yang sesuai
-        let subscription = CKQuerySubscription(recordType: "gogoNotification", predicate: NSPredicate(format: "eventID == \(self.eventID)"), options: .firesOnRecordCreation)
+        let subscription = CKQuerySubscription(recordType: "letsGo", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)
         
         let info = CKSubscription.NotificationInfo()
         
         info.titleLocalizationKey = "%1$@"
-        info.titleLocalizationArgs = ["userName"]
+        info.titleLocalizationArgs = ["userId"]
         
         info.alertLocalizationKey = "%1$@"
-        info.alertLocalizationArgs = ["contentNotification"]
+        info.alertLocalizationArgs = ["message"]
         
         info.shouldBadge = true
         info.soundName = "default"

@@ -19,7 +19,7 @@ struct Activity{
     var message:String
     var userID:String
     var date:Int
-    var adminID:String
+//    var adminID:String
     let ref: DatabaseReference?
     private var key: String
     
@@ -30,7 +30,7 @@ struct Activity{
         self.key = key
         self.message = ""
         self.userID = ""
-        self.adminID = adminID
+//        self.adminID = adminID
         // convert Date to TimeInterval (typealias for Double)
         let timeInterval = date.timeIntervalSince1970
         
@@ -47,7 +47,7 @@ struct Activity{
         self.key = ""
         self.message = ""
         self.userID = ""
-        self.adminID = ""
+//        self.adminID = ""
         // convert Date to TimeInterval (typealias for Double)
         let date = Date()
         let timeInterval = date.timeIntervalSince1970
@@ -67,11 +67,11 @@ struct Activity{
             let messageID = value["messageID"] as? Int?,
             let message = value["message"] as? String,
             let user = value["user"] as? String,
-            let date = value["date"] as? Int,
-            let admin = value["adminID"] as? String
+            let date = value["date"] as? Int
+//            let admin = value["adminID"] as? String
             else {
                 return nil
-        }
+            }
         
         self.ref = snapshot.ref
         self.key = snapshot.key
@@ -80,7 +80,7 @@ struct Activity{
         self.messageID = messageID ?? 0
         self.userID = user
         self.date = date
-        self.adminID = admin
+//        self.adminID = admin
         
         var routesList :[CLLocationCoordinate2D] = []
         routes.forEach { (route) in
@@ -107,8 +107,8 @@ struct Activity{
             "messageID": messageID,
             "message": message,
             "user": userID,
-            "date": date,
-            "adminID": adminID
+            "date": date
+//            "adminID": adminID
             
         ]
     }
@@ -132,11 +132,10 @@ struct Activity{
             for item in snapshot.children {
                 let activity = item as! DataSnapshot
                 
-                guard let activityCyclist = Activity(snapshot: activity) else {return}
+                guard let activityCyclist = Activity(snapshot: activity) else { return }
                 activityList.append(activityCyclist)
             }
             
-            print(activityList)
             callback(activityList)
         }
     }

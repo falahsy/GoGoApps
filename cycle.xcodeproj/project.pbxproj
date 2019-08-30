@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AA212230D30B4002EB295 /* OnBoardingVC.xib */; };
 		161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AA213230D30B4002EB295 /* OnBoardingVC.swift */; };
-		16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16699DA1230F885B00A90ABC /* CloudKit.framework */; };
+		166C74BC23192FE50097DA77 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166C74BB23192FE50097DA77 /* CloudKit.framework */; };
 		3204F9A523156286000FDB77 /* DetailEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F99823156286000FDB77 /* DetailEventVC.xib */; };
 		3204F9A623156286000FDB77 /* DetailEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99923156286000FDB77 /* DetailEventVC.swift */; };
 		3204F9A723156286000FDB77 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99C23156286000FDB77 /* MapCell.swift */; };
@@ -140,7 +140,7 @@
 		161AA212230D30B4002EB295 /* OnBoardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingVC.xib; sourceTree = "<group>"; };
 		161AA213230D30B4002EB295 /* OnBoardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		16699DA0230F86E000A90ABC /* gogoApps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gogoApps.entitlements; sourceTree = "<group>"; };
-		16699DA1230F885B00A90ABC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		166C74BB23192FE50097DA77 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1670D766230F627400443D86 /* gogoApps Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gogoApps Extension.entitlements"; sourceTree = "<group>"; };
 		3204F99823156286000FDB77 /* DetailEventVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailEventVC.xib; sourceTree = "<group>"; };
 		3204F99923156286000FDB77 /* DetailEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventVC.swift; sourceTree = "<group>"; };
@@ -259,9 +259,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
+				166C74BC23192FE50097DA77 /* CloudKit.framework in Frameworks */,
 				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
-				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
 				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,7 +420,7 @@
 		6BF146F74B034CBBD1B54B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16699DA1230F885B00A90ABC /* CloudKit.framework */,
+				166C74BB23192FE50097DA77 /* CloudKit.framework */,
 				632687FF7D4AC005F2F89996 /* Pods_cycle.framework */,
 				3CEB6D410995C5BF108A0D89 /* Pods_gogoApps.framework */,
 				964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */,
@@ -1030,14 +1029,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1053,14 +1052,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1077,10 +1076,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4N5X372G52;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1097,10 +1096,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4N5X372G52;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1233,13 +1232,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1253,13 +1252,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STKR5JMBGH;
+				DEVELOPMENT_TEAM = L2RW8586XY;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.azmimuhammad.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

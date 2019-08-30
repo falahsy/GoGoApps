@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CloudKit
 
 class DetailEventVC: UIViewController {
 
@@ -77,7 +78,6 @@ class DetailEventVC: UIViewController {
             })
             self.tableView.reloadData()
         }
-        
         getMembers()
     }
     
@@ -93,6 +93,34 @@ class DetailEventVC: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             self.tableView.reloadData()
+        }
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if let temp = activity {
+            self.activityId = temp.activityID
+            
+            appDelegate.eventID = activityId
+            
+            appDelegate.letsGo(eventId: self.activityId)
+            
+            print("User: \(temp.userID)")
+//            let record = CKRecord(recordType: "letsGo")
+//            let myContainer = CKContainer.default()
+//
+//            record["eventId"] = self.activityId
+//            record["userId"] = temp.userID
+//            record["message"] = "Lets Gowes"
+//
+//            let publicDatabase = myContainer.publicCloudDatabase
+//
+//            publicDatabase.save(record, completionHandler: { recordX, error in
+//                if let error = error {
+//                    print("Error \(error.localizedDescription)")
+//                    return
+//                }
+//            })
         }
     }
 }

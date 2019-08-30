@@ -31,12 +31,19 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavController(title: "GoGo", prefLargeTitle: false, isHidingBackButton: true)
+        
+        //Check All Activity
+//        let act = Activity()
+//        act.getAllActivity { (activities) in
+//            for data in activities {
+//                print("\(data.activityID): \(data.userID)")
+//            }
+//        }
         
         let userID = Preference.getString(forKey: .kUserEmail)!
         let today = Date()
@@ -224,7 +231,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = DetailEventVC()
-        vc.activityId = upcomingEvents[indexPath.row].activityID
+        vc.activityId = upcomingEvents[0].activityID
         navigationController?.pushViewController(vc, animated: true)
     }
 }
