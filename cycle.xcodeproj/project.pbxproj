@@ -66,6 +66,7 @@
 		EF63BD8423103D3400000FF8 /* EventCreatedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */; };
 		EF6864BF230664B300B039FA /* Pretiffy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6864BE230664B300B039FA /* Pretiffy.swift */; };
 		EF6A3C46231616B3002D4F1A /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6A3C45231616B3002D4F1A /* Events.swift */; };
+		EF6A3C4823163A58002D4F1A /* UpcomingEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6A3C4723163A58002D4F1A /* UpcomingEventInfo.swift */; };
 		EF82A13B23039EEC001939B7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82A13A23039EEC001939B7 /* Activity.swift */; };
 		EF83F76D2305465B0082CDB8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83F76C2305465B0082CDB8 /* MapVC.swift */; };
 		EF90A8E9230E86FB003BB556 /* CreateEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */; };
@@ -208,6 +209,7 @@
 		EF63BD8323103D3400000FF8 /* EventCreatedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreatedVC.swift; sourceTree = "<group>"; };
 		EF6864BE230664B300B039FA /* Pretiffy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretiffy.swift; sourceTree = "<group>"; };
 		EF6A3C45231616B3002D4F1A /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		EF6A3C4723163A58002D4F1A /* UpcomingEventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventInfo.swift; sourceTree = "<group>"; };
 		EF82A13A23039EEC001939B7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EF83F76C2305465B0082CDB8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		EF90A8E8230E86FB003BB556 /* CreateEventVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateEventVC.xib; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				EFCEE83A2308C2E0006E5D70 /* Cyclist.swift */,
 				EFC2216D2308E5970083D8B5 /* CyclistView.swift */,
 				EF6A3C45231616B3002D4F1A /* Events.swift */,
+				EF6A3C4723163A58002D4F1A /* UpcomingEventInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 				3297C561230FA49200548F26 /* Preference.swift in Sources */,
 				EFC627B2231135A6007C30CD /* CyclistInfo.swift in Sources */,
 				327E4FD1230D131200FEBB9D /* SearchActivityVC.swift in Sources */,
+				EF6A3C4823163A58002D4F1A /* UpcomingEventInfo.swift in Sources */,
 				32D240C923139B8800D4D69C /* SearchActivityViewController.swift in Sources */,
 				32D240CA23139B8800D4D69C /* ShowRouteViewController.swift in Sources */,
 				3292555323162D0100E6AAC4 /* String+Extension.swift in Sources */,

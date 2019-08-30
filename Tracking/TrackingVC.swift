@@ -91,7 +91,7 @@ class TrackingVC: UIViewController{
         collectionView.register(UINib.init(nibName: "CyclistCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cyclistCell")
         
         self.userID = Preference.getString(forKey: .kUserEmail)
-        self.activityID = Preference.getString(forKey: .kUserActivity)
+//        self.activityID = Preference.getString(forKey: .kUserActivity)
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -172,8 +172,6 @@ extension TrackingVC:UICollectionViewDataSource{
             cell.title?.text = self.cyclistOrder[indexPath.row].title
             cell.subtitle.text = self.cyclistOrder[indexPath.row].subtitle
             cell.distance.text = self.cyclistOrder[indexPath.row].distance
-            
-//            cell.subtitle?.text = "\(self.cyclistOrder[indexPath.row].userID) distance \(Pretiffy.getDistance(distance: self.sortedFriendsByDistance[indexPath.row].distance))"
             
         }
         

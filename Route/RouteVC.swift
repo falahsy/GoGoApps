@@ -28,6 +28,7 @@ class RouteVC: UIViewController {
             }
         }
     }
+    var exactDistanceByRoutes:Double = 0.0
     var timeFromDestination:Int!{
         didSet{
             
@@ -35,6 +36,7 @@ class RouteVC: UIViewController {
             
         }
     }
+    var destination:String = ""
     var userID:String?
     var activityID:String?
     var eventDate:Date!{
@@ -77,12 +79,12 @@ class RouteVC: UIViewController {
             }
         }
         
-        let activity = Activity(id: self.activityID!.trimmingCharacters(in: .whitespacesAndNewlines), routes: routesShared,date:self.eventDate)
+        let activity = Activity(id: self.activityID!.trimmingCharacters(in: .whitespacesAndNewlines), routes: routesShared,date:self.eventDate,adminID: self.userID!)
         
         activity.insertData { (info) in
             Preference.set(value: self.activityID, forKey: .kUserActivity)
             
-            let event = Events(id: self.activityID ?? "", user: self.userID ?? "", date: self.eventDate)
+            let event = Events(id: self.activityID ?? "", user: self.userID ?? "", date: self.eventDate,distance: self.exactDistanceByRoutes, eta:self.timeFromDestination, destination: self.destination)
             event.insertData(callback: { (events) in
                 print(events)
             })
@@ -265,6 +267,9 @@ extension RouteVC: SearchRouteDelegate {
         self.timeFromDestination = 0
         let sourcePlaceMark = MKPlacemark(coordinate: initialLocation)
         var source = MKMapItem(placemark: sourcePlaceMark)
+        var togleForExactDistance = false
+        
+        getDestinationName(coordinate: self.routesPoints.last!.coordinate)
         
         for point in routes{
             
@@ -286,6 +291,10 @@ extension RouteVC: SearchRouteDelegate {
                 //get route and assign to our route variable
                 let route = directionResonse.routes[0]
                 
+                if togleForExactDistance{
+                    self.exactDistanceByRoutes += route.distance
+                }
+                
                 self.distanceFromDestination += route.distance
                 self.timeFromDestination += Int (route.expectedTravelTime)
                 
@@ -302,8 +311,30 @@ extension RouteVC: SearchRouteDelegate {
             }
             
             source = MKMapItem(placemark: point)
+            togleForExactDistance = true
             
         }
+        
+    }
+    
+    func getDestinationName(coordinate: CLLocationCoordinate2D)  {
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        geoCoder.reverseGeocodeLocation(location, completionHandler:
+            {
+                placemarks, error -> Void in
+                
+                // Place details
+                guard let placeMark = placemarks?.first else { return }
+                
+                
+                // Street address
+                if let street = placeMark.thoroughfare {
+                    self.destination = street
+                }
+                
+        })
         
     }
 }

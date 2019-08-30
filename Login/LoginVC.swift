@@ -15,7 +15,7 @@ class LoginVC: UIViewController, UITextFieldDelegate{
   
     @IBOutlet weak var welcomeLbl: UILabel!{
         didSet{
-            welcomeLbl.text = "WelcomeBack"
+            welcomeLbl.text = "Welcome Back"
         }
     }
     
@@ -194,10 +194,10 @@ class LoginVC: UIViewController, UITextFieldDelegate{
         textBoxPassword.text = ""
     }
     
-    @objc func signIn() {
-        
-        
-    }
+//    @objc func signIn() {
+//
+//
+//    }
     
     func showInputDialog() {
         //Creating UIAlertController and
@@ -213,17 +213,11 @@ class LoginVC: UIViewController, UITextFieldDelegate{
             user.insertData { (info) in
                 print(info)
             }
-            let defaults = UserDefaults.standard
-            defaults.set(self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "email")
+            
+            Preference.set(value: self.textBoxUserID.text?.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
             let homeVC = HomeVC()
             self.navigationController?.pushViewController(homeVC, animated: true)
         }
-        
-        //        //the cancel action doing nothing
-        //        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-        //
-        //
-        //        }
         
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
@@ -232,7 +226,6 @@ class LoginVC: UIViewController, UITextFieldDelegate{
         
         //adding the action to dialogbox
         alertController.addAction(confirmAction)
-        //alertController.addAction(cancelAction)
         
         //finally presenting the dialog box
         self.present(alertController, animated: true, completion: nil)
@@ -255,7 +248,6 @@ class LoginVC: UIViewController, UITextFieldDelegate{
             }
         } else {
             Login.createAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,status) in
-                
                 
                 if status{
                     self.showInputDialog()

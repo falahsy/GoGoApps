@@ -40,7 +40,7 @@ class DetailEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityId = Preference.getString(forKey: .kUserActivity) ?? ""
+//        activityId = Preference.getString(forKey: .kUserActivity) ?? ""
         setupNavController(title: "Detail Event", prefLargeTitle: true, isHidingBackButton: false)
         view.backgroundColor = UIColor(hex: "#F9F9F9")
         
@@ -152,7 +152,6 @@ extension DetailEventVC: CLLocationManagerDelegate, MKMapViewDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             initialLocation = location.coordinate
-            tableView.reloadData()
         }
     }
     
