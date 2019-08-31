@@ -251,7 +251,6 @@ extension RouteVC: SearchRouteDelegate {
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
         
-        //self.routesPoints.append(placemark)
         self.routesPoints.insert(placemark, at: 0)
         self.startingPoint.text = placemark.title
         
