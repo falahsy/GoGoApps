@@ -260,7 +260,6 @@ extension HomeVC : homeCellDelegate{
         let vc = JoinEventVC()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 

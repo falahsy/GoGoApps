@@ -100,27 +100,27 @@ class DetailEventVC: UIViewController {
         
         if let temp = activity {
             self.activityId = temp.activityID
-            
             appDelegate.eventID = activityId
-            
             appDelegate.letsGo(eventId: self.activityId)
             
             print("User: \(temp.userID)")
-//            let record = CKRecord(recordType: "letsGo")
-//            let myContainer = CKContainer.default()
-//
-//            record["eventId"] = self.activityId
-//            record["userId"] = temp.userID
-//            record["message"] = "Lets Gowes"
-//
-//            let publicDatabase = myContainer.publicCloudDatabase
-//
-//            publicDatabase.save(record, completionHandler: { recordX, error in
-//                if let error = error {
-//                    print("Error \(error.localizedDescription)")
-//                    return
-//                }
-//            })
+            print("Activity Id: \(temp.activityID)")
+            
+            let record = CKRecord(recordType: "letsGo")
+            let myContainer = CKContainer.default()
+
+            record["eventId"] = self.activityId
+            record["userId"] = temp.userID
+            record["message"] = "Lets Gowes"
+
+            let publicDatabase = myContainer.publicCloudDatabase
+
+            publicDatabase.save(record, completionHandler: { recordX, error in
+                if let error = error {
+                    print("Error \(error.localizedDescription)")
+                    return
+                }
+            })
         }
     }
 }
