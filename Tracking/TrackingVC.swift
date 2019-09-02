@@ -10,6 +10,7 @@ import Foundation
 import Foundation
 import UIKit
 import MapKit
+import CloudKit
 
 class TrackingVC: UIViewController{
     
@@ -70,6 +71,9 @@ class TrackingVC: UIViewController{
     var groups:[[String:Double]] = []
     var cyclistOrder:[CyclistInfo] = []
     var backgroundCounter = 0
+    
+    var messageSOS = ""
+    var hasError: Bool! = false
     
     @IBAction func go(_ sender: UIButton) {
         if self.timerForBackground != nil{
@@ -462,6 +466,40 @@ extension TrackingVC {
         
     }
     
+    private func pushNotification() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.letsGo(activity: "SOS", eventId: activityID!) { [weak self] (_ , error) in
+            guard let self = self else { return }
+            
+            if let _ = error {
+                self.hasError = true
+            } else {
+                self.createNewRecord(msg: self.messageSOS)
+            }
+            
+        }
+    }
+    
+    func createNewRecord(msg: String){
+        let record: CKRecord = CKRecord(recordType: "SOS")
+        let myContainer: CKContainer = CKContainer.default()
+        
+        record["eventId"] = activityID!
+        record["userId"] = userID!
+        record["message"] = messageSOS
+        
+        let publicDatabase = myContainer.publicCloudDatabase
+        
+        publicDatabase.save(record, completionHandler: { recordX, error in
+            if let _ = error {
+                self.hasError = true
+                return
+            } else {
+                self.hasError = false
+            }
+        })
+    }
+    
     func showSOSDialog() {
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
@@ -486,6 +524,7 @@ extension TrackingVC {
                 }
             }
             
+            self.pushNotification()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
@@ -495,6 +534,7 @@ extension TrackingVC {
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
             textField.placeholder = "Message"
+            self.messageSOS = textField.text!
         }
         
         //adding the action to dialogbox

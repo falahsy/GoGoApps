@@ -38,7 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
         
+        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil){
+            
+            moveToTrackingVC(withActivityId: self.eventID)
+        }
+        
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
     }
     
     //setUp subscription ke cloudkit
@@ -47,10 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func letsGo(eventId: String, completion: @escaping ((CKSubscription?, Error?)->Void)) {
-        self.unsubscribeNotification()
+    func letsGo(activity: String, eventId: String, completion: @escaping ((CKSubscription?, Error?)->Void)) {
+        self.eventID = eventId
         
-        let subscription = CKQuerySubscription(recordType: "letsGo", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)
+        var subscription: CKQuerySubscription
+        
+        if(activity == "letsGo") {
+            self.unsubscribeNotification()
+            subscription = CKQuerySubscription(recordType: "letsGo", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)
+        } else if (activity == "SOS") {
+            subscription = CKQuerySubscription(recordType: "SOS", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)
+        } else {
+            subscription = CKQuerySubscription(recordType: "Finish", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)
+        }
         
         let info = CKSubscription.NotificationInfo()
         
@@ -72,8 +90,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func unsubscribeNotification() {
         CKContainer.default().publicCloudDatabase.fetchAllSubscriptions(completionHandler: { subscriptions, error in
             if error != nil {
-                // failed to fetch all subscriptions, handle error here
-                // end the function early
                 return
             }
             
@@ -105,7 +121,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let onBoardingVC = OnBoardingVC()
                 setRoot(window, onBoardingVC)
             }
-            
+        }
+    }
+    
+    private func moveToTrackingVC(withActivityId id: String) {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if let window = window {
+            let vc = TrackingVC()
+            vc.activityID = id
+            setRoot(window, vc)
         }
     }
     
@@ -131,3 +155,5 @@ extension AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
 }
+
+// ActivityID = 7580
