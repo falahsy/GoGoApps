@@ -25,11 +25,7 @@ class TeamProfileCell: UICollectionViewCell {
         }
     }
     
-    @IBOutlet weak var nameLabel: UILabel! {
-        didSet {
-            nameLabel.text = "Brocolli"
-        }   
-    }
+    @IBOutlet weak var nameLabel: UILabel!
     
     var member: User? {
         didSet {

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingVC" customModule="cycle" customModuleProvider="target">
             <connections>
+                <outlet property="buttonOk" destination="kNU-xc-QbQ" id="1If-X1-Lmm"/>
                 <outlet property="imageView" destination="cxB-14-aVI" id="KPD-is-rkf"/>
                 <outlet property="infoLabel" destination="uwc-Sj-ntD" id="sLu-ed-sWH"/>
                 <outlet property="titleLabel" destination="U3U-Xj-Jpi" id="L0N-z7-22E"/>
@@ -26,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q19-Qe-Kve">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait for confirmation" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3U-Xj-Jpi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait for confirmation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3U-Xj-Jpi">
                             <rect key="frame" x="24" y="24" width="366" height="36"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                             <nil key="textColor"/>
@@ -40,10 +41,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zj4-14-9om">
-                            <rect key="frame" x="0.0" y="170.5" width="414" height="647.5"/>
+                            <rect key="frame" x="0.0" y="170.5" width="414" height="597.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourglass" translatesAutoresizingMaskIntoConstraints="NO" id="cxB-14-aVI">
-                                    <rect key="frame" x="127" y="244" width="160" height="160"/>
+                                    <rect key="frame" x="127" y="219" width="160" height="160"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="160" id="XLe-1n-nPk"/>
                                         <constraint firstAttribute="width" constant="160" id="va5-kO-XXU"/>
@@ -56,18 +57,34 @@
                                 <constraint firstItem="cxB-14-aVI" firstAttribute="centerY" secondItem="zj4-14-9om" secondAttribute="centerY" id="fEq-0h-avZ"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNU-xc-QbQ">
+                            <rect key="frame" x="24" y="768" width="366" height="50"/>
+                            <color key="backgroundColor" red="0.22352941179999999" green="0.86274509799999999" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="JZy-mH-p9w"/>
+                            </constraints>
+                            <state key="normal" title="OK">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onNextTapped:" destination="-1" eventType="touchUpInside" id="cNt-Yy-cUo"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="zj4-14-9om" firstAttribute="top" secondItem="uwc-Sj-ntD" secondAttribute="bottom" id="5Ye-7k-hNu"/>
+                        <constraint firstItem="kNU-xc-QbQ" firstAttribute="top" secondItem="zj4-14-9om" secondAttribute="bottom" id="CEl-zy-vk1"/>
                         <constraint firstItem="U3U-Xj-Jpi" firstAttribute="top" secondItem="q19-Qe-Kve" secondAttribute="top" constant="24" id="DFG-zc-OTX"/>
                         <constraint firstItem="uwc-Sj-ntD" firstAttribute="top" secondItem="U3U-Xj-Jpi" secondAttribute="bottom" constant="24" id="HbG-hg-Zpu"/>
                         <constraint firstAttribute="trailing" secondItem="zj4-14-9om" secondAttribute="trailing" id="OpY-B7-ZDY"/>
-                        <constraint firstAttribute="bottom" secondItem="zj4-14-9om" secondAttribute="bottom" id="UvP-Mc-NcX"/>
                         <constraint firstItem="U3U-Xj-Jpi" firstAttribute="leading" secondItem="q19-Qe-Kve" secondAttribute="leading" constant="24" id="XTH-7t-Xos"/>
                         <constraint firstAttribute="trailing" secondItem="uwc-Sj-ntD" secondAttribute="trailing" constant="24" id="cL6-sM-LWn"/>
                         <constraint firstItem="zj4-14-9om" firstAttribute="leading" secondItem="q19-Qe-Kve" secondAttribute="leading" id="dWw-a5-bNE"/>
+                        <constraint firstAttribute="bottom" secondItem="kNU-xc-QbQ" secondAttribute="bottom" id="gDm-u3-V1P"/>
+                        <constraint firstAttribute="trailing" secondItem="kNU-xc-QbQ" secondAttribute="trailing" constant="24" id="j4S-EE-9dX"/>
                         <constraint firstAttribute="trailing" secondItem="U3U-Xj-Jpi" secondAttribute="trailing" constant="24" id="klR-5x-C3A"/>
+                        <constraint firstItem="kNU-xc-QbQ" firstAttribute="leading" secondItem="q19-Qe-Kve" secondAttribute="leading" constant="24" id="qwN-Ze-3RO"/>
                         <constraint firstItem="uwc-Sj-ntD" firstAttribute="leading" secondItem="q19-Qe-Kve" secondAttribute="leading" constant="24" id="rcJ-GA-Gpc"/>
                     </constraints>
                 </view>
@@ -80,6 +97,7 @@
                 <constraint firstItem="q19-Qe-Kve" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mWM-Jm-GkS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
     <resources>

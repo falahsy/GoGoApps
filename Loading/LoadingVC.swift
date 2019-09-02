@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import CloudKit
 
 class LoadingVC: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var buttonOk: UIButton! {
+        didSet {
+            buttonOk.setupRadius(type: .custom(16.0))
+            buttonOk.isHidden = true
+        }
+    }
     
-    //change to true
-    var hasReceivedNotification: Bool! {
+    var activity: Activity!
+    var hasError: Bool! = false {
         didSet {
             setupView()
         }
@@ -23,151 +30,82 @@ class LoadingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        observeNotification()
+        pushNotification()
     }
     
-    private func setupView() {
-        if hasReceivedNotification {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "Loading"
+    }
+    
+    private func pushNotification() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.letsGo(eventId: activity.activityID) { [weak self] (_ , error) in
+            guard let self = self else { return }
+            if let _ = error {
+                self.hasError = true
+            } else {
+                self.createNewRecord()
+            }
             
-        } else {
-            observeWatch()
         }
     }
     
-    private func observeNotification() {
-        let shared = AppDelegate.shared
-        let eventId = shared.eventID
+    private func setupView() {
+        if !hasError {
+            DispatchQueue.main.async {
+                self.infoView("Happy Cycling", "Please open Gogo on your Apple Watch so you can know how far you are from friends while cycling and quikly send emergency alert.", image: "Watch")
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.infoView("Hold On!", "There's something wrong with our system. Try again", image: "cycling-2")
+            }
+        }
     }
-
-    private func observeWatch() {
-//        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { (time) in
-//            print("Background")
-//            let kegiatan = Activity()
+    
+    private func infoView(_ title: String, _ info: String, image: String) {
+        titleLabel.text = title
+        infoLabel.text = info
+        imageView.image = UIImage(named: image)
+        buttonOk.isHidden = false
+        buttonOk.setTitle(hasError ? "Back" : "OK", for: .normal)
+    }
+    
+    private func createNewRecord() {
+        print("User: \(activity.adminID)")
+        print("Activity Id: \(activity.activityID)")
         
-//            checkSOSMessage(activity: kegiatan)
-            
-            //MARK:- Real Time Location
-            //send real time location
-//            let user = User()
-            
-//            sendRealtimeLocation(user: user)
-            //MARK:- Get Friends Location
-//            mapView.removeAnnotations(friends)
-            
-//            sortedFriendsByDistance = []
-            
-//            user.searchActivity(activity: activityID ?? "", callback: { (users) in
-//                self.friends = []
-//                for cyclist in users {
-//                    if cyclist.userID != self.userID{
-//                        self.friends.append(Cyclist(user: cyclist)!)
-//                    }
-//
-//                }
-            
-                //MARK:- Detect distance between check point in route
-//                var point = 0
-//                for (index, element) in self.routesPoints.enumerated() {
-//
-//                    guard let distance = element.location?.distance(from: CLLocation(latitude: self.initialLocation.latitude, longitude: self.initialLocation.longitude)) else {
-//                        return
-//                    }
-//
-//                    if distance < 50 {
-//                        point = index
-//                    }
-//                }
-            
-//                var you:User!
-//
-//                user.searchUser(userID: self.userID!) { (users) in
-//                    users.first?.ref?.updateChildValues(["point": point])
-//                    you = users.first!
-//                    you.fullName = "You"
-//                    self.sortedFriendsByDistance.append(you)
-                    //just in case there are no more friends afterwards
-                    //self.collectionView.reloadData()
-                    
-//                }
-            
-                //MARK:- calculating distance to destination
-//                let checkPointPassed = self.routesPoints[point...]
-                //nedd to do this because the array slice cannot automatically converted
-//                let checkDistance = Array(checkPointPassed)
-//                self.mapView.removeOverlays(self.mapView.overlays)
-//                self.drawRoutes(routes: checkDistance, draw: true)
-            
-                //MARK:- calculating friends distance to destination
-//                for friend in  self.friends{
-//                    user.searchUser(userID: friend.userID, callback: { (users) in
-//                        self.friendsDistance[users.first!.userID] = users.first!.distance
-//                    })
-//                }
-            
-                //MARK:- Grouping all cyclists
-//                self.groups = []
-//                while self.friendsDistance.count > 0 {
-//
-//                    let sortedByValueDictionary = self.friendsDistance.sorted { $0.1 < $1.1 }
-//                    guard let initialDistance = sortedByValueDictionary.first?.value else { return }
-//
-//                    let filteredDict = self.friendsDistance.filter{
-//                        Int(($0.value - initialDistance)) < (50 )
-//                    }
-//
-//                    if filteredDict.count > 0{
-//
-//                        self.groups.append(filteredDict)
-//
-//                        for cyclist in filteredDict{
-//                            self.friendsDistance.removeValue(forKey: cyclist.key)
-//                        }
-//
-//                    }
-//
-//
-//                }
-            
-//                self.friends = []
-//
-//                for frontCyclist in self.groups {
-//
-//                    let sortedCyclistInGroup = frontCyclist.sorted { $0.1 < $1.1 }
-//
-//                    user.searchUser(userID: sortedCyclistInGroup.first!.key, callback: { (users) in
-//
-//                        var info = ""
-//                        var detail = ""
-//                        var user = users.first!
-//
-//                        if frontCyclist.count > 1 {
-//                            info = "consists of \(frontCyclist.count ) friends"
-//                            detail = "\(users.first!.fullName) is in group"
-//                            user.fullName = info
-//
-//                        }else{
-//                            info = users.first?.fullName ?? ""
-//                            detail = users.first?.userID ?? ""
-//                        }
-//                        self.friends.append(Cyclist(fullname: info, userID: detail, discipline: "Flag", coordinate: users.first!.location))
-//
-//                        self.mapView.addAnnotations(self.friends)
-//
-//                        self.sortedFriendsByDistance.append(user)
-//
-//                        self.sortedFriendsByDistance = self.sortedFriendsByDistance.sorted(by: { (user1, user2) -> Bool in return user1.distance < user2.distance
-//                        })
-//
-//                        self.collectionView.reloadData()
-//                    })
-//                }
-//
-//                self.collectionView.reloadData()
-            
-                
-//            })
-            
-//        }
+        let record: CKRecord = CKRecord(recordType: "letsGo")
+        let myContainer: CKContainer = CKContainer.default()
+        
+        record["eventId"] = activity.activityID
+        record["userId"] = activity.adminID
+        record["message"] = "Lets Gowes"
+        
+        let publicDatabase = myContainer.publicCloudDatabase
+        
+        publicDatabase.save(record, completionHandler: { recordX, error in
+            if let _ = error {
+                self.hasError = true
+                return
+            } else {
+                self.hasError = false
+            }
+        })
+    }
+    
+    private func moveToTrackingVC() {
+        let vc = TrackingVC()
+        vc.activityID = activity.activityID
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onNextTapped(_ sender: UIButton) {
+        if hasError {
+            navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            moveToTrackingVC()
+        }
+        
     }
 }

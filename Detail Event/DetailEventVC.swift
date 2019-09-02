@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import CloudKit
 
 class DetailEventVC: UIViewController {
 
@@ -30,7 +29,7 @@ class DetailEventVC: UIViewController {
     }
     
     var activityId: String = ""
-    var userId: String = "a@ok.com"
+    var userId: String = ""
     var activity: Activity?
     var timer: Timer?
     var placemarks: [MKPlacemark] = []
@@ -41,7 +40,6 @@ class DetailEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        activityId = Preference.getString(forKey: .kUserActivity) ?? ""
         setupNavController(title: "Detail Event", prefLargeTitle: true, isHidingBackButton: false)
         view.backgroundColor = UIColor(hex: "#F9F9F9")
         
@@ -76,7 +74,6 @@ class DetailEventVC: UIViewController {
                 let place = MKPlacemark(coordinate: coordinate)
                 self.placemarks.append(place)
             })
-            self.tableView.reloadData()
         }
         getMembers()
     }
@@ -85,43 +82,18 @@ class DetailEventVC: UIViewController {
         let user: User = User()
         user.searchActivity(activity: activityId) { (users) in
             self.members = users
-            self.tableView.reloadData()
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
     @IBAction func onStartTapped(_ sender: UIButton) {
-        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
-            self.tableView.reloadData()
-        }
-        
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        if let temp = activity {
-            self.activityId = temp.activityID
-            appDelegate.eventID = activityId
-            appDelegate.letsGo(eventId: self.activityId)
-            
-            print("User: \(temp.userID)")
-            print("Activity Id: \(temp.activityID)")
-            
-            let record = CKRecord(recordType: "letsGo")
-            let myContainer = CKContainer.default()
-
-            record["eventId"] = self.activityId
-            record["userId"] = temp.userID
-            record["message"] = "Lets Gowes"
-
-            let publicDatabase = myContainer.publicCloudDatabase
-
-            publicDatabase.save(record, completionHandler: { recordX, error in
-                if let error = error {
-                    print("Error \(error.localizedDescription)")
-                    return
-                }
-            })
-        }
+        let vc: LoadingVC = LoadingVC()
+        vc.activity = activity
+        let navController = UINavigationController(rootViewController: vc)
+        navigationController?.present(navController, animated: true, completion: nil)
     }
 }
 
@@ -174,6 +146,7 @@ extension DetailEventVC: CLLocationManagerDelegate, MKMapViewDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.requestLocation()
+            tableView.reloadData()
         }
     }
     

@@ -37,14 +37,6 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         setupNavController(title: "GoGo", prefLargeTitle: false, isHidingBackButton: true)
         
-        //Check All Activity
-//        let act = Activity()
-//        act.getAllActivity { (activities) in
-//            for data in activities {
-//                print("\(data.activityID): \(data.userID)")
-//            }
-//        }
-        
         let userID = Preference.getString(forKey: .kUserEmail)!
         let today = Date()
         let tommorow = Calendar.current.date(byAdding: .day, value: 1, to: today)
@@ -72,6 +64,7 @@ class HomeVC: UIViewController {
                         
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+                            self.upcomingContent = self.upcomingEvents.count - 1
                         }
                         
                     })
@@ -230,9 +223,29 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = DetailEventVC()
-        vc.activityId = upcomingEvents[0].activityID
-        navigationController?.pushViewController(vc, animated: true)
+        
+        var rowSelected: Int = 0
+        if indexPath.row != 2 {
+            rowSelected = indexPath.row - upcomingContent
+        }
+        
+        Preference.set(value: upcomingEvents[rowSelected].activityID, forKey: .kUserActivity)
+        let userId = Preference.getString(forKey: .kUserEmail) ?? ""
+        
+        if upcomingEvents.indices.contains(rowSelected) {
+            let user = User()
+            user.searchUser(userID: userId) { (results) in
+                results.first?.ref?
+                    .updateChildValues(
+                        ["activity":"\(self.upcomingEvents[rowSelected].activityID)"]
+                )
+            }
+         
+            let vc = DetailEventVC()
+            vc.activityId = self.upcomingEvents[rowSelected].activityID
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
     }
 }
 extension HomeVC{

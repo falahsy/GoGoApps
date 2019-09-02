@@ -47,8 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func letsGo(eventId: String) {
-        
+    func letsGo(eventId: String, completion: @escaping ((CKSubscription?, Error?)->Void)) {
         self.unsubscribeNotification()
         
         let subscription = CKQuerySubscription(recordType: "letsGo", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)
@@ -66,18 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         subscription.notificationInfo = info
         
-        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
-            
-            if error == nil {
-                print("Success")
-            } else {
-                print("Error Occured \(error?.localizedDescription ?? "Error")")
-            }
-        })
+        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: completion)
     }
     
     //unsubscribe ke cloudkit
-    func unsubscribeNotification(){
+    func unsubscribeNotification() {
         CKContainer.default().publicCloudDatabase.fetchAllSubscriptions(completionHandler: { subscriptions, error in
             if error != nil {
                 // failed to fetch all subscriptions, handle error here
@@ -88,7 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let subscriptions = subscriptions {
                 for subscription in subscriptions {
                     CKContainer.default().publicCloudDatabase.delete(withSubscriptionID: subscription.subscriptionID, completionHandler: { string, error in
-                        if(error != nil){
+                        if(error != nil) {
+                            print(error ?? "nil")
                             // deletion of subscription failed, handle error here
                         }
                     })
@@ -120,33 +113,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController = UINavigationController(rootViewController: vc)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-        print("applicationWillResignActive")
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        print("applicationDidEnterBackground")
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        print("applicationWillEnterForeground")
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        print("applicationDidBecomeActive")
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        print("applicationWillTerminate")
     }
 }
 

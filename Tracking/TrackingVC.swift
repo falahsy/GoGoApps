@@ -52,9 +52,7 @@ class TrackingVC: UIViewController{
     
     var timeFromDestination:Int!{
         didSet{
-            
             self.etaLabel.text = "\(Pretiffy.getETA(seconds: self.timeFromDestination))"
-            
         }
     }
     var eventDate:Date!{
@@ -91,7 +89,6 @@ class TrackingVC: UIViewController{
         collectionView.register(UINib.init(nibName: "CyclistCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cyclistCell")
         
         self.userID = Preference.getString(forKey: .kUserEmail)
-//        self.activityID = Preference.getString(forKey: .kUserActivity)
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -126,53 +123,48 @@ class TrackingVC: UIViewController{
     }
    
     override func viewDidAppear(_ animated: Bool) {
-        
+        super.viewDidAppear(animated)
         guard let initialLocation = self.initialLocation else {return}
+        
+        title = "Tracking"
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         
         let region = MKCoordinateRegion(center: initialLocation, span: span)
         mapView.setRegion(region, animated: true)
         
-        guard let timer = self.timerForBackground else {return}
         backgroundOperation()
-        timer.fire()
-        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let timer = self.timerForBackground else {return}
         timer.invalidate()
-        
     }
+    
 }
 
-extension TrackingVC:UICollectionViewDelegate{
-    
+extension TrackingVC:UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120.0, height: 160.0)
+    }
 }
 extension TrackingVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.sortedFriendsByDistance.count > 0 {
             sortFriendByDistance()
         }
-        //return self.sortedFriendsByDistance.count
         return self.cyclistOrder.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cyclistCell", for: indexPath) as! CyclistCollectionCell
         
-        if self.cyclistOrder.count < 1{
+        if self.cyclistOrder.count < 1 {
             cell.title?.text = ""
-            cell.subtitle?.text = ""
+            cell.distance?.text = ""
             
-        }else{
-            cell.title?.text = self.cyclistOrder[indexPath.row].title
-            cell.subtitle.text = self.cyclistOrder[indexPath.row].subtitle
-            cell.distance.text = self.cyclistOrder[indexPath.row].distance
-            
+        } else {
+            cell.cyclistInfo = cyclistOrder[indexPath.row]
         }
         
         return cell
@@ -182,7 +174,7 @@ extension TrackingVC:UICollectionViewDataSource{
 }
 
 extension TrackingVC: CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.requestLocation()
         }
@@ -224,7 +216,7 @@ extension TrackingVC: MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        let location = view.annotation as! Cyclist
+//        let location = view.annotation as! Cyclist
         
         
     }
@@ -347,7 +339,7 @@ extension TrackingVC {
                     you.fullName = "You"
                     self.sortedFriendsByDistance.append(you)
                     //just in case there are no more friends afterwards
-                    //self.collectionView.reloadData()
+                    self.collectionView.reloadData()
                     
                 }
                 
