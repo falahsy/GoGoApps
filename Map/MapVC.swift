@@ -122,7 +122,7 @@ class MapVC: UIViewController {
                 
                 for activity in activities{
                     //update values
-                    activity.ref?.updateChildValues(["message" : message?.trimmingCharacters(in: .whitespacesAndNewlines),"user": self.userID,"messageID":messageID])
+                    activity.ref?.updateChildValues(["message" : message?.trimmingCharacters(in: .whitespacesAndNewlines) as Any,"user": self.userID,"messageID":messageID])
                 
                 }
             }
@@ -684,7 +684,6 @@ extension MapVC: SearchRouteDelegate {
 
     }
 }
-
 extension MapVC: SearchActivityDelegate {
     func dropActivity(activity: Activity) {
         
@@ -694,20 +693,16 @@ extension MapVC: SearchActivityDelegate {
             routesPoints.append(placemark)
             addPinInMap(placemark: placemark)
         }
-        
         self.activityID = activity.activityID
-        print("This is as drop \(self.activityID )")
+        print("This is as drop \(String(describing: self.activityID) )")
         drawRoutes(routes: self.routesPoints)
     }
-    
     func cancelActivity() {
         navigationItem.titleView = nil
         isSearchActivityClicked = false
         self.searchActivity.setTitle("Activity", for: .normal)
         cancelRoutes()
-        
     }
-    
 }
 
 extension MapVC: MKMapViewDelegate {

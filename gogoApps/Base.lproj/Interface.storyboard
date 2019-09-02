@@ -12,7 +12,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="gogoApps" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="gogoApps_Extension">
                     <items>
                         <group width="134" alignment="left" id="hMr-dq-csX">
                             <items>
@@ -22,6 +22,10 @@
                                 </label>
                             </items>
                         </group>
+                        <timer width="136" height="46" alignment="left" textAlignment="center" id="g0L-7c-2mz">
+                            <color key="textColor" red="0.3070317804813385" green="0.67749625444412231" blue="0.43918019533157349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                        </timer>
                     </items>
                     <connections>
                         <segue destination="fPd-P4-4WI" kind="relationship" relationship="nextPage" id="4n9-OF-jth"/>
@@ -30,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="202" y="345"/>
         </scene>
-        <!--Rank List-->
+        <!--Interface Controller-->
         <scene sceneID="sUF-vs-HBP">
             <objects>
-                <controller id="fPd-P4-4WI" customClass="RankList" customModule="gogoApps_Extension">
+                <controller id="fPd-P4-4WI" customClass="InterfaceController" customModule="gogoApps_Extension">
                     <items>
                         <table alignment="left" id="et7-BE-moZ">
                             <items>
@@ -89,15 +93,19 @@
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
-        <!--Emergency Page-->
+        <!--Interface Controller-->
         <scene sceneID="btz-ZI-q8e">
             <objects>
-                <controller id="9ZC-HR-wFw" customClass="Emergency_Page" customModule="gogoApps_Extension">
+                <controller id="9ZC-HR-wFw" customClass="InterfaceController" customModule="gogoApps_Extension">
                     <items>
                         <button width="1" height="105" alignment="left" title="Emergency" id="GCS-S4-GAZ">
                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                         </button>
-                        <button width="1" alignment="left" title="Stop" id="pvf-2G-tWL"/>
+                        <button width="1" alignment="left" title="Stop" id="pvf-2G-tWL">
+                            <connections>
+                                <segue destination="7bN-6P-5t5" kind="push" id="BeR-q7-9hX"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -106,7 +114,11 @@
         <!--Emergency Details-->
         <scene sceneID="Uau-KI-Pkn">
             <objects>
-                <controller id="7bN-6P-5t5" customClass="Emergency_Details" customModule="gogoApps_Extension"/>
+                <controller id="7bN-6P-5t5" customClass="Emergency_Details" customModule="gogoApps_Extension">
+                    <items>
+                        <label width="136" height="47" alignment="left" text="Are you sure want to Stop?" textAlignment="center" id="H6o-jp-rgg"/>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="982" y="341"/>
         </scene>

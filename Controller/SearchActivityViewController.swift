@@ -21,24 +21,17 @@ protocol HandleActivitySearch {
 }
 
 extension SearchActivityViewController {
-    
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = matchingItems[indexPath.row]
         handleActivitySearchDelegate?.dropActivity(activity: selectedItem)
         dismiss(animated: true, completion: nil)
-        
     }
 }
-
 extension SearchActivityViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         handleActivitySearchDelegate?.cancelActivity()
     }
-    
-    
 }
-
 extension SearchActivityViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
@@ -66,7 +59,6 @@ extension SearchActivityViewController : UISearchResultsUpdating {
             print("\(activities)-\(searchBarText)")
             self.tableView.reloadData()
         }
-        
         }
     }
     
@@ -74,6 +66,5 @@ extension SearchActivityViewController : UISearchResultsUpdating {
         if !searchController.isActive {
             print("Cancelled")
         }
-        
     }
 

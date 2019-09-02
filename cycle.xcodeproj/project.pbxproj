@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		161AA214230D30B4002EB295 /* OnBoardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AA212230D30B4002EB295 /* OnBoardingVC.xib */; };
 		161AA215230D30B4002EB295 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AA213230D30B4002EB295 /* OnBoardingVC.swift */; };
-		16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16699DA1230F885B00A90ABC /* CloudKit.framework */; };
 		3204F9A523156286000FDB77 /* DetailEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3204F99823156286000FDB77 /* DetailEventVC.xib */; };
 		3204F9A623156286000FDB77 /* DetailEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99923156286000FDB77 /* DetailEventVC.swift */; };
 		3204F9A723156286000FDB77 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204F99C23156286000FDB77 /* MapCell.swift */; };
@@ -34,7 +33,6 @@
 		32D240C923139B8800D4D69C /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C623139B8700D4D69C /* SearchActivityViewController.swift */; };
 		32D240CA23139B8800D4D69C /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C723139B8800D4D69C /* ShowRouteViewController.swift */; };
 		32D240CB23139B8800D4D69C /* SearchRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C823139B8800D4D69C /* SearchRouteViewController.swift */; };
-		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
 		BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A8230D351300A35295 /* HomeHeaderCell.swift */; };
@@ -49,10 +47,8 @@
 		BEE576AF230E524700ADA11B /* HomeNoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */; };
 		BEE576B0230E524700ADA11B /* HomeNoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */; };
 		CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */; };
-		E02116452316390C00CB7246 /* RankList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02116442316390C00CB7246 /* RankList.swift */; };
-		E02116472316395300CB7246 /* Emergency_Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02116462316395300CB7246 /* Emergency_Page.swift */; };
-		E0211649231639CA00CB7246 /* Emergency_Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0211648231639CA00CB7246 /* Emergency_Details.swift */; };
-		E021164B23163A4400CB7246 /* RowTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E021164A23163A4400CB7246 /* RowTable.swift */; };
+		E021164F2317D57800CB7246 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16699DA1230F885B00A90ABC /* CloudKit.framework */; };
+		E02116502317D57800CB7246 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
 		EF2B16F5230BB13100EBF33B /* gogoApps Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF2B16F4230BB13100EBF33B /* gogoApps Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -188,10 +184,6 @@
 		BEE576AD230E524700ADA11B /* HomeNoEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoEventCell.swift; sourceTree = "<group>"; };
 		BEE576AE230E524700ADA11B /* HomeNoEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoEventCell.xib; sourceTree = "<group>"; };
 		C0A6D227A09E2CF23EBEF495 /* Pods-gogoApps Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gogoApps Extension.debug.xcconfig"; path = "Target Support Files/Pods-gogoApps Extension/Pods-gogoApps Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		E02116442316390C00CB7246 /* RankList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankList.swift; sourceTree = "<group>"; };
-		E02116462316395300CB7246 /* Emergency_Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency_Page.swift; sourceTree = "<group>"; };
-		E0211648231639CA00CB7246 /* Emergency_Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency_Details.swift; sourceTree = "<group>"; };
-		E021164A23163A4400CB7246 /* RowTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTable.swift; sourceTree = "<group>"; };
 		EF1EC614230255810011EA59 /* cycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cycle.entitlements; sourceTree = "<group>"; };
 		EF2B16E8230BB13000EBF33B /* gogoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B16EB230BB13000EBF33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -259,10 +251,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
-				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
-				16699DA2230F885B00A90ABC /* CloudKit.framework in Frameworks */,
-				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
+				E021164F2317D57800CB7246 /* CloudKit.framework in Frameworks */,
+				E02116502317D57800CB7246 /* Pods_cycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,10 +463,6 @@
 			children = (
 				1670D766230F627400443D86 /* gogoApps Extension.entitlements */,
 				EF2B16F9230BB13100EBF33B /* InterfaceController.swift */,
-				E02116442316390C00CB7246 /* RankList.swift */,
-				E0211648231639CA00CB7246 /* Emergency_Details.swift */,
-				E021164A23163A4400CB7246 /* RowTable.swift */,
-				E02116462316395300CB7246 /* Emergency_Page.swift */,
 				EF2B16FB230BB13100EBF33B /* ExtensionDelegate.swift */,
 				EF2B16FD230BB13100EBF33B /* NotificationController.swift */,
 				EF2B16FF230BB13200EBF33B /* Assets.xcassets */,
@@ -698,7 +684,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "boy setiawan";
 				TargetAttributes = {
 					EF2B16E7230BB13000EBF33B = {
@@ -920,11 +906,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF2B16FE230BB13100EBF33B /* NotificationController.swift in Sources */,
-				E02116472316395300CB7246 /* Emergency_Page.swift in Sources */,
-				E02116452316390C00CB7246 /* RankList.swift in Sources */,
 				EF2B16FC230BB13100EBF33B /* ExtensionDelegate.swift in Sources */,
-				E021164B23163A4400CB7246 /* RowTable.swift in Sources */,
-				E0211649231639CA00CB7246 /* Emergency_Details.swift in Sources */,
 				EF2B16FA230BB13100EBF33B /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
