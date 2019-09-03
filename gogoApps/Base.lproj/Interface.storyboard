@@ -13,6 +13,9 @@
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="gogoApps" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Label" id="pTP-9f-yrt"/>
+                    </items>
                     <connections>
                         <segue destination="R9T-lU-fvG" kind="relationship" relationship="nextPage" id="yZd-af-7qi"/>
                     </connections>
@@ -24,6 +27,15 @@
         <scene sceneID="LND-tp-ceC">
             <objects>
                 <controller id="R9T-lU-fvG">
+                    <items>
+                        <table alignment="left" id="6re-Sk-jcO">
+                            <items>
+                                <tableRow id="5KD-hv-mao">
+                                    <group key="rootItem" width="1" alignment="left" id="Y9Z-17-rXC"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
                     <connections>
                         <segue destination="ITu-bT-tbQ" kind="relationship" relationship="nextPage" id="TuB-cQ-adT"/>
                     </connections>
