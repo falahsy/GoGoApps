@@ -37,7 +37,6 @@
 		32D240C923139B8800D4D69C /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C623139B8700D4D69C /* SearchActivityViewController.swift */; };
 		32D240CA23139B8800D4D69C /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C723139B8800D4D69C /* ShowRouteViewController.swift */; };
 		32D240CB23139B8800D4D69C /* SearchRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D240C823139B8800D4D69C /* SearchRouteViewController.swift */; };
-		5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		BE0D22A5230D34EB00A35295 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A3230D34EB00A35295 /* HomeVC.swift */; };
 		BE0D22A6230D34EB00A35295 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0D22A4230D34EB00A35295 /* HomeVC.xib */; };
 		BE0D22AA230D351300A35295 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D22A8230D351300A35295 /* HomeHeaderCell.swift */; };
@@ -54,6 +53,7 @@
 		CADAE95EC8087FC3290F0057 /* Pods_gogoApps_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964C2EE0137B4E413DB989F2 /* Pods_gogoApps_Extension.framework */; };
 		E0CF3873231E5801003D1899 /* EmergencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3872231E5801003D1899 /* EmergencyController.swift */; };
 		E0CF3875231E5827003D1899 /* rankListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3874231E5827003D1899 /* rankListController.swift */; };
+		E0CF3876231E747F003D1899 /* Pods_cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632687FF7D4AC005F2F89996 /* Pods_cycle.framework */; };
 		EF2B16EC230BB13000EBF33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16EA230BB13000EBF33B /* Interface.storyboard */; };
 		EF2B16EE230BB13100EBF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B16ED230BB13100EBF33B /* Assets.xcassets */; };
 		EF2B16F5230BB13100EBF33B /* gogoApps Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF2B16F4230BB13100EBF33B /* gogoApps Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -264,8 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				166C74BC23192FE50097DA77 /* CloudKit.framework in Frameworks */,
-				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
-				5D1101B41999AD4D2E676895 /* Pods_cycle.framework in Frameworks */,
+				E0CF3876231E747F003D1899 /* Pods_cycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,7 +719,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "boy setiawan";
 				TargetAttributes = {
 					EF2B16E7230BB13000EBF33B = {
@@ -745,6 +744,9 @@
 					EFEE5DD02301575B0027F401 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};

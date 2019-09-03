@@ -14,7 +14,15 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="gogoApps" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Label" id="pTP-9f-yrt"/>
+                        <group height="40" alignment="left" id="4yv-cY-hXm">
+                            <items>
+                                <imageView width="45" alignment="left" id="66U-EV-A9j"/>
+                                <label width="100" height="100" alignment="left" text="Cycling" textAlignment="center" id="rdn-0e-QTg"/>
+                            </items>
+                        </group>
+                        <timer width="150" height="50" alignment="left" id="1sV-4n-sg2">
+                            <fontDescription key="font" type="system" pointSize="40"/>
+                        </timer>
                     </items>
                     <connections>
                         <segue destination="R9T-lU-fvG" kind="relationship" relationship="nextPage" id="yZd-af-7qi"/>
@@ -23,36 +31,69 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Rank List Controller-->
         <scene sceneID="LND-tp-ceC">
             <objects>
-                <controller id="R9T-lU-fvG">
+                <controller id="R9T-lU-fvG" customClass="rankListController" customModule="gogoApps_Extension">
                     <items>
-                        <table alignment="left" id="6re-Sk-jcO">
+                        <table alignment="left" id="ewF-8j-8m3">
                             <items>
-                                <tableRow id="5KD-hv-mao">
-                                    <group key="rootItem" width="1" alignment="left" id="Y9Z-17-rXC"/>
+                                <tableRow id="3BU-2V-4ju">
+                                    <group key="rootItem" width="1" height="52" alignment="left" spacing="6" id="ufy-VV-gdk">
+                                        <items>
+                                            <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="qZR-S0-Aro">
+                                                <color key="color" red="0.91751509899999995" green="0.20156051250000001" blue="0.1413655684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </separator>
+                                            <group width="113" alignment="left" layout="vertical" spacing="0.0" id="ziQ-Kw-p6T">
+                                                <items>
+                                                    <group width="1" height="32" alignment="left" spacing="4" id="E8e-dA-Dbd">
+                                                        <items>
+                                                            <label width="35" height="30" alignment="left" text="1" textAlignment="center" id="ve7-ki-LSX">
+                                                                <fontDescription key="font" type="system" pointSize="22"/>
+                                                            </label>
+                                                            <label width="57" height="31" alignment="left" text="Name" textAlignment="center" id="FqS-nw-Rd0"/>
+                                                        </items>
+                                                    </group>
+                                                    <group width="1" height="20" alignment="left" id="2BU-2i-gTB">
+                                                        <items>
+                                                            <label width="58" height="20" alignment="left" text="Distances" textAlignment="center" id="qlt-Vg-EAg">
+                                                                <color key="textColor" red="0.30703178050000002" green="0.67749625440000005" blue="0.43918019530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <fontDescription key="font" type="system" pointSize="10"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
+                        <outlet property="RankTable" destination="ewF-8j-8m3" id="Y2k-0H-hsg"/>
                         <segue destination="ITu-bT-tbQ" kind="relationship" relationship="nextPage" id="TuB-cQ-adT"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Emergency Controller-->
         <scene sceneID="o6U-RT-kA9">
             <objects>
-                <controller id="ITu-bT-tbQ">
+                <controller id="ITu-bT-tbQ" customClass="EmergencyController" customModule="gogoApps_Extension">
                     <items>
                         <button width="1" height="104" alignment="left" title="Emergency" id="5Ol-aO-Wl6">
                             <color key="backgroundColor" red="0.91751509899999995" green="0.20156051250000001" blue="0.1413655684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="EmergencyButton" destination="ITu-bT-tbQ" id="DAA-g1-0oi"/>
+                            </connections>
                         </button>
-                        <button width="1" alignment="left" title="Stop" id="gr4-VW-67E"/>
+                        <button width="1" alignment="left" title="Stop" id="qCh-ul-tSh"/>
                     </items>
+                    <connections>
+                        <outlet property="EmergencyButton" destination="5Ol-aO-Wl6" id="gsS-Um-2Qc"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="724" y="345"/>

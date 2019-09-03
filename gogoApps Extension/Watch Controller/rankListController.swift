@@ -10,5 +10,7 @@ import UIKit
 import WatchKit
 
 class rankListController: WKInterfaceController {
-
+    @IBOutlet weak var RankTable: WKInterfaceTable!
+    // udah gua rapihin semua UInya
+    
 }

@@ -10,5 +10,4 @@ import UIKit
 import WatchKit
 
 class EmergencyController: WKInterfaceController {
-
 }

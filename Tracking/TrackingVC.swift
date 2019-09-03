@@ -81,7 +81,6 @@ class TrackingVC: UIViewController{
         }else{
             backgroundOperation()
         }
-        
     }
     @IBAction func sos(_ sender: UIButton) {
         showSOSDialog()
@@ -116,7 +115,6 @@ class TrackingVC: UIViewController{
                 self.routesPoints.append(place)
                 self.addPinInMap(placemark: place)
             }
-            
             self.drawRoutes(routes: self.routesPoints)
         }
         
@@ -173,8 +171,6 @@ extension TrackingVC:UICollectionViewDataSource{
         
         return cell
     }
-    
-    
 }
 
 extension TrackingVC: CLLocationManagerDelegate {
@@ -198,7 +194,6 @@ extension TrackingVC: CLLocationManagerDelegate {
                     appIsInBackground()
                 }
             }
-            
         }
     }
     
@@ -556,8 +551,6 @@ extension TrackingVC {
                     }else{
                         self.showSOSMessage(activity: activity)
                     }
-                    
-                    
                 }
             }
         }
@@ -566,9 +559,8 @@ extension TrackingVC {
     func sendRealtimeLocation(user: User){
         
         user.searchUser(userID: self.userID!, callback: { (users) in
-            users.first?.ref?.updateChildValues(["location":"\(self.initialLocation.latitude),\(self.initialLocation.longitude)"])
+    users.first?.ref?.updateChildValues(["location":"\(self.initialLocation.latitude),\(self.initialLocation.longitude)"])
         })
-        
     }
     
     func sortFriendByDistance(){
@@ -587,7 +579,6 @@ extension TrackingVC {
             let info = "Group 1 \(firstCyclist.fullName)"
             self.cyclistOrder.append(CyclistInfo(title: info, subtitle: firstCyclist.userID, distance: Pretiffy.getDistance(distance: firstCyclist.distance)))
         }
-        
         self.sortedFriendsByDistance.enumerated().forEach { (index,element) in
             
             if index == 0 {
@@ -618,10 +609,7 @@ extension TrackingVC {
                 self.cyclistOrder.append(CyclistInfo(title: info, subtitle: element.userID, distance: Pretiffy.getDistance(distance: distance)))
             }
             print("called")
-            
         }
-        
-        
     }
 
     func appIsInBackground(){
@@ -648,7 +636,6 @@ extension TrackingVC {
                 }
                 
             }
-            
             //MARK:- Detect distance between check point in route
             var point = 0
             for (index, element) in self.routesPoints.enumerated() {
@@ -687,7 +674,6 @@ extension TrackingVC {
                     self.friendsDistance[users.first!.userID] = users.first!.distance
                 })
             }
-            
             
             //MARK:- Grouping all cyclists
             self.groups = []
@@ -734,23 +720,15 @@ extension TrackingVC {
                         info = users.first?.fullName ?? ""
                         detail = users.first?.userID ?? ""
                     }
-                    
                     self.sortedFriendsByDistance.append(user)
-                    
                     self.sortedFriendsByDistance = self.sortedFriendsByDistance.sorted(by: { (user1:User, user2:User) -> Bool in
                         return user1.distance < user2.distance
                     })
-                    
                     print("SEND DATA TO WATCH")
                 })
             }
-            
             print("SEND DATA TO WATCH")
             
-            
         })
-        
-        
-        
     }
 }
