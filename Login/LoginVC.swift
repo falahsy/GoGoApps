@@ -213,7 +213,6 @@ class LoginVC: UIViewController, UITextFieldDelegate{
             user.insertData { (info) in
                 print(info)
             }
-            
             Preference.set(value: self.textBoxUserID.text?.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
             let homeVC = HomeVC()
             self.navigationController?.pushViewController(homeVC, animated: true)
@@ -234,7 +233,8 @@ class LoginVC: UIViewController, UITextFieldDelegate{
     @objc func loginRegister() {
         if isLogin!{
             Login.loginAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,result) in
-                
+                print(info)
+                print(result)
                 if result{
                     Preference.set(value: self.textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), forKey: .kUserEmail)
                     Preference.set(value: true, forKey: .kUserLogin)
@@ -248,12 +248,10 @@ class LoginVC: UIViewController, UITextFieldDelegate{
             }
         } else {
             Login.createAccount(email: textBoxUserID.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: textBoxPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (info,status) in
-                
                 if status{
                     self.showInputDialog()
                     
                 }else{
-                    
                     let alert = UIAlertController(title: "Welcome",message: info,preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true, completion: nil)

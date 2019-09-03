@@ -64,7 +64,6 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         label.sizeToFit()
         label.numberOfLines = 0
         cell.accessoryView = label
-        
         return cell
     }
     

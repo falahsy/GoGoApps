@@ -19,12 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="323.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cycle with friends?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwc-Ib-7ML">
-                        <rect key="frame" x="20" y="25" width="139" height="20"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITI-lw-Cbu">
                         <rect key="frame" x="20" y="70" width="176" height="213"/>
                         <constraints>
@@ -43,27 +37,23 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW3-Oj-kjg">
-                        <rect key="frame" x="364" y="20" width="30" height="30"/>
+                        <rect key="frame" x="344" y="12" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="4Ut-Be-Bn2"/>
-                            <constraint firstAttribute="width" constant="30" id="z2Y-th-cFo"/>
+                            <constraint firstAttribute="height" constant="50" id="4Ut-Be-Bn2"/>
+                            <constraint firstAttribute="width" constant="50" id="z2Y-th-cFo"/>
                         </constraints>
-                        <state key="normal" image="Flag"/>
+                        <state key="normal" image="Oval"/>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ITI-lw-Cbu" firstAttribute="height" secondItem="YyR-eO-5Jw" secondAttribute="height" id="1fX-df-o1T"/>
                     <constraint firstItem="ITI-lw-Cbu" firstAttribute="width" secondItem="YyR-eO-5Jw" secondAttribute="width" id="5FV-Ic-UKz"/>
-                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="top" secondItem="qwc-Ib-7ML" secondAttribute="bottom" constant="25" id="ANo-Xr-mQc"/>
+                    <constraint firstItem="YyR-eO-5Jw" firstAttribute="top" secondItem="BW3-Oj-kjg" secondAttribute="bottom" constant="8" id="5ZU-0L-BMd"/>
                     <constraint firstItem="YyR-eO-5Jw" firstAttribute="trailing" secondItem="BW3-Oj-kjg" secondAttribute="trailing" id="Dn3-ZR-iTp"/>
                     <constraint firstItem="YyR-eO-5Jw" firstAttribute="leading" secondItem="ITI-lw-Cbu" secondAttribute="trailing" constant="22" id="KGZ-LD-XjV"/>
-                    <constraint firstItem="ITI-lw-Cbu" firstAttribute="leading" secondItem="qwc-Ib-7ML" secondAttribute="leading" id="NHM-oH-i08"/>
                     <constraint firstAttribute="trailing" secondItem="BW3-Oj-kjg" secondAttribute="trailing" constant="20" id="NqR-YQ-UfV"/>
                     <constraint firstAttribute="bottom" secondItem="ITI-lw-Cbu" secondAttribute="bottom" constant="40.5" id="ODq-5J-bfd"/>
-                    <constraint firstItem="BW3-Oj-kjg" firstAttribute="centerY" secondItem="qwc-Ib-7ML" secondAttribute="centerY" id="QUB-i1-JuR"/>
-                    <constraint firstItem="qwc-Ib-7ML" firstAttribute="top" secondItem="lnh-Ut-ap8" secondAttribute="top" constant="25" id="W9H-Xb-WTs"/>
-                    <constraint firstItem="qwc-Ib-7ML" firstAttribute="leading" secondItem="lnh-Ut-ap8" secondAttribute="leading" constant="20" id="YaN-0p-0sB"/>
-                    <constraint firstItem="YyR-eO-5Jw" firstAttribute="top" secondItem="BW3-Oj-kjg" secondAttribute="bottom" constant="20" id="eo3-Gn-RZH"/>
+                    <constraint firstItem="BW3-Oj-kjg" firstAttribute="top" secondItem="lnh-Ut-ap8" secondAttribute="top" constant="12" id="vlg-Dk-gZy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="PFe-AB-lT3"/>
@@ -76,7 +66,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Flag" width="48" height="48"/>
+        <image name="Oval" width="40" height="40"/>
         <image name="create button" width="174" height="231"/>
         <image name="join button" width="176" height="233"/>
     </resources>

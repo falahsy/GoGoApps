@@ -142,21 +142,14 @@ struct Events{
     }
     
     func searchUser(userID:String, callback: @escaping ([Events]) -> Void){
-        
-        
         Events.dbRef.child("events").queryOrdered(byChild:  "userID").queryStarting(atValue: userID).queryEnding(atValue: userID + "\u{f8ff}").observeSingleEvent(of: .value, with: { (snapshot) in
-            
             var eventsList:[Events] = []
             for item in snapshot.children{
                 let event = item as! DataSnapshot
-                
                 guard let cyclistEvents = Events(snapshot: event) else {return}
                 eventsList.append(cyclistEvents)
             }
-            
             callback(eventsList)
-            
-            
         })
         
     }

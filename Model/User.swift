@@ -106,10 +106,8 @@ struct User{
         if ref != nil{
             ref?.removeValue()
             callback("Delete Successful")
-            
         }else{
             callback("Delete Failed")
-            
         }
         
     }
@@ -146,8 +144,6 @@ struct User{
             }
             
             callback(userList)
-            
-            
         })
         
     }
