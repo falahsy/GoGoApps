@@ -46,7 +46,8 @@ class ProfileViewController: UIViewController {
         Preference.set(value: false, forKey: .kUserLogin)
         let vc = LoginVC()
         vc.isLogin = true
-        navigationController?.present(vc, animated: true, completion: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        navigationController?.present(nav, animated: true, completion: nil)
     }
 }
 
