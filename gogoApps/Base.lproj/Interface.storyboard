@@ -83,20 +83,18 @@
             <objects>
                 <controller id="ITu-bT-tbQ" customClass="EmergencyController" customModule="gogoApps_Extension">
                     <items>
-                        <button width="1" height="104" alignment="left" title="Emergency" id="5Ol-aO-Wl6">
-                            <color key="backgroundColor" red="0.91751509899999995" green="0.20156051250000001" blue="0.1413655684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="EmergencyButton" destination="ITu-bT-tbQ" id="DAA-g1-0oi"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Stop" id="qCh-ul-tSh"/>
+                        <group width="1" height="100" alignment="left" id="zQd-kQ-JT4">
+                            <items>
+                                <button width="1" height="100" alignment="left" title="Emergency" id="qCN-Ns-Igj">
+                                    <color key="backgroundColor" red="0.91751509899999995" green="0.20156051250000001" blue="0.1413655684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Stop" id="gVV-z5-BM9"/>
                     </items>
-                    <connections>
-                        <outlet property="EmergencyButton" destination="5Ol-aO-Wl6" id="gsS-Um-2Qc"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="724" y="345"/>
+            <point key="canvasLocation" x="724" y="345.5"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -128,6 +126,25 @@
                 <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="gogoApps" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="724" y="643"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="7bf-bU-FfX">
+            <objects>
+                <controller id="esT-kp-1Tu">
+                    <items>
+                        <label width="132" alignment="left" text="are you want to stop?" id="ACf-PC-SIA">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                        </label>
+                        <group width="1" alignment="left" id="x0d-sE-s9L">
+                            <items>
+                                <button width="64" alignment="left" title="Yes" id="2G2-rX-0St"/>
+                                <button width="64" alignment="left" title="No" id="yFq-8v-v8B"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1034" y="345"/>
         </scene>
     </scenes>
 </document>

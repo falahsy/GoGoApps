@@ -31,10 +31,8 @@ class TrackingVC: UIViewController{
         didSet{
             sosButton.layer.cornerRadius = sosButton.frame.size.height/2
             sosButton.clipsToBounds = true
-            
         }
     }
-    
     let locationManager = CLLocationManager()
     var initialLocation:CLLocationCoordinate2D!
     var routesPoints:[MKPlacemark] = []
@@ -164,11 +162,10 @@ extension TrackingVC:UICollectionViewDataSource{
         if self.cyclistOrder.count < 1 {
             cell.title?.text = ""
             cell.distance?.text = ""
-            
+    
         } else {
             cell.cyclistInfo = cyclistOrder[indexPath.row]
         }
-        
         return cell
     }
 }
