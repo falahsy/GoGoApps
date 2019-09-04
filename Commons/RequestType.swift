@@ -9,6 +9,7 @@
 import Foundation
 
 enum RequestType: String {
+    case start
     case sos
     case rank
     case stop

@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import MapKit
-import Firebase
 
 struct CyclistInfo{
     var title:String

@@ -192,16 +192,10 @@ static NSString *const ktargetToInFlightPackagesKey =
 
   // Create an immediate background task to run until the end of the current queue of work.
   __block GDTBackgroundIdentifier bgID = [app beginBackgroundTaskWithExpirationHandler:^{
-    if (bgID != GDTBackgroundIdentifierInvalid) {
-      [app endBackgroundTask:bgID];
-      bgID = GDTBackgroundIdentifierInvalid;
-    }
+    [app endBackgroundTask:bgID];
   }];
   dispatch_async(_coordinationQueue, ^{
-    if (bgID != GDTBackgroundIdentifierInvalid) {
-      [app endBackgroundTask:bgID];
-      bgID = GDTBackgroundIdentifierInvalid;
-    }
+    [app endBackgroundTask:bgID];
   });
 }
 

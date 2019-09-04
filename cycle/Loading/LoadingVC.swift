@@ -42,11 +42,11 @@ class LoadingVC: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.sendNotification(activity: "letsGo", eventId: activity.activityID) { [weak self] (_ , error) in
             guard let self = self else { return }
-            if let _ = error {
-                self.hasError = true
-            } else {
-                self.createNewRecord()
-            }
+            self.createNewRecord()
+//            if let _ = error {
+//                self.hasError = true
+//            } else {
+//            }
             
         }
     }
@@ -86,8 +86,7 @@ class LoadingVC: UIViewController {
         
         publicDatabase.save(record, completionHandler: { recordX, error in
             if let _ = error {
-                self.hasError = true
-                return
+                self.hasError = false
             } else {
                 self.hasError = false
             }

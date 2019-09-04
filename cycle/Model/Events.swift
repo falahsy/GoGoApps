@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 import Firebase
 
-struct Events{
+struct Events {
     
     private static var dbRef: DatabaseReference = Database.database().reference()
     var activityID:String

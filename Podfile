@@ -18,15 +18,17 @@ target 'gogoApps' do
   use_frameworks!
 
   # Pods for gogoApps
-  pod 'Hex'
+#  pod 'Hex'
 
 end
 
 target 'gogoApps Extension' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
   # Pods for gogoApps Extension
-  pod 'Hex'
+  inherit! :search_paths
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
 end

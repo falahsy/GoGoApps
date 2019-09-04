@@ -41,7 +41,7 @@
                     <items>
                         <table alignment="left" id="ewF-8j-8m3">
                             <items>
-                                <tableRow id="3BU-2V-4ju">
+                                <tableRow identifier="RankRow" id="3BU-2V-4ju" customClass="RankRow" customModule="gogoApps_Extension">
                                     <group key="rootItem" width="1" height="52" alignment="left" spacing="6" id="ufy-VV-gdk">
                                         <items>
                                             <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="qZR-S0-Aro">
@@ -69,6 +69,11 @@
                                             </group>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="distanceLabel" destination="qlt-Vg-EAg" id="Br3-7r-X59"/>
+                                        <outlet property="nameLabel" destination="FqS-nw-Rd0" id="76Y-V8-jQu"/>
+                                        <outlet property="rankLabel" destination="ve7-ki-LSX" id="pAe-T8-1jb"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
@@ -90,6 +95,9 @@
                             <items>
                                 <button width="1" height="100" alignment="left" title="Emergency" id="qCN-Ns-Igj">
                                     <color key="backgroundColor" red="0.91751509899999995" green="0.20156051250000001" blue="0.1413655684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="onSosTapped" destination="ITu-bT-tbQ" id="OzL-x8-ErU"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>

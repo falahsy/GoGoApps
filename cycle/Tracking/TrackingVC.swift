@@ -77,14 +77,10 @@ class TrackingVC: UIViewController{
     var connectivityHandler: WSManager = WSManager.shared
     
     @IBAction func go(_ sender: UIButton) {
-        if self.timerForBackground != nil{
-            return
-        }else{
-            backgroundOperation()
-        }
+        triggerWatch(cyclistOrder)
     }
     @IBAction func sos(_ sender: UIButton) {
-        showSOSDialog()
+        pushNotification()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -414,7 +410,7 @@ extension TrackingVC {
                 }
                 
                 self.collectionView.reloadData()
-                
+                self.triggerWatch(self.cyclistOrder)
                 
             })
             
@@ -699,15 +695,27 @@ extension TrackingVC {
 
 extension TrackingVC: iOSDelegate {
     
+    private func triggerWatch(_ list: [CyclistInfo]) {
+        connectivityHandler.session?.sendMessage([RequestType.start.rawValue : list], replyHandler: nil, errorHandler: { (err) in
+            print(err)
+        })
+    }
+    
     func messageReceived(tuple: MessageReceived) {
-        guard let reply = tuple.replyHandler else {return}
+        guard let reply = tuple.replyHandler else {
+            if let _ = tuple.message[RequestType.sos.rawValue] {
+                handleSos()
+            }
+            
+            return
+        }
         
         switch tuple.message["request"] as! RequestType.RawValue {
         case RequestType.rank.rawValue:
             let ranks = ["rank" : cyclistOrder]
             reply(["ranks" : ranks])
         case RequestType.sos.rawValue:
-            pushNotification()
+            handleSos()
         default:
             break
         }
@@ -724,6 +732,18 @@ extension TrackingVC: iOSDelegate {
                 self.createNewRecord(msg: "\(name) needs help!")
             }
         }
+    }
+    
+    private func handleSos() {
+        let alert: UIAlertController = UIAlertController(title: "SOS", message: "Ayu needs help! She finds snakes", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Take Action", style: .default, handler: { (_) in
+            Preference.set(value: "brew@mail.com", forKey: .friendNeedHelp)
+            let showRouteVC = ShowRouteVC()
+            self.navigationController?.pushViewController(showRouteVC, animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Acknowledge", style: .destructive, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     private func createNewRecord(msg: String){
