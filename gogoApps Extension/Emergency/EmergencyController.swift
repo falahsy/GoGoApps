@@ -10,4 +10,7 @@ import UIKit
 import WatchKit
 
 class EmergencyController: WKInterfaceController {
+    
+    @IBOutlet weak var EmergencyBtn: WKInterfaceButton!
+    
 }

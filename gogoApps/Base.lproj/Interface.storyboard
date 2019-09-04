@@ -16,8 +16,11 @@
                     <items>
                         <group height="40" alignment="left" id="4yv-cY-hXm">
                             <items>
-                                <imageView width="45" alignment="left" id="66U-EV-A9j"/>
-                                <label width="100" height="100" alignment="left" text="Cycling" textAlignment="center" id="rdn-0e-QTg"/>
+                                <imageView width="39" height="39" alignment="left" image="bmx" id="66U-EV-A9j"/>
+                                <label width="100" height="100" alignment="left" text="Cycling" textAlignment="center" id="rdn-0e-QTg">
+                                    <color key="textColor" red="0.55273455381393433" green="0.85913312435150146" blue="0.41165736317634583" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                </label>
                             </items>
                         </group>
                         <timer width="150" height="50" alignment="left" id="1sV-4n-sg2">
@@ -92,6 +95,9 @@
                         </group>
                         <button width="1" alignment="left" title="Stop" id="gVV-z5-BM9"/>
                     </items>
+                    <connections>
+                        <outlet property="EmergencyBtn" destination="qCN-Ns-Igj" id="QyK-Zn-Jm5"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="724" y="345.5"/>
@@ -144,7 +150,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1034" y="345"/>
+            <point key="canvasLocation" x="972" y="345"/>
         </scene>
     </scenes>
 </document>

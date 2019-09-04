@@ -469,14 +469,21 @@
 			path = "Home Cell";
 			sourceTree = "<group>";
 		};
-		E0CF3871231E5710003D1899 /* Watch Controller */ = {
+		E0B8F2E9231F9F3F00D8522C /* RankList */ = {
 			isa = PBXGroup;
 			children = (
-				EF2B16F9230BB13100EBF33B /* InterfaceController.swift */,
-				E0CF3872231E5801003D1899 /* EmergencyController.swift */,
 				E0CF3874231E5827003D1899 /* rankListController.swift */,
 			);
-			path = "Watch Controller";
+			name = RankList;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E0CF3871231E5710003D1899 /* Emergency */ = {
+			isa = PBXGroup;
+			children = (
+				E0CF3872231E5801003D1899 /* EmergencyController.swift */,
+			);
+			path = Emergency;
 			sourceTree = "<group>";
 		};
 		EF2B16E9230BB13000EBF33B /* gogoApps */ = {
@@ -493,7 +500,9 @@
 		EF2B16F8230BB13100EBF33B /* gogoApps Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E0CF3871231E5710003D1899 /* Watch Controller */,
+				E0B8F2E9231F9F3F00D8522C /* RankList */,
+				E0CF3871231E5710003D1899 /* Emergency */,
+				EF2B16F9230BB13100EBF33B /* InterfaceController.swift */,
 				1670D766230F627400443D86 /* gogoApps Extension.entitlements */,
 				EF2B16FB230BB13100EBF33B /* ExtensionDelegate.swift */,
 				EF2B16FD230BB13100EBF33B /* NotificationController.swift */,
