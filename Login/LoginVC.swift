@@ -194,11 +194,6 @@ class LoginVC: UIViewController, UITextFieldDelegate{
         textBoxPassword.text = ""
     }
     
-//    @objc func signIn() {
-//
-//
-//    }
-    
     func showInputDialog() {
         //Creating UIAlertController and
         //Setting title and message for the alert dialog

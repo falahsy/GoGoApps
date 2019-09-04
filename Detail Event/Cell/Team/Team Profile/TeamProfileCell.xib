@@ -31,8 +31,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gZ-lI-O6m">
                                 <rect key="frame" x="15" y="0.0" width="54" height="54"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling - biru" translatesAutoresizingMaskIntoConstraints="NO" id="Skl-8b-Pni">
-                                        <rect key="frame" x="9" y="9" width="36" height="36"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cycling - biru" translatesAutoresizingMaskIntoConstraints="NO" id="Skl-8b-Pni">
+                                        <rect key="frame" x="9" y="23" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="8xj-ic-OrG"/>
                                             <constraint firstAttribute="height" constant="36" id="HLG-8F-DTC"/>

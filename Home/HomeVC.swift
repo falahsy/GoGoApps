@@ -14,9 +14,11 @@ class HomeVC: UIViewController {
     
     var todayContent = 0
     var upcomingContent = 0
-    
+    var rowSelected = 0
     var upcomingEvents = [UpcomingEventInfo]()
     var todayEvents = [UpcomingEventInfo]()
+    var countTodayRow = 0
+    var countNotTodayRow = 0
     @IBOutlet weak var tableView: UITableView!
     func configTable(){
         tableView.backgroundColor = UIColor(hex: "#F9F9F9")
@@ -29,9 +31,9 @@ class HomeVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         configNavBar()
         configTable()
+        fetchData()
     }
     
     func configNavBar(){
@@ -40,36 +42,33 @@ class HomeVC: UIViewController {
     }
     
     func fetchData(){
+        upcomingEvents.removeAll()
+        todayEvents.removeAll()
         let userID = Preference.getString(forKey: .kUserEmail)!
         let event = Events()
-        upcomingEvents = []
         print(userID)
         event.searchUser(userID: userID) { (events) in
             for upcomingEvent in events{
                 let intervalDate = Double(upcomingEvent.date)
                 let eventDate = Date(timeIntervalSince1970: intervalDate)
-                self.todayEvents.removeAll()
-                self.upcomingEvents.removeAll()
                 upcomingEvent.searchActivity(activityID: upcomingEvent.activityID, callback: { (friendsInCommon) in
-                    let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta)
                     if self.toDateString(time: eventDate) == self.getCurrDate(){
+                        let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta, row: self.countTodayRow, isToday: true)
                         self.todayEvents.append(userEvent)
+                        self.countTodayRow += 1
                     } else {
+                        let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta, row: self.countNotTodayRow, isToday: false)
                         self.upcomingEvents.append(userEvent)
+                        self.countNotTodayRow += 1
                     }
                     DispatchQueue.main.async {
                         self.todayContent = self.todayEvents.count
                         self.upcomingContent = self.upcomingEvents.count
                         self.tableView.reloadData()
-                        
                     }
                 })
             }
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchData()
     }
 }
 extension HomeVC: UITableViewDataSource, UITableViewDelegate{
@@ -93,11 +92,11 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             }else if indexPath.row == 1 { //today date
                 return 44
             }else if indexPath.row > 1 && indexPath.row < todayContent + 2{ //today content
-                return 110
+                return 150
             }else if indexPath.row == todayContent + 2{ //upcoming label
                 return 44
             }else{ //upcoming content
-                return 110
+                return 150
             }
         } else if todayContent == 0 && upcomingContent != 0{
             if indexPath.row == 0 {
@@ -105,7 +104,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             }else if indexPath.row == 1 { //upcoming label
                 return 44
             }else{ //upcoming content
-                return 110
+                return 150
             }
         } else if todayContent != 0 && upcomingContent == 0{
             if indexPath.row == 0 {
@@ -113,7 +112,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             }else if indexPath.row == 1 { //today date
                 return 44
             }else{ //today content
-                return 110
+                return 150
             }
         } else{
             if indexPath.row == 0 {
@@ -137,48 +136,18 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }else if indexPath.row > 1 && indexPath.row < todayContent + 2{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)) as! HomeCell
-                
-                if self.todayContent == 0 {
-                    cell.dateLabel.text = "No Event Date"
-                    cell.eventLabel.text = "No Event"
-                    cell.membersLabel.text = "0 Friends"
-                    cell.destinationLabel.text = "No Destination"
-                    cell.infoLabel.text = "Distance : 0 km ETA : 0:0"
-                    return cell
-
-                } else {
-                    cell.dateLabel.text = "At \(Pretiffy.formatDate(date: self.todayEvents[indexPath.row-2].date))"
-                    cell.eventLabel.text = self.todayEvents[indexPath.row-2].activityID
-                    cell.membersLabel.text = "\(self.todayEvents[indexPath.row-2].friends) Friends"
-                    cell.destinationLabel.text = "Destination \(self.todayEvents[indexPath.row-2].destination)"
-                    cell.infoLabel.text = "Distance \(Pretiffy.getDistance(distance: todayEvents[indexPath.row-2].distance)) ETA \(Pretiffy.getETA(seconds: self.todayEvents[indexPath.row-2].eta))"
-                    return cell
-                }
+                cell.event = todayEvents[indexPath.row - 2]
+                cell.delegate = self
+                return cell
             }else if indexPath.row == todayContent + 2{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeDateCell", for: indexPath)) as! HomeDateCell
                 cell.dateLbl.text = "Upcoming Events"
                 return cell
             }else{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)) as! HomeCell
-                
-//                if self.upcomingEvents.indices.contains(indexPath.row - upcomingContent - 2){
-                if self.upcomingContent != 0{
-                    cell.dateLabel.text = "At \(Pretiffy.formatDate(date: self.upcomingEvents[indexPath.row - upcomingContent - 2].date))"
-                    cell.eventLabel.text = self.upcomingEvents[indexPath.row - upcomingContent - 2].activityID
-                    cell.membersLabel.text = "\(self.upcomingEvents[indexPath.row - upcomingContent - 2].friends ) Friends"
-                    cell.destinationLabel.text = "Destination \(self.upcomingEvents[indexPath.row - upcomingContent - 2].destination)"
-                    cell.infoLabel.text = "Distance \(Pretiffy.getDistance(distance: self.upcomingEvents[indexPath.row - upcomingContent - 2].distance)) ETA \(Pretiffy.getETA(seconds: self.upcomingEvents[indexPath.row - upcomingContent].eta))"
-                    return cell
-                }else{
-                    cell.dateLabel.text = "No Event Date"
-                    cell.eventLabel.text = "No Event"
-                    cell.membersLabel.text = "0 Friends"
-                    cell.destinationLabel.text = "No Destination"
-                    cell.infoLabel.text = "Distance : 0 km ETA : 0:0"
-                    return cell
-                }
-
-                
+                cell.event = upcomingEvents[indexPath.row - upcomingContent - 2]
+                cell.delegate = self
+                return cell
             }
         } else if todayContent == 0 && upcomingContent != 0{
             if indexPath.row == 0 {
@@ -191,22 +160,9 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }else {
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)) as! HomeCell
-                if self.upcomingContent != 0{
-                    cell.dateLabel.text = "At \(Pretiffy.formatDate(date: self.upcomingEvents[indexPath.row - 2].date))"
-                    cell.eventLabel.text = self.upcomingEvents[indexPath.row - 2].activityID
-                    cell.membersLabel.text = "\(self.upcomingEvents[indexPath.row - 2].friends) Friends"
-                    cell.destinationLabel.text = "Destination \(self.upcomingEvents[indexPath.row - 2].destination)"
-                    cell.infoLabel.text = "Distance \(Pretiffy.getDistance(distance: self.upcomingEvents[indexPath.row - 2].distance)) ETA \(Pretiffy.getETA(seconds: self.upcomingEvents[indexPath.row - 2].eta))"
-                    return cell
-                }else{
-                    cell.dateLabel.text = "No Event Date"
-                    cell.eventLabel.text = "No Event"
-                    cell.membersLabel.text = "0 Friends"
-                    cell.destinationLabel.text = "No Destination"
-                    cell.infoLabel.text = "Distance : 0 km ETA : 0:0"
-                    return cell
-                }
-                
+                cell.event = upcomingEvents[indexPath.row - 2]
+                cell.delegate = self
+                return cell
             }
         } else if todayContent != 0 && upcomingContent == 0{
             if indexPath.row == 0 {
@@ -219,23 +175,9 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }else {
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)) as! HomeCell
-                
-                if self.todayContent == 0 {
-                    cell.dateLabel.text = "No Event Date"
-                    cell.eventLabel.text = "No Event"
-                    cell.membersLabel.text = "0 Friends"
-                    cell.destinationLabel.text = "No Destination"
-                    cell.infoLabel.text = "Distance : 0 km ETA : 0:0"
-                    return cell
-                    
-                } else {
-                    cell.dateLabel.text = "At \(Pretiffy.formatDate(date: self.todayEvents[indexPath.row-2].date))"
-                    cell.eventLabel.text = self.todayEvents[indexPath.row-2].activityID
-                    cell.membersLabel.text = "\(self.todayEvents[indexPath.row-2].friends) Friends"
-                    cell.destinationLabel.text = "Destination \(self.todayEvents[indexPath.row-2].destination)"
-                    cell.infoLabel.text = "Distance \(Pretiffy.getDistance(distance: todayEvents[indexPath.row-2].distance)) ETA \(Pretiffy.getETA(seconds: self.todayEvents[indexPath.row-2].eta))"
-                    return cell
-                }
+                cell.event = todayEvents[indexPath.row-2]
+                cell.delegate = self
+                return cell
             }
         } else{
             if indexPath.row == 0 {
@@ -249,32 +191,77 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         }
         
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        var rowSelected: Int = 0
-//        if indexPath.row != 2 {
-//            rowSelected = indexPath.row - upcomingContent
-//        }
-//
-//        Preference.set(value: upcomingEvents[rowSelected].activityID, forKey: .kUserActivity)
-//        let userId = Preference.getString(forKey: .kUserEmail) ?? ""
-//
-//        if upcomingEvents.indices.contains(rowSelected) {
-//            let user = User()
-//            user.searchUser(userID: userId) { (results) in
-//                results.first?.ref?
-//                    .updateChildValues(
-//                        ["activity":"\(self.upcomingEvents[rowSelected].activityID)"]
-//                )
-//            }
-//
-//            let vc = DetailEventVC()
-//            vc.activityId = self.upcomingEvents[rowSelected].activityID
-//            self.navigationController?.pushViewController(vc, animated: true)
-//
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        var rowSelected: Int = 0
+        if indexPath.row != 2 {
+            rowSelected = indexPath.row - upcomingContent
+        }
+
+        Preference.set(value: upcomingEvents[rowSelected].activityID, forKey: .kUserActivity)
+        let userId = Preference.getString(forKey: .kUserEmail) ?? ""
+
+        if upcomingEvents.indices.contains(rowSelected) {
+            let user = User()
+            user.searchUser(userID: userId) { (results) in
+                results.first?.ref?
+                    .updateChildValues(
+                        ["activity":"\(self.upcomingEvents[rowSelected].activityID)"]
+                )
+            }
+
+            let vc = DetailEventVC()
+            vc.activityId = self.upcomingEvents[rowSelected].activityID
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
+    }
+}
+extension HomeVC : homeCellDelegate, homeDelegate{
+    func toActDetail(actID: String, row : Int, isToday:Bool) {
+        if isToday{
+            Preference.set(value: todayEvents[row].activityID, forKey: .kUserActivity)
+            let userId = Preference.getString(forKey: .kUserEmail) ?? ""
+            
+            if todayEvents.indices.contains(row) {
+                let user = User()
+                user.searchUser(userID: userId) { (results) in
+                    results.first?.ref?.updateChildValues(["activity":"\(self.todayEvents[row].activityID)"])
+                }
+            }
+        } else {
+            Preference.set(value: upcomingEvents[row].activityID, forKey: .kUserActivity)
+            let userId = Preference.getString(forKey: .kUserEmail) ?? ""
+            
+            if upcomingEvents.indices.contains(row) {
+                let user = User()
+                user.searchUser(userID: userId) { (results) in
+                    results.first?.ref?.updateChildValues(["activity":"\(self.upcomingEvents[row].activityID)"])
+                }
+            }
+        }
+        
+        let vc = DetailEventVC()
+        vc.activityId = actID
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toProfile() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toNewRoute() {
+        let vc = CreateEventVC()
+        let navController = UINavigationController(rootViewController: vc)
+        navigationController?.present(navController, animated: true, completion: nil)
+    }
+    
+    func toJoinEvent() {
+        let vc = JoinEventVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 extension HomeVC{
     func getCurrDate() -> String{
@@ -312,22 +299,4 @@ extension HomeVC{
         return stringDate
     }
 }
-extension HomeVC : homeCellDelegate{
-    func toProfile() {
-        let vc = ProfileViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func toNewRoute() {
-        let vc = CreateEventVC()
-        let navController = UINavigationController(rootViewController: vc)
-        navigationController?.present(navController, animated: true, completion: nil)
-    }
-    
-    func toJoinEvent() {
-        let vc = JoinEventVC()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
 
