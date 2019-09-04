@@ -44,15 +44,15 @@ class JoinEventVC: UIViewController{
                 let eventDate = Date(timeIntervalSince1970: intervalDate)
                 
                 let event = Events()
-                
+                print(userID)
                 event.searchActivity(activityID: activity.activityID, callback: { (events) in
                     let result = events.allSatisfy{
-                         $0.userID == userID
+                         $0.userID != userID
                     }
+                    print(events.count)
                     if result {
                         event.searchActivity(activityID: activity.activityID, callback: { (events) in
-                            let firstEvent = events.first!
-                            
+                            guard let firstEvent = events.first else {return}
                             let jointEvent = Events(id: firstEvent.activityID, user: userID, date: eventDate, distance: firstEvent.distance, eta: firstEvent.eta, destination: firstEvent.destination)
                             
                             jointEvent.insertData(callback: { (info) in

@@ -229,7 +229,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             rowSelected = indexPath.row - upcomingContent
         }
         
-        Preference.set(value: upcomingEvents[rowSelected].activityID, forKey: .kUserActivity)
+        Preference.set(value: upcomingEvents[0].activityID, forKey: .kUserActivity)
         let userId = Preference.getString(forKey: .kUserEmail) ?? ""
         
         if upcomingEvents.indices.contains(rowSelected) {
