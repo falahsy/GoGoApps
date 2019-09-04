@@ -31,12 +31,17 @@ class DetailEventVC: UIViewController {
     var activityId: String = ""
     var userId: String = ""
     var activity: Activity?
-    var timer: Timer?
     var placemarks: [MKPlacemark] = []
     var members: [User]?
     
     let locationManager: CLLocationManager = CLLocationManager()
     var initialLocation: CLLocationCoordinate2D?
+    
+    var detailModel: DetailModel? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +55,6 @@ class DetailEventVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        timer?.invalidate()
     }
     
     private func setupLocationManager() {
@@ -79,13 +79,22 @@ class DetailEventVC: UIViewController {
     }
     
     private func getMembers() {
+        members = []
         let user: User = User()
-        user.searchActivity(activity: activityId) { (users) in
-            self.members = users
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        let event: Events = Events()
+        event.searchActivity(activityID: self.activityId) { (results) in
+            results.forEach({ (result) in
+                user.searchUser(userID: result.userID, callback: { (members) in
+                    members.forEach({ (user) in
+                        
+                        self.members?.append(user)
+                    })
+                })
+            })
+        }
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 

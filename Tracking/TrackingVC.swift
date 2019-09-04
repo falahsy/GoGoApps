@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 import MapKit
 import CloudKit
+import WatchConnectivity
 
 class TrackingVC: UIViewController{
     
@@ -71,7 +72,9 @@ class TrackingVC: UIViewController{
     var backgroundCounter = 0
     
     var messageSOS = ""
-    var hasError: Bool! = false
+    var  hasError: Bool! = false
+    
+    var connectivityHandler: WSManager = WSManager.shared
     
     @IBAction func go(_ sender: UIButton) {
         if self.timerForBackground != nil{
@@ -88,9 +91,8 @@ class TrackingVC: UIViewController{
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib.init(nibName: "CyclistCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cyclistCell")
-        
-        self.userID = Preference.getString(forKey: .kUserEmail)
-        
+        userID = Preference.getString(forKey: .kUserEmail)
+
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.requestWhenInUseAuthorization()
@@ -98,7 +100,7 @@ class TrackingVC: UIViewController{
         locationManager.allowsBackgroundLocationUpdates = true
         //show user location
         mapView.showsUserLocation = true
-        self.mapView.delegate = self
+        mapView.delegate = self
         
         let kegiatan = Activity()
         
@@ -120,6 +122,7 @@ class TrackingVC: UIViewController{
                               forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
         self.sortedFriendsByDistance = []
+        connectivityHandler.iOSDelegate = self
     }
    
     override func viewDidAppear(_ animated: Bool) {
@@ -162,7 +165,6 @@ extension TrackingVC:UICollectionViewDataSource{
         if self.cyclistOrder.count < 1 {
             cell.title?.text = ""
             cell.distance?.text = ""
-    
         } else {
             cell.cyclistInfo = cyclistOrder[indexPath.row]
         }
@@ -433,7 +435,6 @@ extension TrackingVC {
             
             //the confirm action taking the inputs
             let confirmAction = UIAlertAction(title: "Show Location", style: .default) { (_) in
-                
                 let defaults = UserDefaults.standard
                 defaults.set(user?.userID.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "friendNeedHelp")
                 let showRouteVC = ShowRouteVC()
@@ -456,40 +457,6 @@ extension TrackingVC {
         }
         //
         
-    }
-    
-    private func pushNotification() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.letsGo(activity: "SOS", eventId: activityID!) { [weak self] (_ , error) in
-            guard let self = self else { return }
-            
-            if let _ = error {
-                self.hasError = true
-            } else {
-                self.createNewRecord(msg: self.messageSOS)
-            }
-            
-        }
-    }
-    
-    func createNewRecord(msg: String){
-        let record: CKRecord = CKRecord(recordType: "SOS")
-        let myContainer: CKContainer = CKContainer.default()
-        
-        record["eventId"] = activityID!
-        record["userId"] = userID!
-        record["message"] = messageSOS
-        
-        let publicDatabase = myContainer.publicCloudDatabase
-        
-        publicDatabase.save(record, completionHandler: { recordX, error in
-            if let _ = error {
-                self.hasError = true
-                return
-            } else {
-                self.hasError = false
-            }
-        })
     }
     
     func showSOSDialog() {
@@ -726,6 +693,56 @@ extension TrackingVC {
             }
             print("SEND DATA TO WATCH")
             
+        })
+    }
+}
+
+extension TrackingVC: iOSDelegate {
+    
+    func messageReceived(tuple: MessageReceived) {
+        guard let reply = tuple.replyHandler else {return}
+        
+        switch tuple.message["request"] as! RequestType.RawValue {
+        case RequestType.rank.rawValue:
+            let ranks = ["rank" : cyclistOrder]
+            reply(["ranks" : ranks])
+        case RequestType.sos.rawValue:
+            pushNotification()
+        default:
+            break
+        }
+    }
+    
+    private func pushNotification() {
+        let name: String = userID?.removeEmailFormat().uppercased() ?? ""
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.sendNotification(activity: "SOS", eventId: activityID!) { [weak self] (_ , error) in
+            guard let self = self else { return }
+            if let _ = error {
+                self.hasError = true
+            } else {
+                self.createNewRecord(msg: "\(name) needs help!")
+            }
+        }
+    }
+    
+    private func createNewRecord(msg: String){
+        let record: CKRecord = CKRecord(recordType: "SOS")
+        let myContainer: CKContainer = CKContainer.default()
+        
+        record["eventId"] = activityID!
+        record["userId"] = userID!
+        record["message"] = messageSOS
+        
+        let publicDatabase = myContainer.publicCloudDatabase
+        
+        publicDatabase.save(record, completionHandler: { recordX, error in
+            if let _ = error {
+                
+                return
+            } else {
+                
+            }
         })
     }
 }

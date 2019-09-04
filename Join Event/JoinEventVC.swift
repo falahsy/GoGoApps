@@ -19,7 +19,6 @@ class JoinEventVC: UIViewController{
         didSet {
             submitButton.layer.cornerRadius = submitButton.frame.size.height/2
             submitButton.clipsToBounds = true
-            
         }
     }
     
@@ -46,8 +45,8 @@ class JoinEventVC: UIViewController{
                 let event = Events()
                 
                 event.searchActivity(activityID: activity.activityID, callback: { (events) in
-                    let result = events.allSatisfy{
-                         $0.userID == userID
+                    let result = events.allSatisfy {
+                         $0.userID != userID
                     }
                     if result {
                         event.searchActivity(activityID: activity.activityID, callback: { (events) in
@@ -62,6 +61,7 @@ class JoinEventVC: UIViewController{
                         })
                         
                         let trackingVC = DetailEventVC()
+                        trackingVC.activityId = activity.activityID
                         self.navigationController?.pushViewController(trackingVC, animated: true)
                     }else{
                         let alert = UIAlertController(title: "Event",message: "You're already registered to this event",preferredStyle: .alert)

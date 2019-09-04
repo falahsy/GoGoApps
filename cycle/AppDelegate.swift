@@ -39,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         
         if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil){
-            
             moveToTrackingVC(withActivityId: self.eventID)
         }
         
@@ -56,13 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func letsGo(activity: String, eventId: String, completion: @escaping ((CKSubscription?, Error?)->Void)) {
+    func sendNotification(activity: String, eventId: String, completion: @escaping ((CKSubscription?, Error?)->Void)) {
         self.eventID = eventId
         
         var subscription: CKQuerySubscription
+        unsubscribeNotification()
         
         if(activity == "letsGo") {
-            self.unsubscribeNotification()
             subscription = CKQuerySubscription(recordType: "letsGo", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)
         } else if (activity == "SOS") {
             subscription = CKQuerySubscription(recordType: "SOS", predicate: NSPredicate(format: "eventId == %@", eventId), options: .firesOnRecordCreation)

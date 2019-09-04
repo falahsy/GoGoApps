@@ -40,7 +40,7 @@ class LoadingVC: UIViewController {
     
     private func pushNotification() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.letsGo(activity: "letsGo", eventId: activity.activityID) { [weak self] (_ , error) in
+        appDelegate.sendNotification(activity: "letsGo", eventId: activity.activityID) { [weak self] (_ , error) in
             guard let self = self else { return }
             if let _ = error {
                 self.hasError = true

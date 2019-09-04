@@ -93,11 +93,11 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             }else if indexPath.row == 1 { //today date
                 return 44
             }else if indexPath.row > 1 && indexPath.row < todayContent + 2{ //today content
-                return 110
+                return UITableView.automaticDimension
             }else if indexPath.row == todayContent + 2{ //upcoming label
                 return 44
             }else{ //upcoming content
-                return 110
+                return UITableView.automaticDimension
             }
         } else if todayContent == 0 && upcomingContent != 0{
             if indexPath.row == 0 {
@@ -105,7 +105,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             }else if indexPath.row == 1 { //upcoming label
                 return 44
             }else{ //upcoming content
-                return 110
+                return UITableView.automaticDimension
             }
         } else if todayContent != 0 && upcomingContent == 0{
             if indexPath.row == 0 {
@@ -113,7 +113,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             }else if indexPath.row == 1 { //today date
                 return 44
             }else{ //today content
-                return 110
+                return UITableView.automaticDimension
             }
         } else{
             if indexPath.row == 0 {
@@ -249,32 +249,15 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         }
         
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        var rowSelected: Int = 0
-//        if indexPath.row != 2 {
-//            rowSelected = indexPath.row - upcomingContent
-//        }
-//
-//        Preference.set(value: upcomingEvents[rowSelected].activityID, forKey: .kUserActivity)
-//        let userId = Preference.getString(forKey: .kUserEmail) ?? ""
-//
-//        if upcomingEvents.indices.contains(rowSelected) {
-//            let user = User()
-//            user.searchUser(userID: userId) { (results) in
-//                results.first?.ref?
-//                    .updateChildValues(
-//                        ["activity":"\(self.upcomingEvents[rowSelected].activityID)"]
-//                )
-//            }
-//
-//            let vc = DetailEventVC()
-//            vc.activityId = self.upcomingEvents[rowSelected].activityID
-//            self.navigationController?.pushViewController(vc, animated: true)
-//
-//        }
-//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let index = indexPath.row - 2
+        let vc = DetailEventVC()
+        vc.activityId = upcomingEvents[index].activityID
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 extension HomeVC{
     func getCurrDate() -> String{
