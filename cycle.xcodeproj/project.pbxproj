@@ -1050,14 +1050,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XESBM2V2SR;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.27ferryirawan.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1073,14 +1073,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XESBM2V2SR;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = "gogoApps Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.27ferryirawan.cycle.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1097,10 +1097,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XESBM2V2SR;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.27ferryirawan.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1117,10 +1117,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XESBM2V2SR;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				IBSC_MODULE = gogoApps_Extension;
 				INFOPLIST_FILE = gogoApps/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.27ferryirawan.cycle.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1253,13 +1253,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XESBM2V2SR;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.27ferryirawan.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1273,13 +1273,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cycle/cycle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XESBM2V2SR;
+				DEVELOPMENT_TEAM = 4N5X372G52;
 				INFOPLIST_FILE = cycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andikaleonardo.cycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.27ferryirawan.cycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

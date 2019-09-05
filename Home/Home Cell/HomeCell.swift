@@ -42,7 +42,7 @@ class HomeCell: UITableViewCell {
         eventLabel.text = event.activityID
         dateLabel.text = "At \(Pretiffy.formatDate(date: event.date))"
         membersLabel.text = "\(event.friends) Friends"
-        destinationLabel.text = "Destination \(event.destination)"
+        destinationLabel.text = "\(event.destination)"
         infoLabel.text = "Distance \(Pretiffy.getDistance(distance: event.distance)) ETA \(Pretiffy.getETA(seconds: event.eta))"
     }
     

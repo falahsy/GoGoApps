@@ -52,14 +52,26 @@ class HomeVC: UIViewController {
                 let intervalDate = Double(upcomingEvent.date)
                 let eventDate = Date(timeIntervalSince1970: intervalDate)
                 upcomingEvent.searchActivity(activityID: upcomingEvent.activityID, callback: { (friendsInCommon) in
-                    if self.toDateString(time: eventDate) == self.getCurrDate(){
+                    print(self.toDateString(time: eventDate))
+                    print(self.getCurrDate())
+                    print(self.upcomingEvents.count)
+                    if self.toDateString(time: eventDate) == self.getCurrDate() &&  self.todayEvents.isEmpty{
                         let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta, row: self.countTodayRow, isToday: true)
                         self.todayEvents.append(userEvent)
                         self.countTodayRow += 1
-                    } else {
+                    } else if self.toDateString(time: eventDate) == self.getCurrDate() &&  upcomingEvent.activityID != self.todayEvents[self.todayEvents.count-1].activityID{
+                        let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta, row: self.countTodayRow, isToday: true)
+                        self.todayEvents.append(userEvent)
+                        self.countTodayRow += 1
+                    } else if self.toDateString(time: eventDate) != self.getCurrDate() &&  self.upcomingEvents.isEmpty {
                         let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta, row: self.countNotTodayRow, isToday: false)
                         self.upcomingEvents.append(userEvent)
                         self.countNotTodayRow += 1
+                        print(self.upcomingEvents.count)
+                    } else if self.toDateString(time: eventDate) != self.getCurrDate() && upcomingEvent.activityID != self.upcomingEvents[self.upcomingEvents.count-1].activityID{
+                        let userEvent = UpcomingEventInfo(activityID: upcomingEvent.activityID, date: eventDate, friends: friendsInCommon.count - 1, destination: upcomingEvent.destination, distance: upcomingEvent.distance, eta: upcomingEvent.eta, row: self.countNotTodayRow, isToday: false)
+                            self.upcomingEvents.append(userEvent)
+                            self.countNotTodayRow += 1
                     }
                     DispatchQueue.main.async {
                         self.todayContent = self.todayEvents.count
@@ -145,7 +157,9 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }else{
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)) as! HomeCell
-                cell.event = upcomingEvents[indexPath.row - upcomingContent - 2]
+                print(indexPath.row)
+                print(indexPath.row - todayContent - 2)
+                cell.event = upcomingEvents[indexPath.row - todayContent - 3]
                 cell.delegate = self
                 return cell
             }
@@ -191,32 +205,32 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         }
         
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        var rowSelected: Int = 0
-        if indexPath.row != 2 {
-            rowSelected = indexPath.row - upcomingContent
-        }
-
-        Preference.set(value: upcomingEvents[rowSelected].activityID, forKey: .kUserActivity)
-        let userId = Preference.getString(forKey: .kUserEmail) ?? ""
-
-        if upcomingEvents.indices.contains(rowSelected) {
-            let user = User()
-            user.searchUser(userID: userId) { (results) in
-                results.first?.ref?
-                    .updateChildValues(
-                        ["activity":"\(self.upcomingEvents[rowSelected].activityID)"]
-                )
-            }
-
-            let vc = DetailEventVC()
-            vc.activityId = self.upcomingEvents[rowSelected].activityID
-            self.navigationController?.pushViewController(vc, animated: true)
-
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//
+//        var rowSelected: Int = 0
+//        if indexPath.row != 2 {
+//            rowSelected = indexPath.row - upcomingContent
+//        }
+//
+//        Preference.set(value: upcomingEvents[rowSelected].activityID, forKey: .kUserActivity)
+//        let userId = Preference.getString(forKey: .kUserEmail) ?? ""
+//
+//        if upcomingEvents.indices.contains(rowSelected) {
+//            let user = User()
+//            user.searchUser(userID: userId) { (results) in
+//                results.first?.ref?
+//                    .updateChildValues(
+//                        ["activity":"\(self.upcomingEvents[rowSelected].activityID)"]
+//                )
+//            }
+//
+//            let vc = DetailEventVC()
+//            vc.activityId = self.upcomingEvents[rowSelected].activityID
+//            self.navigationController?.pushViewController(vc, animated: true)
+//
+//        }
+//    }
 }
 extension HomeVC : homeCellDelegate, homeDelegate{
     func toActDetail(actID: String, row : Int, isToday:Bool) {
